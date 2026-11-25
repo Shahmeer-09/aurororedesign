@@ -5,6 +5,10 @@
 
 ## Current rework
 
+- Migrated page layouts and shared controls to Tailwind utilities. Edit the palette in `src/app/globals.css`. The Tailwind stylesheet compiled, and lint and TypeScript passed. Turbopack could not bind its local loader port in this environment, so the production build and browser checks are pending.
+
+- The action purple samples Aurora’s hair. The CSS theme controls the palette, including the hero tint and decorative glows. Lint and default and hover button contrast checks passed.
+
 - Full-viewport opening with a plum-tinted Pexels galaxy loop, a specialty marquee and a header that follows scroll direction.
 - The Fear Clear panel uses the original Muse summit artwork. Services use ruled rows and the Starseeds illustration uses orbital rings.
 

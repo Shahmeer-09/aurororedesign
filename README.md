@@ -2,6 +2,8 @@
 
 This repository contains the redesigned Aurora Luna Star homepage. Visitors can explore Aurora’s sessions and sign up for her free guided meditation. The [PRD](docs/PRD.md) describes the homepage scope.
 
+The live website is the reference for the redesign. [Aurora Luna Star](https://auroralunastar.com/)
+
 ## Local development
 
 Use Node.js 20.9 or later and npm. Install from the checked-in lockfile and start the dev server:

@@ -2,6 +2,8 @@
 
 The Aurora Luna Star homepage introduces Aurora’s work, helps visitors choose and book a session, and gives them access to the free Fear Clear meditation.
 
+The live website is the reference for the redesign. [Aurora Luna Star](https://auroralunastar.com/)
+
 ## Homepage scope
 
 - Make Book a Session the primary action and the free meditation the secondary action. Keep both available from the hero and footer.

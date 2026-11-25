@@ -108,13 +108,15 @@ export function MeditationForm() {
   }, [attempt, containerId, inRange]);
 
   return (
-    <div className="meditation-signup" ref={host}>
+    <div className="meditation-signup min-h-52" ref={host}>
       {status === "loading" && (
-        <output className="signup-status">Loading meditation signup…</output>
+        <output className="text-sm leading-[inherit] text-muted">
+          Loading meditation signup…
+        </output>
       )}
       {status === "error" && (
-        <div className="signup-status">
-          <output>The signup form couldn’t load.</output>
+        <div className="text-sm leading-[inherit] text-muted">
+          <output className="block">The signup form couldn’t load.</output>
           <button
             className="text-link"
             onClick={() => {
@@ -125,7 +127,7 @@ export function MeditationForm() {
           >
             Try again
           </button>
-          <a className="text-link" href={siteLinks.contact}>
+          <a className="text-link ms-4" href={siteLinks.contact}>
             Contact Aurora
           </a>
         </div>

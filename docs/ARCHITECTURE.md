@@ -8,7 +8,7 @@ The project is a Next.js 16 App Router application with React 19, strict TypeScr
 | [src/app/layout.tsx](../src/app/layout.tsx) | Document shell, metadata, self-hosted fonts, and global stylesheet |
 | [src/app/_components/](../src/app/_components/) | Site header, footer, and client components for the mobile menu, scroll-aware header, motion preference, and Flodesk embed |
 | [src/components/button.tsx](../src/components/button.tsx) | Shared native button and Next.js link with primary and outline styles |
-| [src/app/globals.css](../src/app/globals.css) | Theme variables, responsive layouts, and CSS motion |
+| [src/app/globals.css](../src/app/globals.css) | CSS variables, Tailwind theme tokens, shared styles, and CSS effects |
 | [public/aurora/](../public/aurora/) | Optimized brand imagery, hero video, and fallback poster |
 
 The mobile menu uses a native dialog. The hero checks motion preference before requesting the video. The Flodesk embed loads as visitors approach the meditation section. Flodesk handles signup and delivery, and Schedulista handles booking via links from the page. The app has no API route, database, authentication, or project-specific environment variables.

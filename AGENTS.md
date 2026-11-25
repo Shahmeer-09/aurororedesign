@@ -2,6 +2,8 @@
 
 Auror Redesign is the Aurora Luna Star homepage, built with Next.js App Router, TypeScript, Tailwind CSS, and Biome.
 
+The live website is the reference for the redesign. [Aurora Luna Star](https://auroralunastar.com/)
+
 ## Session context
 
 - At the start of each session, read [README.md](README.md) and [docs/PROJECT_STATUS.md](docs/PROJECT_STATUS.md). Confirm the current task against the relevant code.

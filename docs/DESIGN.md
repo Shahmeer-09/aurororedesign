@@ -9,8 +9,8 @@ colors:
   accent: "#edce82"
   accent-hover: "#ffe4a5"
   accent-ink: "#271435"
-  purple: "#8a36bd"
-  purple-hover: "#963dc9"
+  purple: "#7800c2"
+  purple-hover: "#891be3"
   line: "#523263"
 typography:
   display:
@@ -50,7 +50,7 @@ A dark plum homepage with warm gold emphasis, Cormorant Garamond display typogra
 
 ## Colors
 
-Purple supplies primary actions with off-white text; its lighter hover shade marks interaction. Gold supplies heading emphasis, text links, focus rings, and testimonial attribution. Background and surface supply the plum layers; muted text and line colors support secondary copy and boundaries. The tokens above follow `src/app/globals.css`.
+Purple supplies primary actions with off-white text; its lighter hover shade marks interaction. Gold supplies heading emphasis, text links, focus rings, and testimonial attribution. Background and surface supply the plum layers; muted text and line colors support secondary copy and boundaries. The action purple is sampled from Aurora’s hair. Edit the color variables in `:root` in `src/app/globals.css`. Tailwind’s `@theme inline` exposes them as utilities such as `bg-purple`, `text-accent`, and `border-line`. The gradients and Flodesk styles use the same palette.
 
 ## Typography
 

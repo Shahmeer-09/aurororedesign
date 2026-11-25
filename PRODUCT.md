@@ -12,7 +12,7 @@ Aurora Luna Star’s public homepage introduces her spiritual services to visito
 
 ## Capabilities and constraints
 
-Next.js App Router frontend. Existing Schedulista links handle booking and Flodesk handles meditation signup. Other pages and commerce currently live on auroralunastar.com. Keep all existing navigation destinations accessible.
+Next.js App Router frontend. Existing Schedulista links handle booking and Flodesk handles meditation signup. Keep all existing navigation destinations accessible. The other pages and commerce are on the live site. [Aurora Luna Star](https://auroralunastar.com/)
 
 ## Brand commitments
 

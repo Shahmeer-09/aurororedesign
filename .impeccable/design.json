@@ -43,7 +43,7 @@
       "refersTo": "button-primary",
       "description": "Purple booking and signup actions with off-white text.",
       "html": "<button class=\"ds-primary\">Book a Session</button>",
-      "css": ".ds-primary{display:inline-flex;min-height:2.875rem;align-items:center;justify-content:center;padding:.65rem 1.25rem;border:1px solid transparent;border-radius:999px;font:600 .875rem var(--font-geist,sans-serif);transition:background-color 160ms ease,border-color 160ms ease,transform 140ms cubic-bezier(.23,1,.32,1);background:var(--purple,#8a36bd);color:var(--foreground,#f5eff8)}.ds-primary:hover{background:var(--purple-hover,#963dc9)}.ds-primary:focus-visible{outline:2px solid var(--accent,#edce82);outline-offset:5px}.ds-primary:active{transform:scale(.97)}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}.ds-primary:active{transform:none}}"
+      "css": ".ds-primary{display:inline-flex;min-height:2.875rem;align-items:center;justify-content:center;padding:.65rem 1.25rem;border:1px solid transparent;border-radius:999px;font:600 .875rem var(--font-geist,sans-serif);transition:background-color 160ms ease,border-color 160ms ease,transform 140ms cubic-bezier(.23,1,.32,1);background:var(--purple,#7800c2);color:var(--foreground,#f5eff8)}.ds-primary:hover{background:var(--purple-hover,#891be3)}.ds-primary:focus-visible{outline:2px solid var(--accent,#edce82);outline-offset:5px}.ds-primary:active{transform:scale(.97)}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}.ds-primary:active{transform:none}}"
     },
     {
       "name": "Outline Button",

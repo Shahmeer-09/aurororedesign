@@ -28,8 +28,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geist.variable} ${cormorant.variable}`}>
-      <body>{children}</body>
+    <html
+      lang="en"
+      className={`${geist.variable} ${cormorant.variable} motion-safe:scroll-smooth`}
+    >
+      <body className="bg-background font-sans text-foreground antialiased">
+        {children}
+      </body>
     </html>
   );
 }

@@ -17,10 +17,10 @@ export function HeroMotion() {
   }, []);
 
   return (
-    <div aria-hidden="true" className="hero-backdrop">
+    <div aria-hidden="true" className="hero-backdrop absolute inset-0 -z-1">
       {eligible && (
         <video
-          className={started ? "hero-video is-playing" : "hero-video"}
+          className={`absolute inset-0 size-full object-cover motion-safe:transition-opacity motion-safe:duration-[260ms] motion-safe:ease-[ease] ${started ? "opacity-100" : "opacity-0"}`}
           loop
           muted
           onError={() => setStarted(false)}

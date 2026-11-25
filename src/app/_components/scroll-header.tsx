@@ -25,7 +25,10 @@ export function ScrollHeader({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <header className="site-header" ref={header}>
+    <header
+      className="site-header sticky top-0 z-2 border-b border-line bg-background motion-safe:transition-transform motion-safe:duration-[240ms] motion-safe:ease-(--ease-out)"
+      ref={header}
+    >
       {children}
     </header>
   );
