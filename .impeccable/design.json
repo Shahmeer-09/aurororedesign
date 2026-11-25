@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-25T14:36:58.552367Z",
+  "title": "Design System: Aurora Luna Star",
+  "extensions": {
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Button press easing."
+      },
+      {
+        "name": "button-color",
+        "value": "160ms ease",
+        "purpose": "Button background and border state changes."
+      },
+      {
+        "name": "hero-video-reveal",
+        "value": "opacity 260ms ease",
+        "purpose": "Reveal the hero video when playback starts; disabled for reduced motion."
+      },
+      {
+        "name": "testimonial-background",
+        "value": "scroll, fixed",
+        "purpose": "Galaxy background attachment from 768px with ordinary motion preferences; mobile, reduced-motion, and paused-motion states use scroll."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "section-columns",
+        "value": "768px"
+      },
+      {
+        "name": "desktop-navigation",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Purple booking and signup actions with off-white text.",
+      "html": "<button class=\"ds-primary\">Book a Session</button>",
+      "css": ".ds-primary{display:inline-flex;min-height:2.875rem;align-items:center;justify-content:center;padding:.65rem 1.25rem;border:1px solid transparent;border-radius:999px;font:600 .875rem var(--font-geist,sans-serif);transition:background-color 160ms ease,border-color 160ms ease,transform 140ms cubic-bezier(.23,1,.32,1);background:var(--purple,#8a36bd);color:var(--foreground,#f5eff8)}.ds-primary:hover{background:var(--purple-hover,#963dc9)}.ds-primary:focus-visible{outline:2px solid var(--accent,#edce82);outline-offset:5px}.ds-primary:active{transform:scale(.97)}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}.ds-primary:active{transform:none}}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "description": "Secondary actions over dark imagery.",
+      "html": "<button class=\"ds-outline\">Free Meditation</button>",
+      "css": ".ds-outline{display:inline-flex;min-height:2.875rem;align-items:center;justify-content:center;padding:.65rem 1.25rem;border:1px solid transparent;border-radius:999px;font:600 .875rem var(--font-geist,sans-serif);transition:background-color 160ms ease,border-color 160ms ease,transform 140ms cubic-bezier(.23,1,.32,1);border-color:#957da4;background:#130c1bc9;color:var(--foreground,#f5eff8)}.ds-outline:hover{border-color:var(--accent,#edce82);background:var(--surface,#251039)}.ds-outline:focus-visible{outline:2px solid var(--accent,#edce82);outline-offset:5px}.ds-outline:active{transform:scale(.97)}@media(prefers-reduced-motion:reduce){.ds-outline{transition:none}.ds-outline:active{transform:none}}"
+    },
+    {
+      "name": "Signup Fields",
+      "kind": "input",
+      "description": "Visible name labels share a row; email spans the form width in the live Flodesk signup.",
+      "html": "<div class=\"ds-fields\"><div><label class=\"ds-label\" for=\"ds-first-name\">First name</label><input class=\"ds-input\" id=\"ds-first-name\" type=\"text\" autocomplete=\"given-name\"></div><div><label class=\"ds-label\" for=\"ds-last-name\">Last name</label><input class=\"ds-input\" id=\"ds-last-name\" type=\"text\" autocomplete=\"family-name\"></div><div class=\"ds-email\"><label class=\"ds-label\" for=\"ds-email\">Email address</label><input class=\"ds-input\" id=\"ds-email\" type=\"email\" autocomplete=\"email\"></div></div>",
+      "css": ".ds-label{display:block;margin-bottom:.35rem;color:var(--foreground,#f5eff8);font:500 .875rem/1.4 var(--font-geist,sans-serif)}.ds-input{min-height:2.875rem;padding:.65rem .875rem;border:1px solid #633d75;border-radius:.5rem;background:#180824;color:var(--foreground,#f5eff8);font:400 1rem/1.4 var(--font-geist,sans-serif)}.ds-input:focus{border-color:var(--accent,#edce82);outline:2px solid var(--accent,#edce82);outline-offset:2px}.ds-fields{display:grid;grid-template-columns:1fr 1fr;column-gap:.75rem}.ds-fields>div{min-width:0}.ds-email{grid-column:1/-1}.ds-input{width:100%;box-sizing:border-box}"
+    },
+    {
+      "name": "Desktop Navigation",
+      "kind": "nav",
+      "description": "Small uppercase links on the sticky plum header.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Preview navigation\"><a href=\"#home\">Home</a><a href=\"#services\">Services</a><a href=\"#about\">About</a></nav>",
+      "css": ".ds-nav{display:flex;justify-content:center;gap:clamp(.8rem,1.5vw,1.75rem);background:var(--background,#160921)}.ds-nav a{display:inline-flex;min-height:2.75rem;align-items:center;color:var(--muted,#c7b9d1);font:.75rem var(--font-geist,sans-serif);letter-spacing:.06em;text-transform:uppercase;text-decoration:none}.ds-nav a:hover{color:var(--foreground,#f5eff8)}.ds-nav a:focus-visible{outline:2px solid var(--accent,#edce82);outline-offset:5px}"
+    },
+    {
+      "name": "Session Row",
+      "kind": "card",
+      "description": "Ruled service listings with a title, description, and booking link.",
+      "html": "<article class=\"ds-session\"><h3>Bio-Magnetic Alignment</h3><p>Explore the beliefs that hold you back and work with them through a guided meditation.</p><a href=\"#sessions\">Book this session</a></article>",
+      "css": ".ds-session{display:grid;grid-template-columns:1fr 1fr auto;align-items:center;gap:2rem;padding:2rem 0;border-block-end:1px solid var(--line,#523263)}.ds-session h3{font:500 2.5rem/1.02 var(--font-cormorant,Georgia,serif)}.ds-session p{color:var(--muted,#c7b9d1);line-height:1.7}.ds-session a{color:var(--accent,#edce82)}@media(max-width:767px){.ds-session{grid-template-columns:1fr;gap:.875rem}}"
+    }
+  ],
+  "narrative": {
+    "overview": "A dark plum homepage with warm gold emphasis, Cormorant Garamond display typography, and Geist body text. The user’s Muse screenshot supplies the heading treatment and palette. Keep the hero centered over the plum-tinted galaxy video."
+  }
+}
