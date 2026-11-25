@@ -68,7 +68,7 @@ export function SiteFooter() {
           <div className="col-span-full md:col-auto">
             <Wordmark className="max-w-72" />
             <div className="mt-[0.9rem] flex flex-wrap items-center gap-x-4">
-              <a className="text-link" href="#meditation">
+              <a className="text-link" href="/#meditation">
                 Get the Free Meditation
               </a>
             </div>

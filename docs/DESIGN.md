@@ -46,7 +46,7 @@ components:
 
 ## Overview
 
-A dark plum homepage with warm gold emphasis, Cormorant Garamond display typography, and Geist body text. The user’s Muse screenshot supplies the heading treatment and palette. Keep the hero centered over the plum-tinted galaxy video.
+A dark plum homepage with warm gold emphasis, Cormorant Garamond display typography, and Geist body text. The user’s Muse screenshot supplies the heading treatment and palette. Keep the hero centered over the galactic nebula footage with a light black overlay.
 
 ## Colors
 
@@ -60,7 +60,9 @@ Display text and quotations use Cormorant Garamond at medium weight. Body text, 
 
 Content uses a centered 72rem maximum container; the full navigation header can extend to 100rem. Section spacing ranges from 4rem to 8rem. The menu replaces desktop navigation below 1280px, and section grids become a single column below 768px.
 
-The hero and header fill the opening viewport. A continuous specialty marquee sits directly below the hero and becomes static for reduced motion. The signup panel follows, with the Muse summit artwork on the left and the live Flodesk form on the right. First and last name fields share a row, with email spanning the form width. The desktop card matches the reference height of roughly 539px and expands with its contents. It stacks on mobile. Three ruled session rows follow, then Aurora’s About portrait, the full testimonial, the Starseeds nebula framed by orbital rings, and the footer.
+The hero and header fill the opening viewport. A continuous specialty marquee sits directly below the hero and becomes static for reduced motion. The signup panel follows, with the Muse summit artwork on the left and the live Flodesk form on the right. First and last name fields share a row, with email spanning the form width. The desktop card matches the reference height of roughly 539px and expands with its contents. It stacks on mobile. Three session cards and a six-product preview follow, then Aurora’s arched About portrait, the full testimonial, a Starseeds illustration, and the footer.
+
+The Media page uses a short nebula image banner, an expanded presenter split with the original stage photograph, and a responsive grid of local video thumbnails. Interior pages with banners use the shared `PageHero` component with the testimonial’s nebula artwork. Products opens directly with a compact title and cover grid. The homepage hero uses an Orion Nebula video. [Live Media page](https://auroralunastar.com/mediakit/)
 
 ## Elevation & Depth
 
@@ -76,14 +78,14 @@ The complete header includes Home, Media, Products, Starseeds, About, Services, 
 
 Primary actions pair purple with off-white text. Outline actions use a plum background and a fine lighter border. Buttons have medium-bold Geist labels; keyboard focus uses a 2px gold outline offset by 5px. Form controls keep visible labels, dark plum fills, and a 2.875rem minimum height. The signup action spans the form width.
 
-The document uses native smooth anchor scrolling and a slim purple scrollbar. Reduced-motion preferences use immediate scrolling and static imagery. The testimonial pairs `galaxy.webp` with a purple overlay and readable multiline copy. At desktop widths with ordinary motion preferences, `background-attachment: scroll, fixed` holds the galaxy image behind the scrolling quotation. Mobile and reduced-motion states use scrolling backgrounds.
+The document uses native smooth anchor scrolling and a slim purple scrollbar. Reduced-motion preferences use immediate scrolling and static imagery. The testimonial pairs `nebula-hero.webp` with a purple overlay and readable multiline copy. At desktop widths with ordinary motion preferences, `background-attachment: scroll, fixed` holds the galaxy image behind the scrolling quotation. Mobile and reduced-motion states use scrolling backgrounds.
 
 The footer begins with “Connect with Aurora” and its booking action, followed by the wordmark, complete navigation destinations, and social links.
 
 ## Asset sources
 
+- Homepage footage and fallback poster use Frank Cone’s [A Red and Purple Nebula with Stars in the Background](https://www.pexels.com/video/a-red-and-purple-nebula-with-stars-in-the-background-17463487/).
 - [Aurora Luna Star](https://auroralunastar.com/) supplies factual copy, wordmark, testimonial.
 - The updated portrait comes from Aurora’s [About page](https://auroralunastar.com/about/).
-- Hero footage and poster use Nicola Narracci’s [Colorful Galaxies and Stars in Cosmic Animation](https://www.pexels.com/video/colorful-galaxies-and-stars-in-cosmic-animation-29823750/) under the [Pexels license](https://www.pexels.com/license/).
 - [Muse preview](https://muse.ai/s/aurora-luna-star-redesign-preview-xfxs6lhxf8hmwv/MzETePr_oF0QTxlk_XtlKJxkzxgBbYJOW9XYjcIHrGg) and the supplied screenshots guide typography, palette, and content hierarchy.
 

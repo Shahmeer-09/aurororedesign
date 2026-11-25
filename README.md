@@ -1,6 +1,6 @@
 # Auror Redesign
 
-This repository contains the redesigned Aurora Luna Star homepage. Visitors can explore Aurora’s sessions and sign up for her free guided meditation. The [PRD](docs/PRD.md) describes the homepage scope.
+This repository contains the redesigned Aurora Luna Star homepage, Media page, and Products page. Visitors can explore Aurora’s sessions, sign up for her free guided meditation, find speaking recordings, and browse video products. The [PRD](docs/PRD.md) describes the site scope.
 
 The live website is the reference for the redesign. [Aurora Luna Star](https://auroralunastar.com/)
 

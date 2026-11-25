@@ -3,6 +3,8 @@ import { ButtonLink } from "@/components/button";
 import { HeroMotion } from "./_components/hero-motion";
 import { MeditationForm } from "./_components/meditation-form";
 import { SiteFooter, SiteHeader } from "./_components/site-chrome";
+import { getProductsPage } from "./products/catalog";
+import { ProductGrid } from "./products/product-grid";
 import { bookingAnchor, siteLinks } from "./site-links";
 
 const specialties = [
@@ -35,7 +37,9 @@ const sessions = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const products = await getProductsPage();
+
   return (
     <>
       <a
@@ -146,7 +150,7 @@ export default function Home() {
 
           <section
             aria-labelledby="sessions-title"
-            className="section-space wrap"
+            className="wrap pb-12 md:pb-16"
             id="sessions"
           >
             <h2 id="sessions-title">Sessions with Aurora</h2>
@@ -154,21 +158,21 @@ export default function Home() {
               A space to reconnect with yourself, explore your gifts, and move
               forward with clarity.
             </p>
-            <ul className="mt-10 mb-4 border-t border-line">
+            <ul className="mt-7 mb-4 grid gap-4 md:grid-cols-3">
               {sessions.map(({ name, description, id }) => (
                 <li
-                  className="grid items-center gap-3.5 border-b border-line py-8 md:grid-cols-[1fr_1fr_auto] md:gap-[clamp(1.5rem,4vw,4rem)]"
+                  className="flex flex-col rounded-2xl border border-line bg-surface/70 p-5 lg:p-7"
                   key={name}
                 >
-                  <h3 className="text-[clamp(2rem,3.4vw,3.3rem)] leading-[1.02] tracking-[-0.025em]">
+                  <h3 className="text-[clamp(1.85rem,2.6vw,2.6rem)] leading-none tracking-[-0.025em]">
                     {name}
                   </h3>
-                  <p className="max-w-[40ch] leading-[1.7] text-muted">
+                  <p className="mt-3 mb-4 max-w-[40ch] leading-[1.7] text-muted">
                     {description}
                   </p>
                   <a
                     aria-label={id ? `Book ${name}` : `Ask about ${name}`}
-                    className="text-link justify-self-start md:justify-self-end"
+                    className="text-link mt-auto self-start"
                     href={
                       id
                         ? `https://www.schedulista.com/schedule/auroralunastar/choose_time?service_id=${id}`
@@ -187,11 +191,24 @@ export default function Home() {
           </section>
 
           <section
+            aria-labelledby="home-products-title"
+            className="wrap border-t border-line pt-10 pb-16 md:pt-14 md:pb-20"
+          >
+            <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
+              <h2 id="home-products-title">Products</h2>
+              <ButtonLink href={siteLinks.products} variant="outline">
+                View All Products
+              </ButtonLink>
+            </div>
+            <ProductGrid products={products.slice(0, 6)} headingLevel="h3" />
+          </section>
+
+          <section
             aria-labelledby="about-title"
             className="wrap section-space grid items-center gap-[clamp(2.25rem,9vw,8rem)] pt-2 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)]"
             id="about"
           >
-            <div className="tinted-image relative aspect-[5/6] w-full max-w-[22rem] justify-self-start overflow-hidden rounded-2xl bg-surface md:max-w-[27rem] md:justify-self-end">
+            <div className="tinted-image relative aspect-[5/6] w-full max-w-[22rem] justify-self-start overflow-hidden rounded-t-[50%_38%] rounded-b-2xl border border-accent/45 bg-surface ring-[7px] ring-purple/20 md:max-w-[27rem] md:justify-self-end">
               <Image
                 src="/aurora/portrait-about.webp"
                 alt="Aurora Luna Star"
@@ -220,7 +237,7 @@ export default function Home() {
 
           <figure
             aria-label="Client testimonial"
-            className="testimonial relative isolate grid items-center overflow-clip border-y border-line text-center"
+            className="testimonial nebula-backdrop relative isolate grid items-center overflow-clip border-y border-line text-center"
           >
             <div className="wrap grid min-h-96 content-center justify-items-center py-16 md:min-h-92">
               <blockquote className="max-w-[58ch] text-[clamp(1.5rem,2.2vw,2.5rem)] leading-[1.45] text-balance tracking-[-0.025em] italic">
@@ -252,16 +269,14 @@ export default function Home() {
                 Explore Starseeds
               </ButtonLink>
             </div>
-            <div className="starseeds-orbit">
-              <div className="starseeds-image relative aspect-square w-[78%] overflow-hidden rounded-full">
-                <Image
-                  alt="Violet and blue stars illuminating a distant nebula"
-                  className="object-cover"
-                  src="/aurora/galaxy.webp"
-                  fill
-                  sizes="(min-width: 768px) 50vw, 90vw"
-                />
-              </div>
+            <div className="relative mx-auto aspect-[5/6] w-full max-w-[29rem] overflow-hidden rounded-2xl border border-line">
+              <Image
+                alt="Illustration of a purple-haired woman beneath a star-filled sky"
+                className="object-cover object-[center_34%]"
+                src="/aurora/hero-aurora.webp"
+                fill
+                sizes="(min-width: 768px) 40vw, 90vw"
+              />
             </div>
           </section>
         </div>

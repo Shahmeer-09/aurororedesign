@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+const poster = "/aurora/hero-orion-nebula.webp";
+
 export function HeroMotion() {
   const [eligible, setEligible] = useState(false);
   const [started, setStarted] = useState(false);
@@ -17,7 +19,11 @@ export function HeroMotion() {
   }, []);
 
   return (
-    <div aria-hidden="true" className="hero-backdrop absolute inset-0 -z-1">
+    <div
+      aria-hidden="true"
+      className="hero-backdrop absolute inset-0 -z-1 bg-hero-fill bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url("${poster}")` }}
+    >
       {eligible && (
         <video
           className={`absolute inset-0 size-full object-cover motion-safe:transition-opacity motion-safe:duration-[260ms] motion-safe:ease-[ease] ${started ? "opacity-100" : "opacity-0"}`}
@@ -26,9 +32,9 @@ export function HeroMotion() {
           onError={() => setStarted(false)}
           onPlaying={() => setStarted(true)}
           playsInline
-          poster="/aurora/hero-galaxies.webp"
+          poster={poster}
           autoPlay
-          src="/aurora/hero-galaxies.mp4"
+          src="/aurora/hero-orion-nebula.mp4"
         />
       )}
     </div>

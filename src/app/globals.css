@@ -16,9 +16,9 @@
   --outline-fill: #130c1bc9;
   --menu-scrim: #0b0714bb;
   --hero-fill: #1c0e28;
-  --hero-center-scrim: #210c32a8;
-  --hero-top-tint: color-mix(in srgb, var(--purple) 17%, var(--background) 22%);
-  --hero-lower-tint: #29113873;
+  --hero-center-scrim: rgb(0 0 0 / 28%);
+  --hero-edge-scrim: rgb(0 0 0 / 14%);
+  --hero-lower-scrim: rgb(0 0 0 / 22%);
   --hero-text-shadow: #130a20ad;
   --hero-muted: #e2d2ed;
   --star-pale: #cbb2e6;
@@ -29,19 +29,13 @@
   --form-message: #efbdca;
   --footer-fill: #100619;
   --scroll-thumb: #9e72b9;
-  --testimonial-edge: #26083aa8;
-  --testimonial-center: #42126780;
-  --orbit-glow: color-mix(in srgb, var(--purple) 19%, transparent);
+  --nebula-edge: #26083aa8;
+  --nebula-center: #42126780;
   --image-tint: color-mix(in srgb, var(--purple) 10%, transparent);
   --field-fill: #180824;
   --field-line: #633d75;
   --marquee-fill: #210d30;
   --marquee-ink: #ead6f0;
-  --orbit-halo: #53206070;
-  --orbit-gold: color-mix(in srgb, var(--accent) 51%, transparent);
-  --orbit-violet: #b499d05c;
-  --orbit-image-tint: #240d3b70;
-  --orbit-image-edge: #110619ed;
   --star-field-glow: color-mix(in srgb, var(--purple) 9%, transparent);
   --star-field-lower-glow: color-mix(
     in srgb,
@@ -150,27 +144,23 @@ html:has(#mobile-menu[open]) {
   transform: translateY(-100%);
 }
 
-.hero-backdrop {
-  background:
-    var(--hero-fill) url("/aurora/hero-galaxies.webp") center / cover no-repeat;
-}
-
 .hero-backdrop::after {
   position: absolute;
+  z-index: 1;
   inset: 0;
+  content: "";
   background:
     radial-gradient(
       ellipse at 50% 48%,
-      var(--hero-center-scrim) 0%,
-      transparent 72%
+      var(--hero-center-scrim) 20%,
+      transparent 76%
     ),
     linear-gradient(
       180deg,
-      var(--hero-top-tint),
-      var(--hero-lower-tint) 70%,
-      var(--background)
+      var(--hero-edge-scrim),
+      var(--hero-edge-scrim) 56%,
+      var(--hero-lower-scrim)
     );
-  content: "";
 }
 
 .star-field {
@@ -232,15 +222,15 @@ html:has(#mobile-menu[open]) {
     417px 391px;
 }
 
-.testimonial {
+.nebula-backdrop {
   background:
     linear-gradient(
       90deg,
-      var(--testimonial-edge),
-      var(--testimonial-center),
-      var(--testimonial-edge)
+      var(--nebula-edge),
+      var(--nebula-center),
+      var(--nebula-edge)
     ),
-    url("/aurora/galaxy.webp") center / cover;
+    url("/aurora/nebula-hero.webp") center / cover;
 }
 
 @media (width >= 48rem) and (prefers-reduced-motion: no-preference) {
@@ -262,45 +252,13 @@ html:has(#mobile-menu[open]) {
   }
 }
 
-.tinted-image::after,
-.starseeds-image::after {
+.tinted-image::after {
   @apply pointer-events-none absolute inset-0;
   content: "";
 }
 
 .tinted-image::after {
   background: var(--image-tint);
-}
-
-.starseeds-orbit {
-  @apply relative isolate grid place-items-center py-[6%];
-  background: radial-gradient(ellipse, var(--orbit-halo), transparent 68%);
-}
-.starseeds-orbit::before,
-.starseeds-orbit::after {
-  content: "";
-  position: absolute;
-  inset: 24% 1%;
-  border: 1px solid var(--orbit-gold);
-  border-radius: 50%;
-  transform: rotate(-26deg);
-}
-.starseeds-orbit::after {
-  inset: 9% 17%;
-  transform: rotate(39deg);
-  border-color: var(--orbit-violet);
-  z-index: -1;
-}
-.starseeds-image::after {
-  background: radial-gradient(
-    circle at 37% 35%,
-    transparent 32%,
-    var(--orbit-image-tint) 72%,
-    var(--orbit-image-edge)
-  );
-}
-.starseeds-image {
-  box-shadow: 0 0 3rem var(--orbit-glow);
 }
 
 .marquee-track {

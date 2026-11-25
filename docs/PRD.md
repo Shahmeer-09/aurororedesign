@@ -8,10 +8,21 @@ The live website is the reference for the redesign. [Aurora Luna Star](https://a
 
 - Make Book a Session the primary action and the free meditation the secondary action. Keep both available from the hero and footer.
 - Summarize the three existing sessions. Link to Schedulista where direct booking is available and Contact for Soul Evolutionary Alchemy.
-- Introduce Aurora using her existing site content and photography. Keep the About, Starseeds, Products, Media, Partnerships, and Contact destinations accessible.
+- Preview six products and link to the full Products page. Introduce Aurora using her existing site content and photography. Keep the About, Starseeds, Products, Media, Partnerships, and Contact destinations accessible.
 - Use the existing Flodesk flow for the meditation. Show an actionable fallback when the signup form cannot load.
 
-Booking, commerce, and the other live pages remain on their current systems. The route rollout on the production domain needs a separate decision.
+Booking, commerce, and the remaining live pages remain on their current systems. The route rollout on the production domain needs a separate decision.
+
+## Media page scope
+
+- Use a compact image banner for Speaking Engagements and a wide presenter feature with Aurora’s original stage photograph.
+- Include all distinct recordings from the live media kit and link each one to YouTube. Direct speaking inquiries to Aurora’s contact page.
+- Serve the redesign at `/media` and redirect the original `/mediakit/` path within this app. [Live Media page](https://auroralunastar.com/mediakit/)
+
+## Products page scope
+
+- Open `/products` with a compact title and a grid that fits one column on mobile and three on desktop.
+- Show all nine products from the first page of the live shop, with their covers and prices. Each listing links to its live product page for purchase. A link opens the full shop. [Live Products page](https://auroralunastar.com/products/)
 
 ## Acceptance criteria
 
