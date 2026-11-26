@@ -90,7 +90,7 @@ export default function MediaPage() {
                   </p>
                 </div>
                 <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
-                  <ButtonLink href={siteLinks.contact}>
+                  <ButtonLink href={siteLinks.contact} icon="message">
                     Invite Aurora to Speak
                   </ButtonLink>
                   <a className="text-link" href="#appearances">

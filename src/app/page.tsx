@@ -5,6 +5,7 @@ import { MeditationForm } from "./_components/meditation-form";
 import { SiteFooter, SiteHeader } from "./_components/site-chrome";
 import { getProductsPage } from "./products/catalog";
 import { ProductGrid } from "./products/product-grid";
+import { sessionHref, sessions } from "./services/sessions";
 import { bookingAnchor, siteLinks } from "./site-links";
 
 const specialties = [
@@ -15,26 +16,6 @@ const specialties = [
   "Sound Activations",
   "Light Language",
   "Personal Empowerment",
-];
-
-const sessions = [
-  {
-    name: "Bio-Magnetic Alignment",
-    description:
-      "Explore the beliefs that hold you back and work with them through a guided meditation.",
-    id: "1074087138",
-  },
-  {
-    name: "Heart Intelligence",
-    description:
-      "Make space to speak freely, then reconnect with yourself through a heart-mind meditation.",
-    id: "1074115334",
-  },
-  {
-    name: "Soul Evolutionary Alchemy",
-    description:
-      "Explore your Akashic Records through a channeled meditation at your own pace.",
-  },
 ];
 
 export default async function Home() {
@@ -74,14 +55,16 @@ export default async function Home() {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <ButtonLink
-                className="min-h-12 px-[1.45rem]"
+                className="button-featured min-h-12 px-[1.45rem]"
                 href={bookingAnchor}
+                icon="calendar"
               >
                 Book a Session
               </ButtonLink>
               <ButtonLink
-                className="min-h-12 px-[1.45rem]"
+                className="button-featured min-h-12 px-[1.45rem]"
                 href="#meditation"
+                icon="sparkles"
                 variant="outline"
               >
                 Get the Free Meditation
@@ -158,35 +141,46 @@ export default async function Home() {
               A space to reconnect with yourself, explore your gifts, and move
               forward with clarity.
             </p>
-            <ul className="mt-7 mb-4 grid gap-4 md:grid-cols-3">
-              {sessions.map(({ name, description, id }) => (
+            <ul className="mt-8 mb-5 grid gap-5 md:grid-cols-3">
+              {sessions.map(({ name, description, id }, index) => (
                 <li
-                  className="flex flex-col rounded-2xl border border-line bg-surface/70 p-5 lg:p-7"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-linear-to-b from-surface/85 to-background/60 p-6 motion-safe:transition-[transform,border-color,box-shadow] motion-safe:duration-300 motion-safe:hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_18px_50px_-24px_var(--purple-hover)] lg:p-8"
                   key={name}
                 >
-                  <h3 className="text-[clamp(1.85rem,2.6vw,2.6rem)] leading-none tracking-[-0.025em]">
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-accent/60 to-transparent opacity-60 group-hover:opacity-100"
+                  />
+                  <div className="mb-5 flex items-center gap-4">
+                    <span className="font-display text-sm tracking-[0.35em] text-accent/80">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="h-px flex-1 bg-line group-hover:bg-accent/40 motion-safe:transition-colors motion-safe:duration-300" />
+                  </div>
+                  <h3 className="text-[clamp(1.85rem,2.6vw,2.6rem)] leading-[1.05] tracking-[-0.025em] text-balance">
                     {name}
                   </h3>
-                  <p className="mt-3 mb-4 max-w-[40ch] leading-[1.7] text-muted">
+                  <p className="mt-4 mb-6 max-w-[40ch] leading-[1.75] text-muted">
                     {description}
                   </p>
                   <a
                     aria-label={id ? `Book ${name}` : `Ask about ${name}`}
-                    className="text-link mt-auto self-start"
-                    href={
-                      id
-                        ? `https://www.schedulista.com/schedule/auroralunastar/choose_time?service_id=${id}`
-                        : siteLinks.contact
-                    }
+                    className="mt-auto inline-flex min-h-11 items-center gap-2 self-start text-sm font-semibold text-accent underline decoration-1 underline-offset-[0.32em] hover:text-foreground"
+                    href={sessionHref(id)}
                   >
-                    {id ? "Book this session" : "Ask about this session"}{" "}
-                    <span aria-hidden="true">↗</span>
+                    {id ? "Book this session" : "Ask about this session"}
+                    <span
+                      aria-hidden="true"
+                      className="inline-block motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:translate-x-1"
+                    >
+                      ↗
+                    </span>
                   </a>
                 </li>
               ))}
             </ul>
             <a className="text-link" href={siteLinks.services}>
-              View all services <span aria-hidden="true">↗</span>
+              View all services
             </a>
           </section>
 
@@ -194,9 +188,22 @@ export default async function Home() {
             aria-labelledby="home-products-title"
             className="wrap border-t border-line pt-10 pb-16 md:pt-14 md:pb-20"
           >
-            <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
-              <h2 id="home-products-title">Products</h2>
-              <ButtonLink href={siteLinks.products} variant="outline">
+            <div className="mb-9 flex flex-wrap items-end justify-between gap-x-8 gap-y-5">
+              <div>
+                <p className="mb-4 text-[0.72rem] font-semibold tracking-[0.2em] text-accent uppercase">
+                  Gatherings & Recordings
+                </p>
+                <h2 id="home-products-title">Products</h2>
+                <p className="section-intro mt-4 mb-0">
+                  Retreats, galactic gatherings, and channeled series to explore
+                  at your own pace.
+                </p>
+              </div>
+              <ButtonLink
+                href={siteLinks.products}
+                icon="bag"
+                variant="outline"
+              >
                 View All Products
               </ButtonLink>
             </div>
@@ -229,9 +236,13 @@ export default async function Home() {
                 sharing sound, messages, images, and light language to support
                 personal growth and self-discovery.
               </p>
-              <a className="text-link" href={siteLinks.about}>
-                More about Aurora <span aria-hidden="true">↗</span>
-              </a>
+              <ButtonLink
+                className="button-featured"
+                href={siteLinks.about}
+                variant="outline"
+              >
+                More about Aurora
+              </ButtonLink>
             </div>
           </section>
 
@@ -265,7 +276,11 @@ export default async function Home() {
                 Do you feel a strong connection to the stars? Explore your star
                 origins, intuitive gifts, and connections to the cosmos.
               </p>
-              <ButtonLink href={siteLinks.starseeds} variant="outline">
+              <ButtonLink
+                href={siteLinks.starseeds}
+                icon="sparkles"
+                variant="outline"
+              >
                 Explore Starseeds
               </ButtonLink>
             </div>

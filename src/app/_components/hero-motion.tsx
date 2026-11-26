@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const poster = "/aurora/hero-orion-nebula.webp";
+const poster = "/aurora/hero-colin-nebula.webp";
 
 export function HeroMotion() {
   const [eligible, setEligible] = useState(false);
@@ -34,7 +34,7 @@ export function HeroMotion() {
           playsInline
           poster={poster}
           autoPlay
-          src="/aurora/hero-orion-nebula.mp4"
+          src="/aurora/hero-colin-nebula.mp4"
         />
       )}
     </div>

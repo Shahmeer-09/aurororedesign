@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SiteFooter, SiteHeader } from "../../_components/site-chrome";
-import { siteLinks } from "../../site-links";
 import { getProductsPage } from "../catalog";
 import { ProductGrid } from "../product-grid";
 
@@ -33,18 +32,17 @@ export default async function ProductsPage({
       </a>
       <SiteHeader />
       <main className="wrap py-10 md:py-14" id="main">
-        <div className="mb-7 flex flex-wrap items-end justify-between gap-x-8 gap-y-4 border-b border-line pb-5">
-          <div>
-            <h1 className="text-[clamp(2.75rem,5vw,4.25rem)] leading-none tracking-[-0.03em]">
-              Products
-            </h1>
-            <p className="mt-3 text-sm text-muted">
-              Retreats, online gatherings, and recordings from Aurora.
-            </p>
-          </div>
-          <a className="text-link" href={siteLinks.liveProducts}>
-            Browse the full shop
-          </a>
+        <div className="mb-9 border-b border-line pb-6">
+          <p className="mb-4 text-[0.72rem] font-semibold tracking-[0.2em] text-accent uppercase">
+            Gatherings & Recordings
+          </p>
+          <h1 className="text-[clamp(2.75rem,5vw,4.25rem)] leading-none tracking-[-0.03em]">
+            Products
+          </h1>
+          <p className="mt-4 max-w-[52ch] leading-[1.7] text-muted">
+            Retreats, online gatherings, and channeled series from Aurora. Each
+            item opens its page on auroralunastar.com to complete your purchase.
+          </p>
         </div>
         <ProductGrid products={products} />
       </main>

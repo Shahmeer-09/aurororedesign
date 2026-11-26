@@ -2,7 +2,15 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   redirects() {
-    return [{ source: "/mediakit", destination: "/media", permanent: true }];
+    return [
+      { source: "/contact-aurora", destination: "/contact", permanent: true },
+      { source: "/mediakit", destination: "/media", permanent: true },
+      {
+        source: "/welcomestarseeds",
+        destination: "/starseeds",
+        permanent: true,
+      },
+    ];
   },
   cacheComponents: true,
   partialPrefetching: true,

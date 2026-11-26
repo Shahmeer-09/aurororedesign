@@ -1,0 +1,107 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import { ButtonLink } from "@/components/button";
+import { PageHero } from "../_components/page-hero";
+import { SiteFooter, SiteHeader } from "../_components/site-chrome";
+import { bookingAnchor, siteLinks } from "../site-links";
+import { TestimonialSlider } from "./testimonial-slider";
+
+export const metadata: Metadata = {
+  title: "About Aurora | Aurora Luna Star",
+  description:
+    "Meet Aurora Luna Star and learn about her work in Starseed Akashic Readings, sound activations, and personal empowerment.",
+};
+
+export default function AboutPage() {
+  return (
+    <>
+      <a
+        className="fixed top-3 left-3 z-3 -translate-y-[180%] bg-purple px-4 py-3 text-foreground focus:translate-y-0"
+        href="#main"
+      >
+        Skip to content
+      </a>
+      <SiteHeader />
+      <main id="main">
+        <PageHero title="About Aurora" />
+        <div className="star-field">
+          <section
+            aria-labelledby="aurora-work"
+            className="wrap grid items-center gap-9 py-16 md:grid-cols-[0.85fr_1.15fr] md:gap-16 md:py-20"
+          >
+            <div className="relative mx-auto aspect-[5/6] w-full max-w-104 overflow-hidden rounded-t-[50%_38%] rounded-b-2xl border border-accent/45">
+              <Image
+                alt="Aurora Luna Star with purple hair in a garden"
+                className="object-cover object-[center_35%]"
+                fill
+                sizes="(min-width: 1024px) 416px, (min-width: 768px) 45vw, 90vw"
+                src="/aurora/portrait-about.webp"
+              />
+            </div>
+            <div>
+              <h2 id="aurora-work">Alchemy, alignment &amp; ascension</h2>
+              <div className="mt-6 max-w-[60ch] space-y-4 leading-relaxed text-muted">
+                <p>
+                  Aurora Luna Star is an interdimensional channel. Through
+                  Starseed Akashic Readings, sound activations, and personal
+                  empowerment work, she invites people to explore their gifts
+                  and find their own sense of spiritual direction.
+                </p>
+                <p>
+                  As a Soul Vibrational Alchemist, Aurora describes connecting
+                  with Aum RA Ha Nu, a collective she knows as
+                  ninth-dimensional. She shares what comes through that practice
+                  in sound, messages, imagery, and light language. She sees her
+                  role as helping others make room for change and discover what
+                  they are capable of.
+                </p>
+                <p>
+                  Aurora believes people carry wisdom from past lives and can
+                  draw on it during a time of spiritual awakening. She calls
+                  this a soul blueprint and sees reconnecting with it as a way
+                  to recognize one’s own potential.
+                </p>
+              </div>
+              <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
+                <ButtonLink
+                  className="button-featured min-h-12"
+                  href={bookingAnchor}
+                  icon="calendar"
+                >
+                  Book a Session
+                </ButtonLink>
+                <a className="text-link" href={siteLinks.media}>
+                  Explore Aurora’s speaking work
+                </a>
+              </div>
+            </div>
+          </section>
+          <section aria-labelledby="mission-title" className="wrap">
+            <div className="mx-auto max-w-[60rem] border-y border-line py-9 md:py-12">
+              <h2
+                className="text-[clamp(2.25rem,4vw,3.5rem)]"
+                id="mission-title"
+              >
+                Aurora’s mission
+              </h2>
+              <p className="mt-4 max-w-[68ch] text-lg leading-relaxed text-muted">
+                Aurora sees her role as bringing people together in harmony and
+                helping them remember, awaken, and transform their potential.
+                She hopes that shared spiritual work makes space for
+                self-healing, raises what she calls the collective vibration,
+                and brings more love and peace into how people relate.
+              </p>
+              <p className="mt-6 max-w-[68ch] border-l-2 border-accent/60 pl-5 font-display text-[clamp(1.5rem,2.4vw,2rem)] leading-[1.35] text-balance text-foreground">
+                Aurora’s greatest joy lies in empowering others to recognize
+                their limitless nature and see themselves as the master beings
+                they’ve always been.
+              </p>
+            </div>
+          </section>
+          <TestimonialSlider />
+        </div>
+      </main>
+      <SiteFooter />
+    </>
+  );
+}

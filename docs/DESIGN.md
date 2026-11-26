@@ -12,6 +12,10 @@ colors:
   purple: "#7800c2"
   purple-hover: "#891be3"
   line: "#523263"
+  action-hot-pink: "#ff4fb8"
+  action-glow: "#b43dff"
+  action-border: "#d2adf3"
+  action-ink: "#271333"
 typography:
   display:
     fontFamily: "Cormorant Garamond, Georgia, serif"
@@ -34,23 +38,21 @@ rounded:
   pill: "999px"
 components:
   button-primary:
-    backgroundColor: "{colors.purple}"
-    textColor: "{colors.foreground}"
+    backgroundColor: "{colors.action-hot-pink}"
+    textColor: "{colors.action-ink}"
     rounded: "{rounded.pill}"
     padding: "0.65rem 1.25rem"
-  button-primary-hover:
-    backgroundColor: "{colors.purple-hover}"
 ---
 
 # Design
 
 ## Overview
 
-A dark plum homepage with warm gold emphasis, Cormorant Garamond display typography, and Geist body text. The user’s Muse screenshot supplies the heading treatment and palette. Keep the hero centered over the galactic nebula footage with a light black overlay.
+A dark plum homepage with warm gold emphasis, Cormorant Garamond display typography, and Geist body text. The user’s Muse screenshot supplies the heading treatment and palette. Keep the hero centered over the galactic nebula footage with a neutral black overlay that darkens toward the copy.
 
 ## Colors
 
-Purple supplies primary actions with off-white text; its lighter hover shade marks interaction. Gold supplies heading emphasis, text links, focus rings, and testimonial attribution. Background and surface supply the plum layers; muted text and line colors support secondary copy and boundaries. The action purple is sampled from Aurora’s hair. Edit the color variables in `:root` in `src/app/globals.css`. Tailwind’s `@theme inline` exposes them as utilities such as `bg-purple`, `text-accent`, and `border-line`. The gradients and Flodesk styles use the same palette.
+Primary actions use solid hot pink with plum text and a violet glow. Secondary actions use a lavender outline over translucent plum. Gold supplies heading emphasis, text links, focus rings, and testimonial attribution. The wider purple palette draws from Aurora’s hair. Edit the color variables in `:root` in `src/app/globals.css`. Tailwind’s `@theme inline` exposes them as utilities such as `bg-purple`, `text-accent`, and `border-line`. The embedded Flodesk signup uses the same primary action styling.
 
 ## Typography
 
@@ -62,7 +64,11 @@ Content uses a centered 72rem maximum container; the full navigation header can 
 
 The hero and header fill the opening viewport. A continuous specialty marquee sits directly below the hero and becomes static for reduced motion. The signup panel follows, with the Muse summit artwork on the left and the live Flodesk form on the right. First and last name fields share a row, with email spanning the form width. The desktop card matches the reference height of roughly 539px and expands with its contents. It stacks on mobile. Three session cards and a six-product preview follow, then Aurora’s arched About portrait, the full testimonial, a Starseeds illustration, and the footer.
 
-The Media page uses a short nebula image banner, an expanded presenter split with the original stage photograph, and a responsive grid of local video thumbnails. Interior pages with banners use the shared `PageHero` component with the testimonial’s nebula artwork. Products opens directly with a compact title and cover grid. The homepage hero uses an Orion Nebula video. [Live Media page](https://auroralunastar.com/mediakit/)
+The Media page uses a nebula image banner, an expanded presenter split with the original stage photograph, and a responsive grid of local video thumbnails. Interior pages with banners use the shared `PageHero` component with a 400px minimum height, oversized headings, and the testimonial’s nebula artwork. Products opens directly with a compact title and cover grid. The homepage hero uses a short loop from Colin Jones’s purple nebula animation. [Live Media page](https://auroralunastar.com/mediakit/)
+
+About pairs the original arched portrait with the biography, followed by a text-only mission section and a testimonial slider aligned to the same column. Portraits and the author name sit above a quote area sized to the active testimonial with timed rotation. Starseeds uses the shared nebula banner and original artwork alongside its introduction and offering details.
+
+Services, Partnerships, and Contact use the shared banner. Services places a session guide and Aurora’s original singing-bowl portrait beside detailed session entries. Partnerships uses an editorial Kejiwa feature and gives the TwistedSage gallery the full content width. Contact uses Aurora’s original portrait beside the hosted form at desktop widths.
 
 ## Elevation & Depth
 
@@ -74,9 +80,9 @@ Portraits use the panel radius, while the meditation feature uses the larger fea
 
 ## Components
 
-The complete header includes Home, Media, Products, Starseeds, About, Services, Partnerships, Contact, and Cart. The mobile menu exposes the same destinations. The header slides away on downward scroll and returns on upward scroll or keyboard focus.
+The complete header includes Home, Media, Products, Starseeds, About, Services, Partnerships, Contact, and Cart. The taller header stays pinned at the top while scrolling and uses translucent purple with backdrop blur. Cart is an accessible icon link visible at desktop and mobile widths.
 
-Primary actions pair purple with off-white text. Outline actions use a plum background and a fine lighter border. Buttons have medium-bold Geist labels; keyboard focus uses a 2px gold outline offset by 5px. Form controls keep visible labels, dark plum fills, and a 2.875rem minimum height. The signup action spans the form width.
+Buttons pair leading icons with medium-bold Geist labels. Primary actions use a layered violet glow that expands on hover. Secondary action borders turn pink on hover. Featured home and About actions add a small lift. Keyboard focus uses a 2px gold outline offset by 5px. Reduced-motion preferences disable button motion. Form controls keep visible labels, dark plum fills, and a 2.875rem minimum height. The signup action spans the form width.
 
 The document uses native smooth anchor scrolling and a slim purple scrollbar. Reduced-motion preferences use immediate scrolling and static imagery. The testimonial pairs `nebula-hero.webp` with a purple overlay and readable multiline copy. At desktop widths with ordinary motion preferences, `background-attachment: scroll, fixed` holds the galaxy image behind the scrolling quotation. Mobile and reduced-motion states use scrolling backgrounds.
 
@@ -84,7 +90,7 @@ The footer begins with “Connect with Aurora” and its booking action, followe
 
 ## Asset sources
 
-- Homepage footage and fallback poster use Frank Cone’s [A Red and Purple Nebula with Stars in the Background](https://www.pexels.com/video/a-red-and-purple-nebula-with-stars-in-the-background-17463487/).
+- Homepage footage and fallback poster use Colin Jones’s [Illuminating Abstract Purple Nebula Animation](https://www.pexels.com/video/illuminating-abstract-purple-nebula-animation-36502226/).
 - [Aurora Luna Star](https://auroralunastar.com/) supplies factual copy, wordmark, testimonial.
 - The updated portrait comes from Aurora’s [About page](https://auroralunastar.com/about/).
 - [Muse preview](https://muse.ai/s/aurora-luna-star-redesign-preview-xfxs6lhxf8hmwv/MzETePr_oF0QTxlk_XtlKJxkzxgBbYJOW9XYjcIHrGg) and the supplied screenshots guide typography, palette, and content hierarchy.

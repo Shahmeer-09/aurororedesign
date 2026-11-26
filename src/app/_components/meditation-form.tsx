@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/button";
 import { siteLinks } from "../site-links";
 
 const formId = "688bc6a2665a288748556803";
@@ -117,8 +118,10 @@ export function MeditationForm() {
       {status === "error" && (
         <div className="text-sm leading-[inherit] text-muted">
           <output className="block">The signup form couldn’t load.</output>
-          <button
-            className="text-link"
+          <Button
+            className="mt-3"
+            icon="refresh"
+            variant="outline"
             onClick={() => {
               setStatus("loading");
               setAttempt(attempt + 1);
@@ -126,7 +129,7 @@ export function MeditationForm() {
             type="button"
           >
             Try again
-          </button>
+          </Button>
           <a className="text-link ms-4" href={siteLinks.contact}>
             Contact Aurora
           </a>

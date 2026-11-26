@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ButtonLink } from "@/components/button";
 import { bookingAnchor, navigation, siteLinks } from "../site-links";
 import { MobileMenu } from "./mobile-menu";
-import { ScrollHeader } from "./scroll-header";
 
 function Wordmark({ className }: { className: string }) {
   return (
@@ -22,8 +21,8 @@ function Wordmark({ className }: { className: string }) {
 
 export function SiteHeader() {
   return (
-    <ScrollHeader>
-      <div className="mx-auto grid min-h-(--header-height) w-[min(100%-3rem,100rem)] grid-cols-[1fr_auto] items-center gap-6 xl:grid-cols-[auto_1fr_auto]">
+    <header className="site-header sticky top-0 z-2 border-b border-nav-line bg-nav-glass backdrop-blur-lg backdrop-brightness-72">
+      <div className="mx-auto grid min-h-(--header-height) w-[min(100%-2rem,100rem)] grid-cols-[1fr_auto] items-center gap-3 md:w-[min(100%-3rem,100rem)] md:gap-6 xl:grid-cols-[auto_1fr_auto]">
         <Wordmark className="max-w-48 md:max-w-54 xl:w-50" />
         <nav
           aria-label="Main navigation"
@@ -31,7 +30,7 @@ export function SiteHeader() {
         >
           {navigation.map(({ href, label }) => (
             <a
-              className="inline-flex min-h-11 items-center text-xs leading-[inherit] tracking-[0.06em] text-muted uppercase hover:text-foreground"
+              className="inline-flex min-h-11 items-center text-xs leading-[inherit] tracking-[0.06em] text-foreground uppercase underline-offset-4 hover:underline"
               href={href}
               key={href}
             >
@@ -39,20 +38,53 @@ export function SiteHeader() {
             </a>
           ))}
         </nav>
-        <ButtonLink
-          className="hidden justify-self-end xl:inline-flex"
-          href={bookingAnchor}
-        >
-          Book a Session
-        </ButtonLink>
-        <MobileMenu />
+        <div className="flex items-center gap-2 md:gap-3">
+          <ButtonLink
+            aria-label="Cart"
+            className="size-11.5 p-0"
+            href={siteLinks.cart}
+            icon="cart"
+            variant="outline"
+          />
+          <ButtonLink
+            className="hidden xl:inline-flex"
+            href={bookingAnchor}
+            icon="calendar"
+          >
+            Book a Session
+          </ButtonLink>
+          <MobileMenu />
+        </div>
       </div>
-    </ScrollHeader>
+    </header>
   );
 }
 
 const footerLinks =
   "grid content-start justify-items-start [&_a]:py-[0.55rem] [&_a]:text-sm [&_a]:leading-[inherit] [&_a]:text-muted [&_a:hover]:text-foreground";
+
+const socials = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/auroralunastar/",
+    path: "M12 2.2c3.2 0 3.6 0 4.9.1 1.2 0 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c0 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2 0-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c0-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1 0-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.4 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c0 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .4 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1 0 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.4-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c0-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.4-2.1-.4-1.2-.1-1.6-.1-4.7-.1Zm0 3.1a5.1 5.1 0 1 1 0 10.2 5.1 5.1 0 0 1 0-10.2Zm0 1.8a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6Zm5.3-3.1a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z",
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/auroralunastar1111/",
+    path: "M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z",
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/channel/UCn2jrsR8VjC3h6rBUQDmngA/videos",
+    path: "M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15V9l5 3-5 3Z",
+  },
+  {
+    label: "Yelp",
+    href: "https://www.yelp.com/biz/aurora-luna-star-sedona",
+    path: "m7.6885 15.1415-3.6715.8483c-.3769.0871-.755.183-1.1452.155-.2611-.0188-.5122-.0414-.7606-.213a1.179 1.179 0 0 1-.331-.3594c-.3486-.5519-.3656-1.3661-.3697-2.0004a6.2874 6.2874 0 0 1 .3314-2.0642 1.857 1.857 0 0 1 .1073-.2474 2.3426 2.3426 0 0 1 .1255-.2165 2.4572 2.4572 0 0 1 .1563-.1975 1.1736 1.1736 0 0 1 .399-.2831 1.082 1.082 0 0 1 .4592-.0837c.2355.0016.5139.052.91.1734.0555.0191.1237.0382.1856.0572.3277.1013.7048.2404 1.1499.3987.6863.2404 1.3663.487 2.0463.7397l1.2117.4423c.2217.0807.4363.18.6412.297.174.0984.3273.2298.4512.387a1.217 1.217 0 0 1 .192.4309 1.2205 1.2205 0 0 1-.872 1.4522c-.0468.0151-.0852.0239-.1085.0293l-1.105.2553-.0031-.001zM18.8208 7.565a1.8506 1.8506 0 0 0-.2042-.1754 2.4082 2.4082 0 0 0-.2077-.1394 2.3607 2.3607 0 0 0-.2269-.109 1.1705 1.1705 0 0 0-.482-.0796 1.0862 1.0862 0 0 0-.4498.1263c-.2107.1048-.4388.2732-.742.5551-.042.0417-.0947.0886-.142.133-.2502.2351-.5286.5252-.8599.863a114.6363 114.6363 0 0 0-1.5166 1.5629l-.8962.9293a4.1897 4.1897 0 0 0-.4466.5483 1.541 1.541 0 0 0-.2364.5459 1.2199 1.2199 0 0 0 .0107.4518l.0046.02a1.218 1.218 0 0 0 1.4184.923 1.162 1.162 0 0 0 .1105-.0213l4.7781-1.104c.3766-.087.7587-.1667 1.097-.3631.2269-.1316.4428-.262.5909-.5252a1.1793 1.1793 0 0 0 .1405-.4683c.0733-.6512-.2668-1.3908-.5403-1.963a6.2792 6.2792 0 0 0-1.2001-1.7103zM8.9703.0754a8.6724 8.6724 0 0 0-.83.1564c-.2754.066-.548.1383-.8146.2236-.868.2844-2.0884.8063-2.295 1.8065-.1165.5655.1595 1.1439.3737 1.66.2595.6254.614 1.1889.9373 1.7777.8543 1.5545 1.7245 3.0993 2.5922 4.6457.259.4617.5416 1.0464 1.043 1.2856a1.058 1.058 0 0 0 .1013.0383c.2248.0851.4699.1016.7041.0471a4.3015 4.3015 0 0 0 .0418-.0097 1.2136 1.2136 0 0 0 .5658-.3397 1.1033 1.1033 0 0 0 .079-.0822c.3463-.435.3454-1.0833.3764-1.6134.1042-1.771.2139-3.5423.3009-5.3142.0332-.6712.1055-1.3333.0655-2.0096-.0328-.5579-.0368-1.1984-.3891-1.6563-.6218-.8073-1.9476-.741-2.8523-.6158zm2.084 15.9505a1.1053 1.1053 0 0 0-1.2306-.4145 1.1398 1.1398 0 0 0-.1526.0633 1.4806 1.4806 0 0 0-.2171.1354c-.1992.1475-.3668.3392-.5196.5315-.0386.049-.074.1143-.12.1562l-.7686 1.0573a113.9168 113.9168 0 0 0-1.2913 1.789c-.278.3895-.5184.7184-.7083 1.0094-.036.0547-.0734.116-.1075.1647-.2277.3522-.3566.6092-.4228.8381a1.0945 1.0945 0 0 0-.046.4721c.0211.1655.0768.3246.1635.467.046.0715.0957.1406.1487.207a2.334 2.334 0 0 0 .1754.1825 1.843 1.843 0 0 0 .2108.1732c.5304.369 1.1112.6342 1.722.8391a6.0958 6.0958 0 0 0 1.5716.3004c.091.0046.1821.0025.2728-.006a2.3878 2.3878 0 0 0 .2506-.0351 2.3862 2.3862 0 0 0 .2447-.071 1.1927 1.1927 0 0 0 .4175-.2658c.1127-.113.1994-.249.2541-.3989.0889-.2214.1473-.5026.1857-.92.0034-.0593.0118-.1305.0177-.1958.0304-.3463.0443-.7531.0666-1.2315.0375-.7357.067-1.4681.0903-2.2026 0 0 .0495-1.3053.0494-1.306.0113-.3008.002-.6342-.0814-.9336a1.396 1.396 0 0 0-.1756-.4054zm8.6754 2.0439c-.1605-.176-.3878-.3514-.7462-.5682-.0518-.0288-.1124-.0674-.1684-.1009-.2985-.1795-.658-.3684-1.078-.5965a120.7615 120.7615 0 0 0-1.9427-1.042l-1.1515-.6107c-.0597-.0175-.1203-.0607-.1766-.0878-.2212-.1058-.4558-.2045-.6992-.2498a1.4915 1.4915 0 0 0-.2545-.0265 1.1527 1.1527 0 0 0-.1648.01 1.1077 1.1077 0 0 0-.9227.9133 1.4186 1.4186 0 0 0 .0159.439c.0563.3065.1932.6096.3346.875l.615 1.1526c.3422.65.6884 1.2963 1.0435 1.9406.229.4202.4196.7799.5982 1.078.0338.056.0721.1163.1011.1682.2173.3584.392.584.569.7458.1146.1107.252.195.4026.247.1583.0525.326.071.4919.0546a2.368 2.368 0 0 0 .251-.0435c.0817-.022.1622-.048.241-.0784a1.863 1.863 0 0 0 .2475-.1143 6.1018 6.1018 0 0 0 1.2818-.9597c.4596-.4522.8659-.9454 1.182-1.51.044-.08.0819-.163.1138-.2483a2.49 2.49 0 0 0 .0773-.2411c.0186-.083.033-.1669.0429-.2513a1.188 1.188 0 0 0-.0565-.491 1.0933 1.0933 0 0 0-.248-.4041zm2.86 3.742a.8523.8523 0 0 1-.111.4236c-.074.132-.178.2377-.3115.3172a.8428.8428 0 0 1-.4385.119.847.847 0 0 1-.4373-.1179.8526.8526 0 0 1-.3125-.3171.8548.8548 0 0 1-.111-.4248c0-.1526.038-.2958.1143-.4294a.8405.8405 0 0 1 .315-.3159.849.849 0 0 1 .4315-.1156.8514.8514 0 0 1 .4294.1144.84.84 0 0 1 .316.3148.8494.8494 0 0 1 .1156.4317zm-.1202 0c0-.1328-.0332-.256-.0996-.3698s-.1564-.2038-.2702-.2702a.7125.7125 0 0 0-.371-.1007.7204.7204 0 0 0-.3698.0996.7487.7487 0 0 0-.2713.2702.7181.7181 0 0 0-.0996.3709c0 .132.0332.2557.0996.371a.7355.7355 0 0 0 .2713.2713.7354.7354 0 0 0 .3698.0985.7205.7205 0 0 0 .3698-.0996.7423.7423 0 0 0 .2702-.2691.7186.7186 0 0 0 .1008-.3721zm-.577.0584.2724.4522h-.1922l-.237-.4052h-.1546v.4052h-.1695v-1.02h.2988c.1268 0 .2195.0247.2783.0744.0595.0496.0892.1252.0892.2267a.2785.2785 0 0 1-.0492.1625c-.032.0466-.0775.0813-.1362.1042zm-.0412-.1408a.1532.1532 0 0 0 .056-.1214c0-.0573-.0164-.0981-.0491-.1225-.0329-.0251-.0847-.0377-.1557-.0377h-.1214v.3285h.1237c.061 0 .1098-.0157.1465-.047z",
+  },
+] as const;
 
 export function SiteFooter() {
   return (
@@ -62,7 +94,9 @@ export function SiteFooter() {
           <h2 className="text-[clamp(2.5rem,4vw,3.75rem)]">
             Connect with Aurora
           </h2>
-          <ButtonLink href={bookingAnchor}>Book a Session</ButtonLink>
+          <ButtonLink href={bookingAnchor} icon="calendar">
+            Book a Session
+          </ButtonLink>
         </div>
         <div className="grid grid-cols-2 gap-x-4 gap-y-7 py-12 md:grid-cols-[1.7fr_1fr_1fr] md:gap-8">
           <div className="col-span-full md:col-auto">
@@ -71,6 +105,35 @@ export function SiteFooter() {
               <a className="text-link" href="/#meditation">
                 Get the Free Meditation
               </a>
+            </div>
+            <div className="mt-6">
+              <h2 className="mb-3 font-sans text-[0.7rem] leading-normal font-semibold tracking-[0.18em] text-muted uppercase">
+                Follow Aurora
+              </h2>
+              <ul className="flex items-center gap-2.5">
+                {socials.map(({ label, href, path }) => (
+                  <li key={label}>
+                    <a
+                      className="grid size-10 place-items-center rounded-full border border-line text-muted hover:border-accent hover:text-accent motion-safe:transition-colors"
+                      href={href}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <span className="sr-only">
+                        {label} (opens in a new tab)
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        className="size-[1.15rem]"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d={path} />
+                      </svg>
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
           <nav aria-label="Explore" className={footerLinks}>
@@ -91,11 +154,8 @@ export function SiteFooter() {
             </h2>
             <a href={siteLinks.contact}>Contact</a>
             <a href={siteLinks.partnerships}>Partnerships</a>
-            <a href="https://www.instagram.com/auroralunastar/">Instagram</a>
-            <a href="https://www.facebook.com/auroralunastar1111/">Facebook</a>
-            <a href="https://www.youtube.com/channel/UCn2jrsR8VjC3h6rBUQDmngA/videos">
-              YouTube
-            </a>
+            <a href="/#sessions">Book a Session</a>
+            <a href="/#meditation">Free Meditation</a>
           </nav>
         </div>
         <p className="border-t border-line py-[1.2rem] text-xs leading-[inherit] text-muted">

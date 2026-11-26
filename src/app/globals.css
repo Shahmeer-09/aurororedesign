@@ -13,12 +13,18 @@
   --purple-hover: #891be3;
   --line: #523263;
   --control-line: #957da4;
-  --outline-fill: #130c1bc9;
+  --action-hot-pink: #ff4fb8;
+  --action-glow: #b43dff;
+  --action-border: #d2adf3;
+  --action-ink: #271333;
+  --action-sheen: rgb(255 249 255 / 68%);
+  --nav-glass: #17092178;
+  --nav-line: #c097e36b;
   --menu-scrim: #0b0714bb;
   --hero-fill: #1c0e28;
-  --hero-center-scrim: rgb(0 0 0 / 28%);
-  --hero-edge-scrim: rgb(0 0 0 / 14%);
-  --hero-lower-scrim: rgb(0 0 0 / 22%);
+  --hero-center-scrim: rgb(0 0 0 / 42%);
+  --hero-edge-scrim: rgb(0 0 0 / 44%);
+  --hero-lower-scrim: rgb(0 0 0 / 48%);
   --hero-text-shadow: #130a20ad;
   --hero-muted: #e2d2ed;
   --star-pale: #cbb2e6;
@@ -42,7 +48,7 @@
     var(--purple-hover) 8%,
     transparent
   );
-  --header-height: 4.5rem;
+  --header-height: 5.5rem;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -58,7 +64,8 @@
   --color-purple-hover: var(--purple-hover);
   --color-line: var(--line);
   --color-control-line: var(--control-line);
-  --color-outline-fill: var(--outline-fill);
+  --color-nav-glass: var(--nav-glass);
+  --color-nav-line: var(--nav-line);
   --color-menu-scrim: var(--menu-scrim);
   --color-hero-fill: var(--hero-fill);
   --color-hero-muted: var(--hero-muted);
@@ -112,17 +119,74 @@
   }
 
   .button {
-    @apply inline-flex min-h-11.5 items-center justify-center rounded-full border border-transparent px-5 py-[0.65rem] text-sm leading-[inherit] font-semibold whitespace-nowrap text-foreground;
-    @apply motion-safe:transition-[background-color,border-color,transform] motion-safe:duration-150 motion-safe:active:[transform:scale(0.97)];
-    @apply motion-safe:ease-(--ease-out);
+    @apply relative isolate inline-flex min-h-11.5 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full border px-5 py-[0.65rem] text-sm leading-[inherit] font-semibold whitespace-nowrap;
+    border-color: var(--action-border);
+    color: var(--action-ink);
   }
 
-  .button-primary {
-    @apply bg-purple hover:bg-purple-hover;
+  .button-icon {
+    @apply size-4.5 shrink-0;
   }
 
   .button-outline {
-    @apply border-control-line bg-outline-fill hover:border-accent hover:bg-surface;
+    background: color-mix(in srgb, var(--background) 52%, transparent);
+    color: var(--foreground);
+  }
+
+  .button-featured .button-icon {
+    @apply size-5;
+  }
+
+  @media (hover: hover) {
+    .button:hover {
+      border-color: var(--action-sheen);
+    }
+
+    .button-outline:hover {
+      background: color-mix(in srgb, var(--surface) 76%, transparent);
+      border-color: var(--action-hot-pink);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .button,
+    .button-icon {
+      transition: transform 180ms var(--ease-out);
+    }
+
+    .button:active {
+      transform: scale(0.97);
+    }
+
+    @media (hover: hover) {
+      .button::before {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        background: linear-gradient(
+          105deg,
+          transparent 30%,
+          var(--action-sheen),
+          transparent 70%
+        );
+        content: "";
+        pointer-events: none;
+        transform: translateX(-120%);
+        transition: transform 280ms var(--ease-out);
+      }
+
+      .button:hover::before {
+        transform: translateX(120%);
+      }
+
+      .button-featured:hover:not(:active) {
+        transform: translateY(-2px);
+      }
+
+      .button-featured:hover .button-icon {
+        transform: translateY(-1px) rotate(-12deg);
+      }
+    }
   }
 
   .text-link {
@@ -130,9 +194,36 @@
   }
 }
 
+/*
+ * From Uiverse.io by mrhyddenn - https://uiverse.io/mrhyddenn/moody-badger-62
+ * MIT License, Copyright (c) mrhyddenn
+ */
+.button-primary,
+.meditation-signup form[data-ff-el="form"] [data-ff-el="submit"] {
+  background: var(--action-hot-pink);
+  box-shadow: 0 0 25px color-mix(in srgb, var(--action-glow) 48%, transparent);
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition:
+      transform 180ms var(--ease-out),
+      box-shadow 500ms ease;
+  }
+
+  @media (hover: hover) {
+    &:hover:enabled,
+    &:any-link:hover {
+      box-shadow:
+        0 0 5px var(--action-glow),
+        0 0 25px var(--action-glow),
+        0 0 50px color-mix(in srgb, var(--action-glow) 75%, transparent),
+        0 0 100px color-mix(in srgb, var(--action-glow) 48%, transparent);
+    }
+  }
+}
+
 @media (width < 48rem) {
   :root {
-    --header-height: 4rem;
+    --header-height: 4.75rem;
   }
 }
 
@@ -140,8 +231,11 @@ html:has(#mobile-menu[open]) {
   overflow: hidden;
 }
 
-.site-header[data-away]:not(:focus-within):not(:has(dialog[open])) {
-  transform: translateY(-100%);
+@media (prefers-reduced-transparency: reduce) {
+  .site-header {
+    background-color: var(--surface);
+    backdrop-filter: none;
+  }
 }
 
 .hero-backdrop::after {
@@ -152,7 +246,7 @@ html:has(#mobile-menu[open]) {
   background:
     radial-gradient(
       ellipse at 50% 48%,
-      var(--hero-center-scrim) 20%,
+      var(--hero-center-scrim) 32%,
       transparent 76%
     ),
     linear-gradient(
@@ -331,7 +425,36 @@ html {
   }
 
   [data-ff-el="submit"] {
-    @apply min-h-11.5 w-full rounded-full border border-transparent bg-purple px-5 py-[0.65rem] font-sans text-sm leading-[1.4] font-semibold tracking-[0.04em] text-foreground normal-case;
-    @apply hover:bg-purple-hover focus-visible:outline-2 focus-visible:outline-offset-[5px] focus-visible:outline-accent;
+    @apply inline-flex min-h-11.5 w-full items-center justify-center gap-2 rounded-full border px-5 py-[0.65rem] font-sans text-sm leading-[1.4] font-semibold tracking-[0.04em] normal-case;
+    @apply focus-visible:outline-2 focus-visible:outline-offset-[5px] focus-visible:outline-accent motion-safe:active:scale-[0.98];
+    border-color: var(--action-border);
+    color: var(--action-ink);
+
+    &::before {
+      @apply size-4.5 shrink-0;
+      background: currentColor;
+      content: "";
+      mask:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2L12 3Z' fill='none' stroke='black' stroke-width='1.75' stroke-linejoin='round'/%3E%3C/svg%3E")
+        center / contain no-repeat;
+    }
+  }
+}
+
+@keyframes testimonial-in {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes testimonial-out {
+  to {
+    opacity: 0;
+    transform: translateX(-0.75rem);
   }
 }

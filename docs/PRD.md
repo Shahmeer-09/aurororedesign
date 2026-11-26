@@ -19,10 +19,21 @@ Booking, commerce, and the remaining live pages remain on their current systems.
 - Include all distinct recordings from the live media kit and link each one to YouTube. Direct speaking inquiries to Aurora’s contact page.
 - Serve the redesign at `/media` and redirect the original `/mediakit/` path within this app. [Live Media page](https://auroralunastar.com/mediakit/)
 
+## About and Starseeds scope
+
+- Present Aurora’s biography, mission, original portrait, and all four client testimonials in full, with their original portraits. Keep the mission on a text-only surface and support portrait selection and automatic rotation that pauses during interaction.
+- Explain Aurora’s approach to Starseed spirituality and present the three original offerings with their artwork. The first two lead to the live shop, and Blueprint Activators leads to Contact. [Live About page](https://auroralunastar.com/about/) · [Live Starseeds page](https://auroralunastar.com/welcomestarseeds/)
+
 ## Products page scope
 
 - Open `/products` with a compact title and a grid that fits one column on mobile and three on desktop.
 - Show all nine products from the first page of the live shop, with their covers and prices. Each listing links to its live product page for purchase. A link opens the full shop. [Live Products page](https://auroralunastar.com/products/)
+
+## Services, Partnerships, and Contact scope
+
+- Services uses the same three session listings as the homepage and shows their original artwork. Keep the two verified Schedulista destinations and route Soul Evolutionary Alchemy inquiries to Contact.
+- Partnerships presents Kejiwa and TwistedSage with original product imagery and their existing store links.
+- Contact embeds the existing DigiStartup form and offers a direct form link. Redirect the legacy `/contact-aurora/` path to `/contact`.
 
 ## Acceptance criteria
 

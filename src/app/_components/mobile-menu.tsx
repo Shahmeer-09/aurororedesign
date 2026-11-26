@@ -22,6 +22,7 @@ export function MobileMenu() {
           dialog.current?.showModal();
           setOpen(true);
         }}
+        icon="menu"
         variant="outline"
       >
         Menu
@@ -37,7 +38,7 @@ export function MobileMenu() {
           <h2 className="text-[2.5rem]" id="mobile-menu-title">
             Menu
           </h2>
-          <Button onClick={closeMenu} variant="outline">
+          <Button icon="close" onClick={closeMenu} variant="outline">
             Close
           </Button>
         </div>
@@ -53,7 +54,7 @@ export function MobileMenu() {
             </a>
           ))}
         </nav>
-        <ButtonLink href={bookingAnchor} onClick={closeMenu}>
+        <ButtonLink href={bookingAnchor} icon="calendar" onClick={closeMenu}>
           Book a Session
         </ButtonLink>
       </dialog>
