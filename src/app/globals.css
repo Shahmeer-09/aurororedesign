@@ -26,6 +26,8 @@
   --hero-edge-scrim: rgb(0 0 0 / 44%);
   --hero-lower-scrim: rgb(0 0 0 / 48%);
   --hero-text-shadow: #130a20ad;
+  --horizon-line: color-mix(in srgb, var(--accent) 44%, transparent);
+  --horizon-light: color-mix(in srgb, var(--action-glow) 19%, transparent);
   --hero-muted: #e2d2ed;
   --star-pale: #cbb2e6;
   --star-dim: #b197ca;
@@ -198,8 +200,7 @@
  * From Uiverse.io by mrhyddenn - https://uiverse.io/mrhyddenn/moody-badger-62
  * MIT License, Copyright (c) mrhyddenn
  */
-.button-primary,
-.meditation-signup form[data-ff-el="form"] [data-ff-el="submit"] {
+.button-primary {
   background: var(--action-hot-pink);
   box-shadow: 0 0 25px color-mix(in srgb, var(--action-glow) 48%, transparent);
 
@@ -256,11 +257,131 @@ html:has(#mobile-menu[open]) {
   inset: 0;
   content: "";
   pointer-events: none;
-  background: radial-gradient(
-    ellipse 58% 57% at center,
-    var(--hero-center-scrim) 35%,
-    transparent 90%
+  background:
+    radial-gradient(
+      ellipse 55% 54% at center,
+      var(--hero-center-scrim),
+      transparent
+    ),
+    linear-gradient(0deg, var(--background), transparent 18%);
+}
+
+.home-hero::before {
+  @apply pointer-events-none absolute inset-0;
+  content: "";
+  background:
+    radial-gradient(
+      circle at 16% 27%,
+      var(--star-pale) 0.8px,
+      transparent 1.4px
+    )
+    0 0 / 197px 219px,
+    radial-gradient(
+      circle at 63% 19%,
+      var(--star-bright) 0.9px,
+      transparent 1.5px
+    )
+    0 0 / 339px 281px,
+    radial-gradient(ellipse at 9% 72%, var(--horizon-light), transparent 40%),
+    radial-gradient(ellipse at 94% 34%, var(--horizon-light), transparent 42%);
+}
+
+.hero-horizon {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  top: 89%;
+  left: -16%;
+  width: 132%;
+  height: 60%;
+  border-radius: 50%;
+  border-top: 1px solid var(--horizon-line);
+  box-shadow: 0 -9px 30px var(--horizon-light);
+  background: linear-gradient(var(--surface), var(--background) 22%);
+}
+
+.hero-horizon::before {
+  @apply absolute rounded-[50%] border-t border-accent/20;
+  inset: -8px 0 8px;
+  content: "";
+}
+
+.hero-horizon::after {
+  @apply absolute left-1/2 size-2.5 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-accent bg-background;
+  content: "";
+}
+
+.moon-phases {
+  @apply mx-auto flex w-fit items-center justify-center gap-2.5 text-accent;
+}
+
+.moon-phases::before,
+.moon-phases::after {
+  @apply block h-px w-10;
+  content: "";
+  background: linear-gradient(90deg, transparent, var(--horizon-line));
+}
+
+.moon-phases::after {
+  transform: scaleX(-1);
+}
+
+.moon-phases i {
+  @apply block size-3 rounded-full;
+  box-shadow: inset 3px 0 currentColor;
+}
+
+.moon-phases i:nth-child(2),
+.moon-phases i:nth-child(4) {
+  @apply size-4;
+  box-shadow: inset 8px 0 currentColor;
+}
+
+.moon-phases i:nth-child(3) {
+  @apply size-5 bg-accent;
+  box-shadow: 0 0 15px var(--horizon-line);
+}
+
+.moon-phases i:nth-child(n + 4) {
+  transform: scaleX(-1);
+}
+
+.meditation-spread {
+  background: linear-gradient(
+    125deg,
+    var(--surface),
+    var(--meditation-fill) 70%,
+    var(--background)
   );
+}
+
+.session-portrait::before,
+.about-portrait::before {
+  @apply pointer-events-none absolute rounded-t-full border border-accent/40;
+  content: "";
+  inset: -0.6rem 0.6rem 0.6rem -0.6rem;
+}
+
+.about-portrait::before {
+  inset: -0.6rem -0.6rem 0.6rem 0.6rem;
+}
+
+.about-spread {
+  background: linear-gradient(
+    110deg,
+    var(--meditation-fill),
+    var(--background) 80%
+  );
+}
+
+.starseed-panorama {
+  mask-image: linear-gradient(to bottom, black 68%, transparent);
+}
+
+@media (width >= 48rem) {
+  .starseed-panorama {
+    mask-image: linear-gradient(to right, transparent, black 38%);
+  }
 }
 
 .star-field {
@@ -433,8 +554,18 @@ html {
   [data-ff-el="submit"] {
     @apply inline-flex min-h-11.5 w-full items-center justify-center gap-2 rounded-full border px-5 py-[0.65rem] font-sans text-sm leading-[1.4] font-semibold tracking-[0.04em] normal-case;
     @apply focus-visible:outline-2 focus-visible:outline-offset-[5px] focus-visible:outline-accent motion-safe:active:scale-[0.98];
+    background: var(--action-hot-pink);
+    box-shadow: none;
     border-color: var(--action-border);
     color: var(--action-ink);
+
+    &:hover {
+      background: color-mix(
+        in srgb,
+        var(--action-hot-pink) 85%,
+        var(--foreground)
+      );
+    }
 
     &::before {
       @apply size-4.5 shrink-0;

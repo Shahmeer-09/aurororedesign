@@ -12,6 +12,29 @@ export const metadata: Metadata = {
     "Explore Aurora Luna Star’s speaking experience and invite her to present at an in-person or online event.",
 };
 
+const recordings = [
+  { id: "khmHG3QKUvk", title: "Starseed Blueprint Activator" },
+  { id: "exX0aoTzSrM", title: "The Channel Panel · January 4, 2025" },
+  {
+    id: "agN0FgqE5FY",
+    title: "Hucolo Saturday Webinar with Aurora Luna Star · March 15, 2025",
+  },
+  {
+    id: "f8hMAoZHVeE",
+    title: "Presentation & Channeling at Odyssey 2024 in Sedona, AZ",
+  },
+  { id: "zDP7j5Icq18", title: "Awaken Your Star Consciousness" },
+  {
+    id: "_exv5DuCYMk",
+    title: "Starseed Akashic Readings & Inter-Dimensional Guidance for Change",
+  },
+  {
+    id: "R4L4ywH4zg4",
+    title: "Quantum Manifesting & Star Beings with Aurora Luna Star",
+  },
+  { id: "CNo-KoBEYdA", title: "Aurora Luna Star · Celestial Harmonies" },
+];
+
 export default function MediaPage() {
   return (
     <>
@@ -23,9 +46,54 @@ export default function MediaPage() {
       </a>
       <SiteHeader />
       <main id="main">
-        <PageHero title="Speaking engagements" subtitle="In person & online" />
+        <PageHero
+          title="Media & speaking"
+          subtitle="Interviews, talks & channelings"
+        />
 
         <div className="star-field">
+          <section
+            aria-labelledby="appearances-title"
+            className="mx-auto w-[min(100%-2.25rem,90rem)] py-[clamp(3rem,6vw,6rem)] md:w-[min(100%-4rem,90rem)]"
+            id="appearances"
+          >
+            <h2 id="appearances-title">
+              Recorded <em className="text-accent">appearances</em>
+            </h2>
+            <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {recordings.map(({ id, title }) => (
+                <li key={id}>
+                  <a
+                    className="group flex h-full flex-col border-t border-accent/35 pt-3"
+                    href={`https://www.youtube.com/watch?v=${id}`}
+                  >
+                    <div className="relative aspect-video overflow-hidden bg-background">
+                      <Image
+                        alt=""
+                        className="object-cover motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-[1.03]"
+                        fill
+                        sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 95vw"
+                        src={`/aurora/media/${id}.webp`}
+                      />
+                      <span
+                        aria-hidden="true"
+                        className="absolute right-3 bottom-3 grid size-11 place-items-center rounded-full border border-line bg-background text-accent group-hover:bg-purple group-hover:text-foreground"
+                      >
+                        ▶
+                      </span>
+                    </div>
+                    <div className="flex flex-1 flex-col gap-3 py-4">
+                      <h3 className="text-2xl leading-none">{title}</h3>
+                      <span className="mt-auto text-xs font-semibold text-accent">
+                        Watch on YouTube <span aria-hidden="true">↗</span>
+                      </span>
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+
           <section
             aria-labelledby="speaker-title"
             className="border-b border-line"
@@ -44,7 +112,9 @@ export default function MediaPage() {
               </Reveal>
 
               <div>
-                <h2 id="speaker-title">Presenter &amp; Speaker</h2>
+                <h2 id="speaker-title">
+                  Presenter <em className="text-accent">&amp; speaker</em>
+                </h2>
                 <div className="mt-5 max-w-[58ch] space-y-4 leading-relaxed text-muted md:text-[1.0625rem]">
                   <p>
                     Aurora presents in person and online. In Sedona, Arizona,

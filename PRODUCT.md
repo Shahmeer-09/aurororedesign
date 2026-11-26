@@ -12,8 +12,8 @@ Aurora Luna Star’s public homepage introduces her spiritual services to visito
 
 ## Capabilities and constraints
 
-Next.js App Router frontend. Existing Schedulista links handle booking and Flodesk handles meditation signup. Keep all existing navigation destinations accessible. The other pages and commerce are on the live site. [Aurora Luna Star](https://auroralunastar.com/)
+Next.js App Router frontend. Existing Schedulista links handle booking and Flodesk handles meditation signup. Keep all existing navigation destinations accessible. Local pages handle browsing. Product purchases use the live shop. [Aurora Luna Star](https://auroralunastar.com/)
 
 ## Brand commitments
 
-Aurora Luna Star’s name, existing photography and factual copy, a dark purple identity, and the Muse reference guide the redesign. The hero uses centered text and a looping background video. The Pexels footage is credited in the design notes.
+Aurora Luna Star’s name, existing photography and factual copy, a dark purple identity, and the Muse reference guide the redesign. The hero uses centered text and a looping background video. The local video and matching poster come from Aurora’s original site. See [design notes](docs/DESIGN.md).

@@ -50,7 +50,7 @@ export default function PartnershipsPage() {
             aria-labelledby="kejiwa-heading"
             className="wrap grid items-center gap-8 py-12 md:grid-cols-[1fr_0.85fr] md:gap-16 md:py-18"
           >
-            <Reveal className="relative aspect-[5/4] w-full overflow-hidden rounded-2xl border border-line md:order-2 md:aspect-[5/5.5]">
+            <Reveal className="relative aspect-[5/4] w-full overflow-hidden rounded-t-full border border-accent/35 md:order-2 md:aspect-[5/5.5]">
               <Image
                 alt="Two Kejiwa bottles on a table with a small glass and copper beads"
                 className="object-cover object-[center_65%]"
@@ -60,7 +60,9 @@ export default function PartnershipsPage() {
               />
             </Reveal>
             <div>
-              <h2 id="kejiwa-heading">Kejiwa</h2>
+              <h2 id="kejiwa-heading" className="text-accent italic">
+                Kejiwa
+              </h2>
               <p className="mt-4 font-display text-2xl leading-tight text-accent">
                 Elixirs and mists for spiritual practice
               </p>
@@ -118,11 +120,11 @@ export default function PartnershipsPage() {
             </Reveal>
             <ul
               aria-label="TwistedSage pieces"
-              className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4"
+              className="mt-9 grid grid-cols-2 gap-3 md:grid-cols-[1.4fr_1fr_1fr] md:gap-4"
             >
               {twistedSagePhotos.map(({ file, alt }) => (
                 <li
-                  className="relative aspect-square overflow-hidden rounded-xl border border-line bg-background"
+                  className="relative aspect-square overflow-hidden rounded-sm bg-background md:first:row-span-2 md:first:aspect-auto md:last:col-span-2 md:last:aspect-[3/1]"
                   key={file}
                 >
                   <Image

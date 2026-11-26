@@ -15,7 +15,7 @@ Booking, commerce, and the remaining live pages remain on their current systems.
 
 ## Media page scope
 
-- Use a compact image banner for Speaking Engagements and a wide presenter feature with Aurora’s original stage photograph.
+- Show all eight recordings from the original Media page with cover art and YouTube links. Follow the archive with Aurora’s stage photograph and speaking inquiry.
 - Present Aurora’s speaking experience and direct event inquiries to her contact page.
 - Serve the redesign at `/media` and redirect the original `/mediakit/` path within this app. [Live Media page](https://auroralunastar.com/mediakit/)
 

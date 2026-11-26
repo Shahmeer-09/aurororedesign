@@ -5,7 +5,8 @@
 
 ## Current rework
 
-- Restored centered homepage hero copy and buttons over the video and removed the circular logo from the layout. Chrome confirmed the centered layout at four widths from 390px to 1920px.
+- The homepage now uses lunar phases over the original video, the summit meditation spread, a ruled session list, a six-product shelf, and a panoramic Starseeds illustration. The singing-bowl portrait matches the session list height on desktop. The signup button uses a flat pink hover treatment.
+- Media leads with all eight recordings verified against the original Media page. Starseeds, About, Partnerships, and Services share the lunar banner and use page-specific layouts for their offerings, biography, gallery, and booking guide. Desktop and mobile Chrome checks covered all five pages, the eight thumbnails, and horizontal overflow. Live signup delivery remains pending.
 
 - Strengthened the shared Motion reveals to a 600ms fade and 32px rise triggered 64px inside the viewport. Home now includes the complete meditation panel, service cards, product group, and About and Starseeds copy. Lint, TypeScript, and a production build passed. Chrome on port 3058 confirmed desktop and mobile entrances, no replay, reduced-motion changes, and visible content without JavaScript.
 
@@ -20,7 +21,7 @@
 - About reuses Aurora’s original portrait, expands the biography and mission, and presents all four full testimonials with the original portrait selectors. Starseeds uses four original illustrations and directs Blueprint Activator inquiries to Contact.
 
 - Redesigned `/products` with a compact title and all nine first-page products, local cover thumbnails, and links to the live shop for purchase.
-- The Media page shows the speaking banner, presenter feature, stage photograph, and speaking inquiry button. Removed the recorded appearances section and its jump link.
+- The Media page includes recorded appearances, the presenter feature, stage photograph, and speaking inquiry button.
 - Added a redirect from `/mediakit/` to `/media` within the Next.js app and updated shared navigation links to reach the homepage sections from Media.
 
 - Migrated page layouts and shared controls to Tailwind utilities. Edit the palette in `src/app/globals.css`. The Tailwind stylesheet compiled, and lint and TypeScript passed. The latest Media production build compiled the shared Tailwind styles.

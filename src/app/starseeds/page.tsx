@@ -60,7 +60,9 @@ export default function StarseedsPage() {
             className="wrap grid items-center gap-8 py-14 md:grid-cols-[1.1fr_0.9fr] md:gap-16 md:py-20"
           >
             <div>
-              <h2 id="what-is-a-starseed">What is a starseed?</h2>
+              <h2 id="what-is-a-starseed">
+                What is a <em className="text-accent">starseed?</em>
+              </h2>
               <div className="mt-6 max-w-[60ch] space-y-4 leading-relaxed text-muted">
                 <p>
                   In Aurora’s spiritual practice, a starseed is someone who
@@ -102,11 +104,11 @@ export default function StarseedsPage() {
                 Explore your star connections
               </h2>
             </Reveal>
-            <ul className="mt-8">
+            <ul className="mt-9 grid gap-9 md:grid-cols-3">
               {offerings.map(
                 ({ title, image, format, description, action, href }) => (
                   <li
-                    className="grid items-center gap-5 border-b border-line py-7 first:border-t md:grid-cols-[13rem_1fr] md:gap-10"
+                    className="flex flex-col gap-5 border-t border-accent/35 pt-4"
                     key={image}
                   >
                     <Image
@@ -115,9 +117,9 @@ export default function StarseedsPage() {
                           ? "Circular blueprint artwork with multicolored geometric patterns and symbols"
                           : ""
                       }
-                      className="h-auto w-full max-w-64 rounded-xl border border-line"
+                      className="mx-auto aspect-square h-auto w-full max-w-96 rounded-sm object-contain"
                       height={900}
-                      sizes="(min-width: 768px) 208px, 256px"
+                      sizes="(min-width: 1200px) 368px, (min-width: 768px) 30vw, 90vw"
                       src={`/aurora/starseeds/${image}.webp`}
                       width={900}
                     />

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/button";
 import { HeroMotion } from "./_components/hero-motion";
 import { MeditationForm } from "./_components/meditation-form";
+import { MoonPhases } from "./_components/moon-phases";
 import { Reveal } from "./_components/reveal";
 import { SiteFooter, SiteHeader } from "./_components/site-chrome";
 import { getProductsPage } from "./products/catalog";
@@ -33,37 +34,36 @@ export default async function Home() {
       <SiteHeader />
       <main id="main">
         <section
-          className="home-hero relative isolate grid min-h-[calc(100svh-var(--header-height))] place-items-center bg-hero-fill py-12 text-center md:py-16"
+          className="home-hero relative isolate grid min-h-[calc(100svh-var(--header-height))] place-items-center overflow-hidden bg-hero-fill px-5 py-[clamp(4.5rem,10svh,8rem)] text-center"
           aria-labelledby="hero-title"
         >
-          <div className="wrap relative z-2">
-            <p className="mb-4 text-[0.72rem] font-semibold tracking-[0.2em] text-accent uppercase md:mb-5">
-              Aurora Luna Star
-            </p>
+          <HeroMotion />
+          <div aria-hidden="true" className="hero-horizon" />
+          <div className="relative z-2 mx-auto w-full">
+            <MoonPhases />
             <h1
-              className="mx-auto max-w-[17ch] text-[clamp(2.7rem,9vw,4rem)] leading-[1.05] text-balance tracking-[-0.03em] [text-shadow:0_3px_35px_var(--hero-text-shadow)] md:max-w-[62rem] md:text-[clamp(3rem,5.6vw,6rem)]"
+              className="mx-auto mt-7 font-display text-[clamp(2.35rem,11.5vw,3.45rem)] leading-[0.99] text-balance tracking-[-0.038em] sm:text-[clamp(3.45rem,7.5vw,7.3rem)]"
               id="hero-title"
             >
               What would you do{" "}
-              <span className="block text-accent">
+              <em className="mt-1 block text-[0.92em] leading-[1.08] text-accent">
                 without the weight of fear?
-              </span>
+              </em>
             </h1>
-            <p className="mx-auto mt-[1.6rem] mb-8 max-w-[35ch] text-[0.95rem] leading-[1.75] text-pretty text-hero-muted md:max-w-[52ch] md:text-[clamp(1rem,1.4vw,1.125rem)] [&_strong]:font-semibold [&_strong]:text-foreground">
-              Bridging <strong>all that you are</strong> with{" "}
-              <strong>All That Is</strong> through Starseed Akashic Readings,
-              Sound Activations, and Personal Empowerment.
+            <p className="mx-auto mt-6 max-w-[47ch] text-[clamp(1rem,1.35vw,1.18rem)] leading-relaxed text-pretty text-hero-muted">
+              Bridging all that you are with All That Is through Starseed
+              Akashic Readings, Sound Activations, and Personal Empowerment.
             </p>
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="mx-auto mt-8 grid w-fit gap-3 min-[440px]:flex">
               <ButtonLink
-                className="button-featured min-h-12 px-[1.45rem]"
+                className="button-featured"
                 href={bookingAnchor}
                 icon="calendar"
               >
                 Book a Session
               </ButtonLink>
               <ButtonLink
-                className="button-featured min-h-12 px-[1.45rem]"
+                className="button-featured"
                 href="#meditation"
                 icon="sparkles"
                 variant="outline"
@@ -72,11 +72,10 @@ export default async function Home() {
               </ButtonLink>
             </div>
           </div>
-          <HeroMotion />
         </section>
 
         <div
-          className="marquee overflow-hidden border-y border-line bg-marquee-fill"
+          className="marquee overflow-hidden border-y border-accent/25 bg-marquee-fill"
           aria-hidden="true"
         >
           <div className="marquee-track">
@@ -84,48 +83,44 @@ export default async function Home() {
               <div className="flex w-max items-center" key={copy}>
                 {specialties.map((specialty) => (
                   <span
-                    className="flex items-center font-display text-[1.12rem] leading-none font-medium tracking-[0.21em] whitespace-nowrap text-marquee-ink uppercase"
+                    className="flex items-center gap-8 pr-8 font-display text-[1.35rem] leading-none whitespace-nowrap text-marquee-ink italic md:gap-12 md:pr-12"
                     key={specialty}
                   >
                     {specialty}
-                    <span className="px-[clamp(1.4rem,3vw,3rem)] py-5 text-[0.8rem] text-accent">
-                      ✦
-                    </span>
+                    <span className="my-5 size-1 rotate-45 bg-accent" />
                   </span>
                 ))}
               </div>
             ))}
           </div>
         </div>
+
         <div className="star-field">
           <section
             className="wrap section-space"
             id="meditation"
             aria-labelledby="meditation-title"
           >
-            <Reveal className="grid overflow-hidden rounded-[1.75rem] border border-line bg-meditation-fill md:grid-cols-[0.95fr_1.15fr]">
-              <div className="tinted-image relative isolate min-h-[clamp(15rem,65vw,18.75rem)] md:min-h-[33.5625rem]">
+            <Reveal className="meditation-spread grid overflow-hidden rounded-[0.5rem] border border-accent/25 md:grid-cols-[1.05fr_1fr]">
+              <div className="relative min-h-64 md:min-h-[33.5rem]">
                 <Image
                   alt="A woman opens her arms above sunlit mountain clouds"
-                  className="object-cover"
+                  className="object-cover object-[52%_center]"
                   src="/aurora/fear-clear-summit.webp"
                   fill
-                  sizes="(min-width: 768px) 45vw, 90vw"
+                  sizes="(min-width: 1200px) 590px, (min-width: 768px) 50vw, 96vw"
                 />
               </div>
-              <div className="self-center p-[clamp(1.5rem,3vw,2.875rem)]">
-                <h2
-                  className="text-[clamp(2rem,3vw,3rem)] leading-[1.12] tracking-[-0.025em]"
-                  id="meditation-title"
-                >
-                  What would you do without the weight of fear?
+              <div className="self-center p-[clamp(1.5rem,4vw,4rem)]">
+                <h2 id="meditation-title">
+                  Fear <em className="text-accent">Clear</em>
                 </h2>
-                <p className="mt-5 font-display text-xl leading-[inherit] tracking-[0.25em] text-accent uppercase">
-                  Fear Clear
+                <p className="my-4 text-sm font-medium tracking-wide text-accent">
+                  Free guided meditation · 30 minutes
                 </p>
-                <p className="section-intro mt-4 max-w-[52ch] text-[0.95rem]">
-                  A free 30-minute guided meditation to help you release what’s
-                  holding you back and step into clarity, calm, and courage.
+                <p className="mb-6 max-w-[38ch] leading-relaxed text-muted">
+                  A guided practice to help you release what’s holding you back
+                  and step into clarity, calm, and courage.
                 </p>
                 <MeditationForm />
               </div>
@@ -133,173 +128,191 @@ export default async function Home() {
           </section>
 
           <section
-            aria-labelledby="sessions-title"
-            className="wrap pb-12 md:pb-16"
+            className="wrap pb-[clamp(4rem,8vw,7rem)]"
             id="sessions"
+            aria-labelledby="sessions-title"
           >
-            <Reveal>
-              <h2 id="sessions-title">Sessions with Aurora</h2>
-              <p className="section-intro">
-                A space to reconnect with yourself, explore your gifts, and move
-                forward with clarity.
-              </p>
-            </Reveal>
-            <Reveal>
-              <ul className="mt-8 mb-5 grid gap-5 md:grid-cols-3">
-                {sessions.map(({ name, description, id }, index) => (
-                  <li
-                    className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-linear-to-b from-surface/85 to-background/60 p-6 motion-safe:transition-[transform,border-color,box-shadow] motion-safe:duration-300 motion-safe:hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_18px_50px_-24px_var(--purple-hover)] lg:p-8"
-                    key={name}
-                  >
-                    <div
-                      aria-hidden="true"
-                      className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-accent/60 to-transparent opacity-60 group-hover:opacity-100"
-                    />
-                    <div className="mb-5 flex items-center gap-4">
-                      <span className="font-display text-sm tracking-[0.35em] text-accent/80">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <span className="h-px flex-1 bg-line group-hover:bg-accent/40 motion-safe:transition-colors motion-safe:duration-300" />
-                    </div>
-                    <h3 className="text-[clamp(1.85rem,2.6vw,2.6rem)] leading-[1.05] tracking-[-0.025em] text-balance">
-                      {name}
-                    </h3>
-                    <p className="mt-4 mb-6 max-w-[40ch] leading-[1.75] text-muted">
-                      {description}
-                    </p>
-                    <a
-                      aria-label={id ? `Book ${name}` : `Ask about ${name}`}
-                      className="mt-auto inline-flex min-h-11 items-center gap-2 self-start text-sm font-semibold text-accent underline decoration-1 underline-offset-[0.32em] hover:text-foreground"
-                      href={sessionHref(id)}
-                    >
-                      {id ? "Book this session" : "Ask about this session"}
-                      <span
-                        aria-hidden="true"
-                        className="inline-block motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:translate-x-1"
-                      >
-                        ↗
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-            <a className="text-link" href={siteLinks.services}>
-              View all services
-            </a>
-          </section>
-
-          <section
-            aria-labelledby="home-products-title"
-            className="wrap border-t border-line pt-10 pb-16 md:pt-14 md:pb-20"
-          >
-            <Reveal className="mb-9 flex flex-wrap items-end justify-between gap-x-8 gap-y-5">
+            <div className="grid items-center gap-10 md:grid-cols-[0.85fr_1.15fr] lg:gap-24">
+              <Reveal className="session-portrait relative order-last mx-auto aspect-[4/5] w-[90%] max-w-[27rem] md:order-first md:aspect-auto md:w-full md:max-w-none md:self-stretch">
+                <Image
+                  src="/aurora/services/aurora.webp"
+                  alt="Aurora playing a singing bowl in the evening light"
+                  className="rounded-t-full object-cover"
+                  fill
+                  sizes="(min-width: 1024px) 430px, (min-width: 768px) 40vw, 94vw"
+                />
+              </Reveal>
               <div>
-                <p className="mb-4 text-[0.72rem] font-semibold tracking-[0.2em] text-accent uppercase">
-                  Gatherings & Recordings
+                <h2 id="sessions-title">
+                  Sessions <em className="text-accent">with Aurora</em>
+                </h2>
+                <p className="section-intro">
+                  A space to reconnect with yourself, explore your gifts, and
+                  move forward with clarity.
                 </p>
-                <h2 id="home-products-title">Products</h2>
-                <p className="section-intro mt-4 mb-0">
-                  Retreats, galactic gatherings, and channeled series to explore
-                  at your own pace.
-                </p>
+                <ul className="divide-y divide-accent/25 border-y border-accent/25">
+                  {sessions.map(({ name, description, id }) => (
+                    <li key={name} className="py-5">
+                      <h3 className="text-[clamp(1.7rem,3vw,2.5rem)] leading-tight tracking-tight">
+                        {name}
+                      </h3>
+                      <p className="mt-2 max-w-[50ch] leading-relaxed text-muted">
+                        {description}
+                      </p>
+                      <a
+                        className="text-link"
+                        aria-label={id ? `Book ${name}` : `Ask about ${name}`}
+                        href={sessionHref(id)}
+                      >
+                        {id ? "Book this session" : "Ask about this session"}{" "}
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <ButtonLink
+                  href={siteLinks.services}
+                  variant="outline"
+                  className="mt-6"
+                >
+                  View all services
+                </ButtonLink>
               </div>
-              <ButtonLink
-                href={siteLinks.products}
-                icon="bag"
-                variant="outline"
-              >
-                View All Products
-              </ButtonLink>
-            </Reveal>
-            <Reveal>
-              <ProductGrid products={products.slice(0, 6)} headingLevel="h3" />
-            </Reveal>
+            </div>
           </section>
 
           <section
             aria-labelledby="about-title"
-            className="wrap section-space grid items-center gap-[clamp(2.25rem,9vw,8rem)] pt-2 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)]"
             id="about"
+            className="about-spread border-y border-line"
           >
-            <Reveal className="tinted-image relative aspect-[5/6] w-full max-w-[22rem] justify-self-start overflow-hidden rounded-t-[50%_38%] rounded-b-2xl border border-accent/45 bg-surface ring-[7px] ring-purple/20 md:max-w-[27rem] md:justify-self-end">
-              <Image
-                src="/aurora/portrait-about.webp"
-                alt="Aurora Luna Star"
-                className="object-cover object-[center_35%]"
-                fill
-                sizes="(min-width: 768px) 40vw, 90vw"
-              />
-            </Reveal>
-            <Reveal>
-              <h2 id="about-title">Meet Aurora</h2>
-              <p className="section-intro">
-                Aurora is an interdimensional channel whose work includes
-                Starseed Akashic Readings, sound activations, and personal
-                empowerment.
-              </p>
-              <p className="mb-6 max-w-[44ch] leading-[1.8] text-muted">
-                As a Soul Vibrational Alchemist, she channels Aum RA Ha Nu,
-                sharing sound, messages, images, and light language to support
-                personal growth and self-discovery.
-              </p>
-              <ButtonLink
-                className="button-featured"
-                href={siteLinks.about}
-                variant="outline"
-              >
-                More about Aurora
-              </ButtonLink>
-            </Reveal>
+            <div className="wrap grid items-center gap-8 py-[clamp(3.5rem,7vw,6rem)] md:grid-cols-[1.2fr_0.8fr] md:gap-16">
+              <Reveal>
+                <h2 id="about-title">
+                  Meet <em className="text-accent">Aurora</em>
+                </h2>
+                <p className="my-6 max-w-[30ch] font-display text-[clamp(1.65rem,3vw,2.6rem)] leading-[1.2] text-pretty">
+                  Aurora shares what comes through in sound, messages, imagery,
+                  and light language.
+                </p>
+                <p className="mb-6 max-w-[48ch] leading-relaxed text-muted">
+                  As a Soul Vibrational Alchemist and interdimensional channel,
+                  she works with Aum RA Ha Nu through Starseed Akashic Readings,
+                  sound activations, and personal empowerment.
+                </p>
+                <ButtonLink
+                  className="button-featured"
+                  href={siteLinks.about}
+                  variant="outline"
+                >
+                  More about Aurora
+                </ButtonLink>
+              </Reveal>
+              <Reveal className="about-portrait relative mx-auto aspect-[4/5] w-[85%] max-w-[23rem]">
+                <Image
+                  src="/aurora/portrait-about.webp"
+                  alt="Aurora Luna Star seated among yellow flowers"
+                  className="rounded-t-full rounded-b-lg object-cover object-[center_35%]"
+                  fill
+                  sizes="(min-width: 768px) 370px, 80vw"
+                />
+              </Reveal>
+            </div>
           </section>
 
           <figure
             aria-label="Client testimonial"
-            className="testimonial nebula-backdrop relative isolate grid items-center overflow-clip border-y border-line text-center"
+            className="testimonial nebula-backdrop relative isolate text-center"
           >
-            <div className="wrap grid min-h-96 content-center justify-items-center py-16 md:min-h-92">
-              <blockquote className="max-w-[58ch] text-[clamp(1.5rem,2.2vw,2.5rem)] leading-[1.45] text-balance tracking-[-0.025em] italic">
-                “Aurora has an extremely powerful gift. My session was one of
-                the most poignant spiritual experiences of my life. It was
+            <div className="wrap grid justify-items-center py-[clamp(4rem,9vw,8rem)]">
+              <span
+                aria-hidden="true"
+                className="h-12 font-display text-8xl leading-none text-accent"
+              >
+                “
+              </span>
+              <blockquote className="max-w-[46ch] font-display text-[clamp(1.65rem,3.1vw,3.15rem)] leading-[1.25] text-balance italic">
+                Aurora has an extremely powerful gift. My session was one of the
+                most poignant spiritual experiences of my life. It was
                 stunningly accurate. I felt as though 10 billion tons of rainbow
                 light flushed my soul of all the inferior energies that had been
-                pulling me down.”
+                pulling me down.
               </blockquote>
-              <figcaption className="mt-[1.35rem] text-accent">
+              <figcaption className="mt-7 flex items-center gap-3 text-sm text-accent">
+                <Image
+                  src="/aurora/testimonials/erik.webp"
+                  alt=""
+                  className="size-10 rounded-full object-cover"
+                  width={40}
+                  height={40}
+                />
                 Erik L.
               </figcaption>
             </div>
           </figure>
 
           <section
-            className="wrap section-space grid items-center gap-[clamp(2rem,6vw,6rem)] md:grid-cols-[1fr_1.15fr]"
-            aria-labelledby="starseeds-title"
+            aria-labelledby="home-products-title"
+            className="wrap section-space"
           >
-            <Reveal>
-              <h2 className="max-w-[14ch]" id="starseeds-title">
-                Embracing your <em className="text-accent">starseed nature</em>
+            <Reveal className="mb-8">
+              <h2 id="home-products-title">
+                Retreats <em className="text-accent">&amp; recordings</em>
               </h2>
-              <p className="section-intro">
-                Do you feel a strong connection to the stars? Explore your star
-                origins, intuitive gifts, and connections to the cosmos.
+              <p className="section-intro max-w-[52ch]">
+                Explore Aurora’s retreats, galactic gatherings, and channeled
+                series.
               </p>
-              <ButtonLink
-                href={siteLinks.starseeds}
-                icon="sparkles"
-                variant="outline"
-              >
-                Explore Starseeds
-              </ButtonLink>
             </Reveal>
-            <Reveal className="relative mx-auto aspect-[5/6] w-full max-w-[29rem] overflow-hidden rounded-2xl border border-line">
-              <Image
-                alt="Illustration of a purple-haired woman beneath a star-filled sky"
-                className="object-cover object-[center_34%]"
-                src="/aurora/hero-aurora.webp"
-                fill
-                sizes="(min-width: 768px) 40vw, 90vw"
+            <Reveal>
+              <ProductGrid
+                products={products.slice(0, 6)}
+                headingLevel="h3"
+                layout="shelf"
               />
             </Reveal>
+            <ButtonLink
+              className="mt-8"
+              href={siteLinks.products}
+              icon="bag"
+              variant="outline"
+            >
+              View all products
+            </ButtonLink>
+          </section>
+
+          <section
+            aria-labelledby="starseeds-title"
+            className="relative isolate overflow-hidden border-t border-accent/25 bg-surface"
+          >
+            <div className="starseed-panorama relative h-[min(76vw,22rem)] md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[60%]">
+              <Image
+                alt="Illustration of a purple-haired woman beneath a star-filled sky"
+                className="object-cover object-[center_29%]"
+                src="/aurora/hero-aurora.webp"
+                fill
+                sizes="(min-width: 768px) 60vw, 100vw"
+              />
+            </div>
+            <div className="wrap relative grid items-center pt-2 pb-12 md:min-h-[34rem] md:py-20">
+              <Reveal className="md:w-[46%]">
+                <h2 id="starseeds-title" className="max-w-[13ch]">
+                  Embracing your{" "}
+                  <em className="text-accent">starseed nature</em>
+                </h2>
+                <p className="section-intro">
+                  Do you feel a strong connection to the stars? Explore your
+                  star origins, intuitive gifts, and connections to the cosmos.
+                </p>
+                <ButtonLink
+                  href={siteLinks.starseeds}
+                  icon="sparkles"
+                  variant="outline"
+                >
+                  Explore Starseeds
+                </ButtonLink>
+              </Reveal>
+            </div>
           </section>
         </div>
       </main>

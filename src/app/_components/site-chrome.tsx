@@ -21,8 +21,8 @@ function Wordmark({ className }: { className: string }) {
 
 export function SiteHeader() {
   return (
-    <header className="site-header sticky top-0 z-2 border-b border-nav-line bg-nav-glass backdrop-blur-lg backdrop-brightness-72">
-      <div className="mx-auto grid min-h-(--header-height) w-[min(100%-2rem,100rem)] grid-cols-[1fr_auto] items-center gap-3 md:w-[min(100%-3rem,100rem)] md:gap-6 xl:grid-cols-[auto_1fr_auto]">
+    <header className="site-header sticky top-0 z-2 border-b border-accent/25 bg-nav-glass backdrop-blur-lg">
+      <div className="mx-auto grid min-h-(--header-height) w-[min(100%-2rem,100rem)] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 md:w-[min(100%-4rem,100rem)] md:gap-6 xl:grid-cols-[auto_1fr_auto]">
         <Wordmark className="max-w-48 md:max-w-54 xl:w-50" />
         <nav
           aria-label="Main navigation"
@@ -30,7 +30,7 @@ export function SiteHeader() {
         >
           {navigation.map(({ href, label }) => (
             <a
-              className="inline-flex min-h-11 items-center text-xs leading-[inherit] tracking-[0.06em] text-foreground uppercase underline-offset-4 hover:underline"
+              className="inline-flex min-h-11 items-center text-sm font-medium text-hero-muted underline-offset-8 hover:text-accent hover:underline"
               href={href}
               key={href}
             >
@@ -90,9 +90,9 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-footer-fill">
       <div className="wrap">
-        <div className="flex flex-col items-start justify-between gap-6 border-b border-line py-12 md:flex-row md:items-center">
-          <h2 className="text-[clamp(2.5rem,4vw,3.75rem)]">
-            Connect with Aurora
+        <div className="flex flex-wrap items-center justify-between gap-6 border-b border-accent/25 py-[clamp(3rem,7vw,6rem)]">
+          <h2 className="text-[clamp(2.75rem,5.5vw,5.5rem)]">
+            Connect <em className="text-accent">with Aurora</em>
           </h2>
           <ButtonLink href={bookingAnchor} icon="calendar">
             Book a Session
@@ -101,11 +101,6 @@ export function SiteFooter() {
         <div className="grid grid-cols-2 gap-x-4 gap-y-7 py-12 md:grid-cols-[1.7fr_1fr_1fr] md:gap-8">
           <div className="col-span-full md:col-auto">
             <Wordmark className="max-w-72" />
-            <div className="mt-[0.9rem] flex flex-wrap items-center gap-x-4">
-              <a className="text-link" href="/#meditation">
-                Get the Free Meditation
-              </a>
-            </div>
             <div className="mt-6">
               <h2 className="mb-3 font-sans text-[0.7rem] leading-normal font-semibold tracking-[0.18em] text-muted uppercase">
                 Follow Aurora

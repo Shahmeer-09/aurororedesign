@@ -34,7 +34,7 @@ export default function ServicesPage() {
                 className="text-[clamp(2.4rem,4vw,3.75rem)]"
                 id="sessions-heading"
               >
-                Choose a session with Aurora
+                Choose a session <em className="text-accent">with Aurora</em>
               </h2>
               <nav
                 aria-label="Session guide"
@@ -53,7 +53,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
               </nav>
-              <div className="relative mt-6 hidden aspect-[4/3] max-w-96 overflow-hidden rounded-2xl border border-line lg:block">
+              <div className="relative mt-6 hidden aspect-[1.25] max-w-96 overflow-hidden rounded-t-full border border-accent/30 lg:block">
                 <Image
                   alt="Aurora playing a crystal singing bowl outdoors"
                   className="object-cover object-bottom"
@@ -63,18 +63,18 @@ export default function ServicesPage() {
                 />
               </div>
             </div>
-            <div className="min-w-0 space-y-9 lg:space-y-11">
+            <div className="min-w-0 space-y-12 lg:space-y-16">
               {sessions.map(({ name, slug, description, details, id }) => (
                 <section
                   aria-labelledby={`${slug}-title`}
-                  className="border-b border-line pb-8 lg:pb-10"
+                  className="border-b border-accent/30 pb-8 lg:pb-10"
                   id={slug}
                   key={slug}
                 >
                   <Reveal>
                     <Image
                       alt=""
-                      className="h-auto w-full rounded-2xl border border-line"
+                      className="h-auto w-full rounded-sm"
                       height={480}
                       sizes="(min-width: 1200px) 670px, (min-width: 1024px) 57vw, 92vw"
                       src={`/aurora/services/${slug}.webp`}
@@ -118,7 +118,7 @@ export default function ServicesPage() {
             </h2>
             <div className="mt-6 grid gap-6 sm:grid-cols-2">
               <figure className="border-t border-line pt-5">
-                <blockquote className="text-2xl leading-snug italic">
+                <blockquote className="font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight text-accent italic">
                   “She met us with open arms”
                 </blockquote>
                 <p className="mt-3 max-w-[49ch] leading-relaxed text-muted">
@@ -131,7 +131,7 @@ export default function ServicesPage() {
                 </figcaption>
               </figure>
               <figure className="border-t border-line pt-5">
-                <blockquote className="text-2xl leading-snug italic">
+                <blockquote className="font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight text-accent italic">
                   “The beautiful safe space she created embraced me like a
                   cocoon”
                 </blockquote>

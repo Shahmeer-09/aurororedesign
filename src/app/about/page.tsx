@@ -30,17 +30,20 @@ export default function AboutPage() {
             aria-labelledby="aurora-work"
             className="wrap grid items-center gap-9 py-16 md:grid-cols-[0.85fr_1.15fr] md:gap-16 md:py-20"
           >
-            <Reveal className="relative mx-auto aspect-[5/6] w-full max-w-104 overflow-hidden rounded-t-[50%_38%] rounded-b-2xl border border-accent/45">
+            <Reveal className="about-portrait relative mx-auto aspect-[5/6] w-[92%] max-w-104 md:aspect-auto md:self-stretch">
               <Image
                 alt="Aurora Luna Star with purple hair in a garden"
-                className="object-cover object-[center_35%]"
+                className="rounded-t-full rounded-b-lg object-cover object-[center_35%]"
                 fill
                 sizes="(min-width: 1024px) 416px, (min-width: 768px) 45vw, 90vw"
                 src="/aurora/portrait-about.webp"
               />
             </Reveal>
             <div>
-              <h2 id="aurora-work">Alchemy, alignment &amp; ascension</h2>
+              <h2 id="aurora-work">
+                Alchemy, alignment{" "}
+                <em className="text-accent">&amp; ascension</em>
+              </h2>
               <div className="mt-6 max-w-[60ch] space-y-4 leading-relaxed text-muted">
                 <p>
                   Aurora Luna Star is an interdimensional channel. Through
@@ -78,7 +81,7 @@ export default function AboutPage() {
             </div>
           </section>
           <section aria-labelledby="mission-title" className="wrap">
-            <Reveal className="mx-auto max-w-[60rem] border-y border-line py-9 md:py-12">
+            <Reveal className="mx-auto max-w-[60rem] border-y border-accent/30 py-10 md:grid md:grid-cols-[1fr_1.7fr] md:gap-x-12 md:py-16 [&>p]:col-start-2">
               <h2
                 className="text-[clamp(2.25rem,4vw,3.5rem)]"
                 id="mission-title"
