@@ -16,7 +16,7 @@ Booking, commerce, and the remaining live pages remain on their current systems.
 ## Media page scope
 
 - Use a compact image banner for Speaking Engagements and a wide presenter feature with Aurora’s original stage photograph.
-- Include all distinct recordings from the live media kit and link each one to YouTube. Direct speaking inquiries to Aurora’s contact page.
+- Present Aurora’s speaking experience and direct event inquiries to her contact page.
 - Serve the redesign at `/media` and redirect the original `/mediakit/` path within this app. [Live Media page](https://auroralunastar.com/mediakit/)
 
 ## About and Starseeds scope
@@ -37,7 +37,7 @@ Booking, commerce, and the remaining live pages remain on their current systems.
 
 ## Acceptance criteria
 
-- The centered hero, navigation, and footer fit at mobile, tablet, and desktop widths.
+- The hero, navigation, and footer fit at mobile, tablet, and desktop widths. The homepage hero centers its copy and buttons.
 - The menu works by keyboard and closes with Escape. Booking and meditation links reach their intended destinations.
 - The video loops on mobile, tablet, and desktop, with a poster fallback. Visitors who prefer reduced motion see a static presentation. A specialty marquee separates the full-height opening from the meditation signup.
 - The Flodesk form can load and report errors. Confirm delivery with an approved test address before launch.

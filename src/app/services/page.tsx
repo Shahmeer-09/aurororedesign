@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button";
 import { PageHero } from "../_components/page-hero";
+import { Reveal } from "../_components/reveal";
 import { SiteFooter, SiteHeader } from "../_components/site-chrome";
 import { sessionHref, sessions } from "./sessions";
 
@@ -70,14 +71,16 @@ export default function ServicesPage() {
                   id={slug}
                   key={slug}
                 >
-                  <Image
-                    alt=""
-                    className="h-auto w-full rounded-2xl border border-line"
-                    height={480}
-                    sizes="(min-width: 1200px) 670px, (min-width: 1024px) 57vw, 92vw"
-                    src={`/aurora/services/${slug}.webp`}
-                    width={960}
-                  />
+                  <Reveal>
+                    <Image
+                      alt=""
+                      className="h-auto w-full rounded-2xl border border-line"
+                      height={480}
+                      sizes="(min-width: 1200px) 670px, (min-width: 1024px) 57vw, 92vw"
+                      src={`/aurora/services/${slug}.webp`}
+                      width={960}
+                    />
+                  </Reveal>
                   <h3
                     className="mt-5 text-[clamp(2rem,4vw,3rem)] leading-none tracking-[-0.025em]"
                     id={`${slug}-title`}

@@ -5,6 +5,10 @@
 
 ## Current rework
 
+- Restored centered homepage hero copy and buttons over the video and removed the circular logo from the layout. Chrome confirmed the centered layout at four widths from 390px to 1920px.
+
+- Strengthened the shared Motion reveals to a 600ms fade and 32px rise triggered 64px inside the viewport. Home now includes the complete meditation panel, service cards, product group, and About and Starseeds copy. Lint, TypeScript, and a production build passed. Chrome on port 3058 confirmed desktop and mobile entrances, no replay, reduced-motion changes, and visible content without JavaScript.
+
 - The taller navbar stays pinned with a more transparent plum tint and visible backdrop blur. Primary buttons across the site, including the Flodesk signup, use hot pink and a purple hover glow. Secondary buttons use lavender outlines. Shared interior banners have a 400px minimum height.
 
 - Reworked Services using the live session descriptions, service artwork, singing-bowl portrait, and two client testimonials. The session guide jumps directly to each service.
@@ -16,14 +20,14 @@
 - About reuses Aurora’s original portrait, expands the biography and mission, and presents all four full testimonials with the original portrait selectors. Starseeds uses four original illustrations and directs Blueprint Activator inquiries to Contact.
 
 - Redesigned `/products` with a compact title and all nine first-page products, local cover thumbnails, and links to the live shop for purchase.
-- Redesigned `/media` around a galaxy banner, a presenter feature, and eight YouTube recordings. The Vercel deployment returned 404 for the presenter asset because the Media WebPs were missing from the repository. Restored the presenter photo and all eight thumbnails in `public/aurora/media/`. The nine direct and nine optimized image requests returned HTTP 200 and decoded locally. The next deployment needs to include these files.
+- The Media page shows the speaking banner, presenter feature, stage photograph, and speaking inquiry button. Removed the recorded appearances section and its jump link.
 - Added a redirect from `/mediakit/` to `/media` within the Next.js app and updated shared navigation links to reach the homepage sections from Media.
 
 - Migrated page layouts and shared controls to Tailwind utilities. Edit the palette in `src/app/globals.css`. The Tailwind stylesheet compiled, and lint and TypeScript passed. The latest Media production build compiled the shared Tailwind styles.
 
 - The action purple samples Aurora’s hair. The CSS theme controls the palette, including the hero tint and decorative glows. Lint and default and hover button contrast checks passed.
 
-- Full-viewport opening with Colin Jones’s purple nebula footage from Pexels. The local 14-second loop uses a crossfaded join and a matching poster. The neutral black overlay is strongest behind the copy for readability across bright frames. Tailwind compilation and lint confirmed the overlay update.
+- The homepage plays Aurora Luna Star’s original hero MP4 from a local copy, with a matching poster for reduced motion. Lint and the production build passed. Chrome confirmed playback, the poster fallback, and the updated Media page on the production preview at port 3060.
 - The Fear Clear panel uses the original Muse summit artwork. Session cards sit above a six-product preview. Meet Aurora has an arched portrait frame, and Starseeds uses the supplied illustration.
 
 ## Completed

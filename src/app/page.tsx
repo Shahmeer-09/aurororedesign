@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/button";
 import { HeroMotion } from "./_components/hero-motion";
 import { MeditationForm } from "./_components/meditation-form";
+import { Reveal } from "./_components/reveal";
 import { SiteFooter, SiteHeader } from "./_components/site-chrome";
 import { getProductsPage } from "./products/catalog";
 import { ProductGrid } from "./products/product-grid";
@@ -32,10 +33,10 @@ export default async function Home() {
       <SiteHeader />
       <main id="main">
         <section
-          className="relative isolate grid min-h-[calc(100svh-var(--header-height))] place-items-center bg-hero-fill py-12 text-center md:py-16"
+          className="home-hero relative isolate grid min-h-[calc(100svh-var(--header-height))] place-items-center bg-hero-fill py-12 text-center md:py-16"
           aria-labelledby="hero-title"
         >
-          <div className="wrap">
+          <div className="wrap relative z-2">
             <p className="mb-4 text-[0.72rem] font-semibold tracking-[0.2em] text-accent uppercase md:mb-5">
               Aurora Luna Star
             </p>
@@ -102,7 +103,7 @@ export default async function Home() {
             id="meditation"
             aria-labelledby="meditation-title"
           >
-            <div className="grid overflow-hidden rounded-[1.75rem] border border-line bg-meditation-fill md:grid-cols-[0.95fr_1.15fr]">
+            <Reveal className="grid overflow-hidden rounded-[1.75rem] border border-line bg-meditation-fill md:grid-cols-[0.95fr_1.15fr]">
               <div className="tinted-image relative isolate min-h-[clamp(15rem,65vw,18.75rem)] md:min-h-[33.5625rem]">
                 <Image
                   alt="A woman opens her arms above sunlit mountain clouds"
@@ -128,7 +129,7 @@ export default async function Home() {
                 </p>
                 <MeditationForm />
               </div>
-            </div>
+            </Reveal>
           </section>
 
           <section
@@ -136,49 +137,53 @@ export default async function Home() {
             className="wrap pb-12 md:pb-16"
             id="sessions"
           >
-            <h2 id="sessions-title">Sessions with Aurora</h2>
-            <p className="section-intro">
-              A space to reconnect with yourself, explore your gifts, and move
-              forward with clarity.
-            </p>
-            <ul className="mt-8 mb-5 grid gap-5 md:grid-cols-3">
-              {sessions.map(({ name, description, id }, index) => (
-                <li
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-linear-to-b from-surface/85 to-background/60 p-6 motion-safe:transition-[transform,border-color,box-shadow] motion-safe:duration-300 motion-safe:hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_18px_50px_-24px_var(--purple-hover)] lg:p-8"
-                  key={name}
-                >
-                  <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-accent/60 to-transparent opacity-60 group-hover:opacity-100"
-                  />
-                  <div className="mb-5 flex items-center gap-4">
-                    <span className="font-display text-sm tracking-[0.35em] text-accent/80">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className="h-px flex-1 bg-line group-hover:bg-accent/40 motion-safe:transition-colors motion-safe:duration-300" />
-                  </div>
-                  <h3 className="text-[clamp(1.85rem,2.6vw,2.6rem)] leading-[1.05] tracking-[-0.025em] text-balance">
-                    {name}
-                  </h3>
-                  <p className="mt-4 mb-6 max-w-[40ch] leading-[1.75] text-muted">
-                    {description}
-                  </p>
-                  <a
-                    aria-label={id ? `Book ${name}` : `Ask about ${name}`}
-                    className="mt-auto inline-flex min-h-11 items-center gap-2 self-start text-sm font-semibold text-accent underline decoration-1 underline-offset-[0.32em] hover:text-foreground"
-                    href={sessionHref(id)}
+            <Reveal>
+              <h2 id="sessions-title">Sessions with Aurora</h2>
+              <p className="section-intro">
+                A space to reconnect with yourself, explore your gifts, and move
+                forward with clarity.
+              </p>
+            </Reveal>
+            <Reveal>
+              <ul className="mt-8 mb-5 grid gap-5 md:grid-cols-3">
+                {sessions.map(({ name, description, id }, index) => (
+                  <li
+                    className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-linear-to-b from-surface/85 to-background/60 p-6 motion-safe:transition-[transform,border-color,box-shadow] motion-safe:duration-300 motion-safe:hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_18px_50px_-24px_var(--purple-hover)] lg:p-8"
+                    key={name}
                   >
-                    {id ? "Book this session" : "Ask about this session"}
-                    <span
+                    <div
                       aria-hidden="true"
-                      className="inline-block motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:translate-x-1"
+                      className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-accent/60 to-transparent opacity-60 group-hover:opacity-100"
+                    />
+                    <div className="mb-5 flex items-center gap-4">
+                      <span className="font-display text-sm tracking-[0.35em] text-accent/80">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="h-px flex-1 bg-line group-hover:bg-accent/40 motion-safe:transition-colors motion-safe:duration-300" />
+                    </div>
+                    <h3 className="text-[clamp(1.85rem,2.6vw,2.6rem)] leading-[1.05] tracking-[-0.025em] text-balance">
+                      {name}
+                    </h3>
+                    <p className="mt-4 mb-6 max-w-[40ch] leading-[1.75] text-muted">
+                      {description}
+                    </p>
+                    <a
+                      aria-label={id ? `Book ${name}` : `Ask about ${name}`}
+                      className="mt-auto inline-flex min-h-11 items-center gap-2 self-start text-sm font-semibold text-accent underline decoration-1 underline-offset-[0.32em] hover:text-foreground"
+                      href={sessionHref(id)}
                     >
-                      ↗
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
+                      {id ? "Book this session" : "Ask about this session"}
+                      <span
+                        aria-hidden="true"
+                        className="inline-block motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:translate-x-1"
+                      >
+                        ↗
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
             <a className="text-link" href={siteLinks.services}>
               View all services
             </a>
@@ -188,7 +193,7 @@ export default async function Home() {
             aria-labelledby="home-products-title"
             className="wrap border-t border-line pt-10 pb-16 md:pt-14 md:pb-20"
           >
-            <div className="mb-9 flex flex-wrap items-end justify-between gap-x-8 gap-y-5">
+            <Reveal className="mb-9 flex flex-wrap items-end justify-between gap-x-8 gap-y-5">
               <div>
                 <p className="mb-4 text-[0.72rem] font-semibold tracking-[0.2em] text-accent uppercase">
                   Gatherings & Recordings
@@ -206,8 +211,10 @@ export default async function Home() {
               >
                 View All Products
               </ButtonLink>
-            </div>
-            <ProductGrid products={products.slice(0, 6)} headingLevel="h3" />
+            </Reveal>
+            <Reveal>
+              <ProductGrid products={products.slice(0, 6)} headingLevel="h3" />
+            </Reveal>
           </section>
 
           <section
@@ -215,7 +222,7 @@ export default async function Home() {
             className="wrap section-space grid items-center gap-[clamp(2.25rem,9vw,8rem)] pt-2 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)]"
             id="about"
           >
-            <div className="tinted-image relative aspect-[5/6] w-full max-w-[22rem] justify-self-start overflow-hidden rounded-t-[50%_38%] rounded-b-2xl border border-accent/45 bg-surface ring-[7px] ring-purple/20 md:max-w-[27rem] md:justify-self-end">
+            <Reveal className="tinted-image relative aspect-[5/6] w-full max-w-[22rem] justify-self-start overflow-hidden rounded-t-[50%_38%] rounded-b-2xl border border-accent/45 bg-surface ring-[7px] ring-purple/20 md:max-w-[27rem] md:justify-self-end">
               <Image
                 src="/aurora/portrait-about.webp"
                 alt="Aurora Luna Star"
@@ -223,8 +230,8 @@ export default async function Home() {
                 fill
                 sizes="(min-width: 768px) 40vw, 90vw"
               />
-            </div>
-            <div>
+            </Reveal>
+            <Reveal>
               <h2 id="about-title">Meet Aurora</h2>
               <p className="section-intro">
                 Aurora is an interdimensional channel whose work includes
@@ -243,7 +250,7 @@ export default async function Home() {
               >
                 More about Aurora
               </ButtonLink>
-            </div>
+            </Reveal>
           </section>
 
           <figure
@@ -268,7 +275,7 @@ export default async function Home() {
             className="wrap section-space grid items-center gap-[clamp(2rem,6vw,6rem)] md:grid-cols-[1fr_1.15fr]"
             aria-labelledby="starseeds-title"
           >
-            <div>
+            <Reveal>
               <h2 className="max-w-[14ch]" id="starseeds-title">
                 Embracing your <em className="text-accent">starseed nature</em>
               </h2>
@@ -283,8 +290,8 @@ export default async function Home() {
               >
                 Explore Starseeds
               </ButtonLink>
-            </div>
-            <div className="relative mx-auto aspect-[5/6] w-full max-w-[29rem] overflow-hidden rounded-2xl border border-line">
+            </Reveal>
+            <Reveal className="relative mx-auto aspect-[5/6] w-full max-w-[29rem] overflow-hidden rounded-2xl border border-line">
               <Image
                 alt="Illustration of a purple-haired woman beneath a star-filled sky"
                 className="object-cover object-[center_34%]"
@@ -292,7 +299,7 @@ export default async function Home() {
                 fill
                 sizes="(min-width: 768px) 40vw, 90vw"
               />
-            </div>
+            </Reveal>
           </section>
         </div>
       </main>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button";
 import { PageHero } from "../_components/page-hero";
+import { Reveal } from "../_components/reveal";
 import { SiteFooter, SiteHeader } from "../_components/site-chrome";
 import { siteLinks } from "../site-links";
 
@@ -96,7 +97,11 @@ export default function StarseedsPage() {
             className="wrap border-t border-line pt-10 pb-16 md:pt-14 md:pb-20"
             id="starseed-offerings"
           >
-            <h2 id="starseed-offerings-title">Explore your star connections</h2>
+            <Reveal>
+              <h2 id="starseed-offerings-title">
+                Explore your star connections
+              </h2>
+            </Reveal>
             <ul className="mt-8">
               {offerings.map(
                 ({ title, image, format, description, action, href }) => (

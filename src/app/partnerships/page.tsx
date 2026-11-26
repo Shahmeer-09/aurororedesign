@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button";
 import { PageHero } from "../_components/page-hero";
+import { Reveal } from "../_components/reveal";
 import { SiteFooter, SiteHeader } from "../_components/site-chrome";
 
 export const metadata: Metadata = {
@@ -49,7 +50,7 @@ export default function PartnershipsPage() {
             aria-labelledby="kejiwa-heading"
             className="wrap grid items-center gap-8 py-12 md:grid-cols-[1fr_0.85fr] md:gap-16 md:py-18"
           >
-            <div className="relative aspect-[5/4] w-full overflow-hidden rounded-2xl border border-line md:order-2 md:aspect-[5/5.5]">
+            <Reveal className="relative aspect-[5/4] w-full overflow-hidden rounded-2xl border border-line md:order-2 md:aspect-[5/5.5]">
               <Image
                 alt="Two Kejiwa bottles on a table with a small glass and copper beads"
                 className="object-cover object-[center_65%]"
@@ -57,7 +58,7 @@ export default function PartnershipsPage() {
                 sizes="(min-width: 1200px) 460px, (min-width: 768px) 42vw, 92vw"
                 src="/aurora/partnerships/kejiwa.webp"
               />
-            </div>
+            </Reveal>
             <div>
               <h2 id="kejiwa-heading">Kejiwa</h2>
               <p className="mt-4 font-display text-2xl leading-tight text-accent">
@@ -91,7 +92,7 @@ export default function PartnershipsPage() {
             aria-labelledby="twistedsage-heading"
             className="wrap border-t border-line py-12 md:py-18"
           >
-            <div className="grid items-start gap-x-12 gap-y-4 md:grid-cols-[0.85fr_1.15fr]">
+            <Reveal className="grid items-start gap-x-12 gap-y-4 md:grid-cols-[0.85fr_1.15fr]">
               <div>
                 <h2 id="twistedsage-heading">TwistedSage</h2>
                 <p className="mt-3 font-display text-2xl leading-tight text-accent">
@@ -114,7 +115,7 @@ export default function PartnershipsPage() {
                   Visit TwistedSage
                 </ButtonLink>
               </div>
-            </div>
+            </Reveal>
             <ul
               aria-label="TwistedSage pieces"
               className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4"

@@ -22,7 +22,7 @@
   --nav-line: #c097e36b;
   --menu-scrim: #0b0714bb;
   --hero-fill: #1c0e28;
-  --hero-center-scrim: rgb(0 0 0 / 42%);
+  --hero-center-scrim: rgb(0 0 0 / 68%);
   --hero-edge-scrim: rgb(0 0 0 / 44%);
   --hero-lower-scrim: rgb(0 0 0 / 48%);
   --hero-text-shadow: #130a20ad;
@@ -240,21 +240,27 @@ html:has(#mobile-menu[open]) {
 
 .hero-backdrop::after {
   position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(
+    180deg,
+    var(--hero-edge-scrim),
+    var(--hero-edge-scrim) 56%,
+    var(--hero-lower-scrim)
+  );
+}
+
+.home-hero::after {
+  position: absolute;
   z-index: 1;
   inset: 0;
   content: "";
-  background:
-    radial-gradient(
-      ellipse at 50% 48%,
-      var(--hero-center-scrim) 32%,
-      transparent 76%
-    ),
-    linear-gradient(
-      180deg,
-      var(--hero-edge-scrim),
-      var(--hero-edge-scrim) 56%,
-      var(--hero-lower-scrim)
-    );
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 58% 57% at center,
+    var(--hero-center-scrim) 35%,
+    transparent 90%
+  );
 }
 
 .star-field {

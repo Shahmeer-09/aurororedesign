@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button";
 import { PageHero } from "../_components/page-hero";
+import { Reveal } from "../_components/reveal";
 import { SiteFooter, SiteHeader } from "../_components/site-chrome";
 import { bookingAnchor, siteLinks } from "../site-links";
 import { TestimonialSlider } from "./testimonial-slider";
@@ -29,7 +30,7 @@ export default function AboutPage() {
             aria-labelledby="aurora-work"
             className="wrap grid items-center gap-9 py-16 md:grid-cols-[0.85fr_1.15fr] md:gap-16 md:py-20"
           >
-            <div className="relative mx-auto aspect-[5/6] w-full max-w-104 overflow-hidden rounded-t-[50%_38%] rounded-b-2xl border border-accent/45">
+            <Reveal className="relative mx-auto aspect-[5/6] w-full max-w-104 overflow-hidden rounded-t-[50%_38%] rounded-b-2xl border border-accent/45">
               <Image
                 alt="Aurora Luna Star with purple hair in a garden"
                 className="object-cover object-[center_35%]"
@@ -37,7 +38,7 @@ export default function AboutPage() {
                 sizes="(min-width: 1024px) 416px, (min-width: 768px) 45vw, 90vw"
                 src="/aurora/portrait-about.webp"
               />
-            </div>
+            </Reveal>
             <div>
               <h2 id="aurora-work">Alchemy, alignment &amp; ascension</h2>
               <div className="mt-6 max-w-[60ch] space-y-4 leading-relaxed text-muted">
@@ -77,7 +78,7 @@ export default function AboutPage() {
             </div>
           </section>
           <section aria-labelledby="mission-title" className="wrap">
-            <div className="mx-auto max-w-[60rem] border-y border-line py-9 md:py-12">
+            <Reveal className="mx-auto max-w-[60rem] border-y border-line py-9 md:py-12">
               <h2
                 className="text-[clamp(2.25rem,4vw,3.5rem)]"
                 id="mission-title"
@@ -96,7 +97,7 @@ export default function AboutPage() {
                 their limitless nature and see themselves as the master beings
                 they’ve always been.
               </p>
-            </div>
+            </Reveal>
           </section>
           <TestimonialSlider />
         </div>
