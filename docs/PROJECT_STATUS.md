@@ -16,7 +16,7 @@
 - About reuses Aurora’s original portrait, expands the biography and mission, and presents all four full testimonials with the original portrait selectors. Starseeds uses four original illustrations and directs Blueprint Activator inquiries to Contact.
 
 - Redesigned `/products` with a compact title and all nine first-page products, local cover thumbnails, and links to the live shop for purchase.
-- Redesigned `/media` around a compact galaxy banner, a wider presenter feature, and the eight distinct YouTube recordings in the live media kit. The presenter photo and all eight thumbnails are local WebP assets.
+- Redesigned `/media` around a galaxy banner, a presenter feature, and eight YouTube recordings. The Vercel deployment returned 404 for the presenter asset because the Media WebPs were missing from the repository. Restored the presenter photo and all eight thumbnails in `public/aurora/media/`. The nine direct and nine optimized image requests returned HTTP 200 and decoded locally. The next deployment needs to include these files.
 - Added a redirect from `/mediakit/` to `/media` within the Next.js app and updated shared navigation links to reach the homepage sections from Media.
 
 - Migrated page layouts and shared controls to Tailwind utilities. Edit the palette in `src/app/globals.css`. The Tailwind stylesheet compiled, and lint and TypeScript passed. The latest Media production build compiled the shared Tailwind styles.
