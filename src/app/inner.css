@@ -58,7 +58,7 @@
   background:
     linear-gradient(180deg, #211022c7, transparent 42%),
     radial-gradient(
-      ellipse at var(--title-focus, 50% 60%),
+      ellipse at 50% 60%,
       #241326b8,
       transparent 72%
     );
@@ -199,15 +199,6 @@
   .edition-cta {
     min-height: 90vh;
     min-height: 90svh;
-  }
-  .services-edition .edition-hero,
-  .shop-edition .edition-hero {
-    --title-focus: 25% 62%;
-    text-align: left;
-  }
-  .media-edition .edition-hero {
-    --title-focus: 75% 62%;
-    text-align: right;
   }
   .story-pair {
     grid-template-columns: 1fr 0.8fr;
