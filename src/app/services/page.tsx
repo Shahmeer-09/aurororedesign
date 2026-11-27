@@ -1,7 +1,7 @@
+import "../inner.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button";
-import { PageHero } from "../_components/page-hero";
 import { Reveal } from "../_components/reveal";
 import { SiteHeader } from "../_components/site-chrome";
 import { sessionHref, sessions } from "./sessions";
@@ -22,20 +22,22 @@ export default function ServicesPage() {
         Skip to content
       </a>
       <SiteHeader />
-      <main id="main">
-        <PageHero title="Services" />
+      <main className="edition" id="main">
         <div>
           <section
             aria-labelledby="sessions-heading"
             className="wrap grid gap-10 py-12 lg:grid-cols-[minmax(16rem,0.75fr)_minmax(0,1.25fr)] lg:gap-20 lg:py-18"
           >
             <div className="self-start lg:sticky lg:top-[calc(var(--header-height)+2rem)]">
-              <h2
+              <h1
                 className="text-[clamp(2.4rem,4vw,3.75rem)]"
                 id="sessions-heading"
               >
-                Choose a session with Aurora
-              </h2>
+                Sessions with <em>Aurora</em>
+              </h1>
+              <p className="mt-4">
+                Private sessions in guided meditation and the Akashic Records.
+              </p>
               <nav
                 aria-label="Session guide"
                 className="mt-5 border-t border-line"
@@ -53,7 +55,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
               </nav>
-              <div className="relative mt-6 hidden aspect-[1.25] max-w-96 overflow-hidden rounded-t-full border border-line lg:block">
+              <div className="relative mt-6 aspect-[1.5] max-w-96 overflow-hidden">
                 <Image
                   alt="Aurora playing a crystal singing bowl outdoors"
                   className="object-cover object-bottom"
@@ -81,12 +83,12 @@ export default function ServicesPage() {
                       width={960}
                     />
                   </Reveal>
-                  <h3
+                  <h2
                     className="mt-5 text-[clamp(2rem,4vw,3rem)] leading-none tracking-[-0.025em]"
                     id={`${slug}-title`}
                   >
                     {name}
-                  </h3>
+                  </h2>
                   <p className="mt-3 max-w-[65ch] leading-relaxed text-foreground">
                     {description}
                   </p>

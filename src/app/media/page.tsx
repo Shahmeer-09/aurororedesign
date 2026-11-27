@@ -1,10 +1,11 @@
+import "../inner.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button";
-import { PageHero } from "../_components/page-hero";
 import { Reveal } from "../_components/reveal";
 import { SiteHeader } from "../_components/site-chrome";
 import { siteLinks } from "../site-links";
+import { Recording } from "./recording";
 
 export const metadata: Metadata = {
   title: "Media & Speaking | Aurora Luna Star",
@@ -45,13 +46,23 @@ export default function MediaPage() {
         Skip to content
       </a>
       <SiteHeader />
-      <main id="main">
-        <PageHero
-          title="Media & speaking"
-          subtitle="Interviews, talks & channelings"
-        />
-
+      <main className="edition" id="main">
         <div>
+          <section className="feature-band">
+            <div className="wrap media-opening">
+              <Recording id={recordings[0].id} title={recordings[0].title} />
+              <div>
+                <p className="kicker">Media &amp; speaking</p>
+                <h1>{recordings[0].title}</h1>
+                <a
+                  className="text-link"
+                  href={`https://www.youtube.com/watch?v=${recordings[0].id}`}
+                >
+                  Watch on YouTube ↗
+                </a>
+              </div>
+            </div>
+          </section>
           <section
             aria-labelledby="appearances-title"
             className="wrap section-space"
@@ -59,7 +70,7 @@ export default function MediaPage() {
           >
             <h2 id="appearances-title">Recorded appearances</h2>
             <ul className="mt-8 grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
-              {recordings.map(({ id, title }) => (
+              {recordings.slice(1).map(({ id, title }) => (
                 <li key={id}>
                   <a
                     className="group flex h-full flex-col border-t border-line pt-3"

@@ -3,6 +3,10 @@
 - **Last updated** · 2026-11-27
 - **Current phase** · Public site pages ready for review
 
+## Inner page preview
+
+About, Services, Starseeds, Media and Products now use the homepage palette. Chrome rendered all five routes at 1440px and 390px with all main images loaded and no horizontal overflow. The featured player creates its iframe on click. Live playback, booking and payment completion were not verified.
+
 ## Homepage demo
 
 The local homepage pairs the supplied Aurora title artwork and original video with an ivory portrait introduction, session guide, full Erik L. testimonial over the Milky Way video, Fear Clear signup, and selected shop links. All eight pages now use the GSAP hamburger menu and the root-layout booking footer. The hero uses the original video and centered title. Home in the menu shows Aurora’s garden portrait. Desktop chapters have a 92svh minimum, and the shared plaster-textured footer links portraits to About, Services, and Media. Desktop and mobile Chrome verified navigation, Escape, focus return, reduced motion, and cross-page booking links.

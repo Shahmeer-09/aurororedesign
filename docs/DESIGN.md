@@ -86,11 +86,7 @@ Content uses a centered 72rem maximum container; the full navigation header can 
 
 The homepage uses its own [editorial stylesheet](../src/app/home.css). Pair a rectangular garden portrait with the introduction on ivory. Follow with the three illustrated sessions, a full-width Milky Way testimonial, the Fear Clear signup on a bright pink fur texture with dark plum text and a raspberry-plum signup action, and a retreat cover beside three recording links. On narrow screens these spreads stack. Keep photography static. The hero footage has up to 48px of desktop scroll travel and a still poster for reduced motion. Both background videos play in view when motion is enabled.
 
-Media leads with eight linked recording thumbnails, followed by a presenter feature with the original stage photograph and a speaking inquiry button. Interior pages with banners use the shared `PageHero` component with a flat surface and fluid title. Products opens directly with a compact title and cover grid. [Live Media page](https://auroralunastar.com/mediakit/)
-
-About pairs the original portrait with the biography, followed by a two-column text-only mission section and a testimonial slider aligned to the same column. Portraits and the author name sit above a quote area sized to the active testimonial with timed rotation. Starseeds uses the shared title band and original artwork alongside its introduction, followed by three illustrated offering columns on desktop.
-
-Services, Partnerships, and Contact use the shared banner. Services places a session guide and Aurora’s original singing-bowl portrait beside detailed session entries. Partnerships uses an editorial Kejiwa feature and gives the TwistedSage gallery the full content width. Contact uses Aurora’s original portrait beside the hosted form at desktop widths.
+About, Services, Starseeds, Media and Products use the homepage’s ivory paper, plum ink and bronze links through the scoped inner stylesheet. About opens with a garden portrait and closes with Shanna’s words and Services. Services pairs a session index and singing-bowl photograph with the three booking or inquiry entries. Starseeds opens with a definition alongside original artwork. Media features one recording with an on-demand player and seven more direct links. Products pairs the two retreat payment options before the recording catalog. Partnerships and Contact retain their shared interior banner.
 
 ## Elevation & Depth
 

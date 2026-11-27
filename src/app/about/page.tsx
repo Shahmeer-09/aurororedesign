@@ -1,7 +1,7 @@
+import "../inner.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button";
-import { PageHero } from "../_components/page-hero";
 import { Reveal } from "../_components/reveal";
 import { SiteHeader } from "../_components/site-chrome";
 import { bookingAnchor, siteLinks } from "../site-links";
@@ -23,8 +23,7 @@ export default function AboutPage() {
         Skip to content
       </a>
       <SiteHeader />
-      <main id="main">
-        <PageHero title="About Aurora" />
+      <main className="edition" id="main">
         <div>
           <section
             aria-labelledby="aurora-work"
@@ -33,14 +32,16 @@ export default function AboutPage() {
             <Reveal className="about-portrait relative mx-auto aspect-[5/6] w-[92%] max-w-104 md:aspect-auto md:self-stretch">
               <Image
                 alt="Aurora Luna Star with purple hair in a garden"
-                className="rounded-t-full rounded-b-lg object-cover object-[center_35%]"
+                className="object-cover object-[center_35%]"
                 fill
                 sizes="(min-width: 1024px) 416px, (min-width: 768px) 45vw, 90vw"
                 src="/aurora/portrait-about.webp"
               />
             </Reveal>
             <div>
-              <h2 id="aurora-work">Alchemy, alignment &amp; ascension</h2>
+              <h1 id="aurora-work">
+                Meet <em>Aurora</em>
+              </h1>
               <div className="mt-6 max-w-[60ch] space-y-4 leading-relaxed text-muted">
                 <p>
                   Aurora Luna Star is an interdimensional channel. Through
@@ -48,6 +49,25 @@ export default function AboutPage() {
                   empowerment work, she invites people to explore their gifts
                   and find their own sense of spiritual direction.
                 </p>
+              </div>
+              <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
+                <ButtonLink
+                  className="min-h-12"
+                  href={bookingAnchor}
+                  icon="calendar"
+                >
+                  Book a Session
+                </ButtonLink>
+                <a className="text-link" href={siteLinks.media}>
+                  Explore Aurora’s speaking work
+                </a>
+              </div>
+            </div>
+          </section>
+          <section className="story-band">
+            <div className="wrap story-pair">
+              <div>
+                <h2>Sound and light language</h2>{" "}
                 <p>
                   As a Soul Vibrational Alchemist, Aurora describes connecting
                   with Aum RA Ha Nu, a collective she knows as
@@ -63,18 +83,12 @@ export default function AboutPage() {
                   to recognize one’s own potential.
                 </p>
               </div>
-              <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
-                <ButtonLink
-                  className="min-h-12"
-                  href={bookingAnchor}
-                  icon="calendar"
-                >
-                  Book a Session
-                </ButtonLink>
-                <a className="text-link" href={siteLinks.media}>
-                  Explore Aurora’s speaking work
-                </a>
-              </div>
+              <Image
+                width={780}
+                height={1170}
+                src="/aurora/services/aurora.webp"
+                alt="Aurora sounding a crystal bowl outdoors"
+              />
             </div>
           </section>
           <section aria-labelledby="mission-title" className="wrap">
@@ -99,7 +113,18 @@ export default function AboutPage() {
               </p>
             </Reveal>
           </section>
-          <TestimonialSlider />
+          <section className="wrap closing">
+            <details>
+              <summary>Read more client stories</summary>
+              <TestimonialSlider />
+            </details>
+            <blockquote>
+              “You can just feel the difference walking into any space that she
+              has created.”
+            </blockquote>
+            <p>Shanna S.</p>
+            <ButtonLink href="/services">Explore sessions</ButtonLink>
+          </section>
         </div>
       </main>
     </>

@@ -1,7 +1,7 @@
+import "../inner.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button";
-import { PageHero } from "../_components/page-hero";
 import { Reveal } from "../_components/reveal";
 import { SiteHeader } from "../_components/site-chrome";
 import { siteLinks } from "../site-links";
@@ -52,15 +52,16 @@ export default function StarseedsPage() {
         Skip to content
       </a>
       <SiteHeader />
-      <main id="main">
-        <PageHero title="Embracing your starseed nature" />
+      <main className="edition" id="main">
         <div>
           <section
             aria-labelledby="what-is-a-starseed"
-            className="wrap grid items-center gap-8 py-14 md:grid-cols-[1.1fr_0.9fr] md:gap-16 md:py-20"
+            className="wrap star-opening grid items-center gap-8 py-14 md:grid-cols-[1.1fr_0.9fr] md:gap-16 md:py-20"
           >
             <div>
-              <h2 id="what-is-a-starseed">What is a starseed?</h2>
+              <h1 id="what-is-a-starseed">
+                What is a <em>starseed?</em>
+              </h1>
               <div className="mt-6 max-w-[60ch] space-y-4 leading-relaxed text-muted">
                 <p>
                   In Aurora’s spiritual practice, a starseed is someone who
@@ -81,7 +82,7 @@ export default function StarseedsPage() {
             </div>
             <Image
               alt=""
-              className="mx-auto h-auto w-full max-w-100 rounded-2xl border border-line"
+              className="mx-auto h-auto w-full max-w-100 rounded-full"
               height={900}
               sizes="(min-width: 768px) 400px, 90vw"
               src="/aurora/starseeds/welcome.webp"

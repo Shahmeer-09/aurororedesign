@@ -1,0 +1,134 @@
+.edition {
+  --background: #f5efe5;
+  --surface: #e9ded2;
+  --foreground: #302231;
+  --muted: #61525a;
+  --accent: #704733;
+  --accent-hover: #503345;
+  --accent-ink: #fff9f2;
+  --line: #c2b1a7;
+  --control-line: #886e77;
+  background: var(--background);
+  color: var(--foreground);
+  color-scheme: light;
+}
+.edition h1 {
+  font-size: clamp(3.5rem, 6.5vw, 6.5rem);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+.edition h1 em {
+  color: #815743;
+}
+.edition .button {
+  border-radius: 0;
+  min-height: 46px;
+}
+.edition .button-primary {
+  background: #302231;
+  color: #f5efe5;
+}
+.edition .button-primary:hover {
+  background: #67485c;
+}
+.edition :focus-visible {
+  outline: 2px solid #784c39;
+  outline-offset: 4px;
+}
+.story-band,
+.feature-band,
+.retreat-feature {
+  background: #e9d7d2;
+}
+.story-pair,
+.media-opening,
+.retreat-feature {
+  display: grid;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  padding-block: clamp(2.5rem, 5vw, 5rem);
+}
+.story-pair p,
+.retreat-feature p {
+  max-width: 58ch;
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+.story-pair img {
+  width: 100%;
+  max-height: 30rem;
+  object-fit: cover;
+  object-position: center 68%;
+}
+.closing {
+  padding-block: 4rem;
+  text-align: center;
+}
+.closing details {
+  text-align: left;
+  border-block: 1px solid var(--line);
+  padding: 1rem 0;
+}
+.closing summary,
+.episode {
+  cursor: pointer;
+}
+.closing > blockquote {
+  max-width: 29ch;
+  margin: 3rem auto 1rem;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.06;
+  font-style: italic;
+}
+.closing .button {
+  margin-top: 1.5rem;
+}
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+.episode {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #291a29;
+}
+.episode img {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  object-fit: cover;
+}
+.episode span {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: #302231;
+  color: #fff;
+  padding: 0.6rem 1rem;
+}
+.retreat-feature {
+  padding-inline: clamp(1rem, 4vw, 4rem);
+  margin-bottom: 4rem;
+}
+.retreat-feature img {
+  width: min(100%, 19rem);
+  justify-self: center;
+}
+.retreat-feature a {
+  display: flex;
+  width: fit-content;
+}
+@media (min-width: 768px) {
+  .story-pair {
+    grid-template-columns: 1fr 0.8fr;
+  }
+  .media-opening {
+    grid-template-columns: 1.35fr 1fr;
+  }
+  .retreat-feature {
+    grid-template-columns: 0.7fr 1.3fr;
+  }
+}

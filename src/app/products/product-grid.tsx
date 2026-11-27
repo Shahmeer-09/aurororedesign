@@ -71,6 +71,7 @@ export function ProductGrid({
                 </del>
               )}
             </p>
+            {!shelf && <span className="text-link">View product</span>}
           </a>
         </li>
       ))}
