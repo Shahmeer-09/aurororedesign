@@ -1,67 +1,17 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ButtonLink } from "@/components/button";
+import { KineticNavigation } from "@/components/ui/sterling-gate-kinetic-navigation";
 import { bookingAnchor, navigation, siteLinks } from "../site-links";
-import { MobileMenu } from "./mobile-menu";
 
-function Wordmark({ className }: { className: string }) {
+export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
   return (
-    <Link className={`inline-block w-full ${className}`} href="/">
-      <Image
-        alt="Aurora Luna Star home"
-        className="h-auto w-full"
-        height={117}
-        src="/aurora/wordmark.png"
-        unoptimized
-        width={867}
-      />
-    </Link>
-  );
-}
-
-export function SiteHeader() {
-  return (
-    <header className="site-header sticky top-0 z-2 border-b border-accent/25 bg-nav-glass backdrop-blur-lg">
-      <div className="mx-auto grid min-h-(--header-height) w-[min(100%-2rem,100rem)] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 md:w-[min(100%-4rem,100rem)] md:gap-6 xl:grid-cols-[auto_1fr_auto]">
-        <Wordmark className="max-w-48 md:max-w-54 xl:w-50" />
-        <nav
-          aria-label="Main navigation"
-          className="hidden justify-center gap-[clamp(0.8rem,1.5vw,1.75rem)] xl:flex"
-        >
-          {navigation.map(({ href, label }) => (
-            <a
-              className="inline-flex min-h-11 items-center text-sm font-medium text-hero-muted underline-offset-8 hover:text-accent hover:underline"
-              href={href}
-              key={href}
-            >
-              {label}
-            </a>
-          ))}
-        </nav>
-        <div className="flex items-center gap-2 md:gap-3">
-          <ButtonLink
-            aria-label="Cart"
-            className="size-11.5 p-0"
-            href={siteLinks.cart}
-            icon="cart"
-            variant="outline"
-          />
-          <ButtonLink
-            className="hidden xl:inline-flex"
-            href={bookingAnchor}
-            icon="calendar"
-          >
-            Book a Session
-          </ButtonLink>
-          <MobileMenu />
-        </div>
-      </div>
+    <header className={`gate-header ${overlay ? "gate-overlay" : ""}`}>
+      <a href="/" aria-label="Aurora Luna Star home">
+        <Image src="/aurora/logogold.png" width={48} height={48} alt="" />
+      </a>
+      <KineticNavigation />
     </header>
   );
 }
-
-const footerLinks =
-  "grid content-start justify-items-start [&_a]:py-[0.55rem] [&_a]:text-sm [&_a]:leading-[inherit] [&_a]:text-muted [&_a:hover]:text-foreground";
 
 const socials = [
   {
@@ -88,74 +38,79 @@ const socials = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-line bg-footer-fill">
-      <div className="wrap">
-        <div className="flex flex-wrap items-center justify-between gap-6 border-b border-accent/25 py-[clamp(3rem,7vw,6rem)]">
-          <h2 className="text-[clamp(2.75rem,5.5vw,5.5rem)]">
-            Connect <em className="text-accent">with Aurora</em>
-          </h2>
-          <ButtonLink href={bookingAnchor} icon="calendar">
+    <footer className="journal journal-footer">
+      <div className="spread">
+        <div className="footer-intro">
+          <Image
+            src="/aurora/logogold.png"
+            className="footer-mark"
+            width={340}
+            height={340}
+            sizes="(min-width: 768px) 23vw, 62vw"
+            alt=""
+          />
+          <h2>Work with Aurora</h2>
+          <p className="body-copy">
+            Through Starseed Akashic Readings, sound activations, and personal
+            empowerment work, Aurora Luna Star invites people to explore their
+            gifts and find their own sense of spiritual direction.
+          </p>
+          <a className="ink-link" href={bookingAnchor}>
             Book a Session
-          </ButtonLink>
+          </a>
         </div>
-        <div className="grid grid-cols-2 gap-x-4 gap-y-7 py-12 md:grid-cols-[1.7fr_1fr_1fr] md:gap-8">
-          <div className="col-span-full md:col-auto">
-            <Wordmark className="max-w-72" />
-            <div className="mt-6">
-              <h2 className="mb-3 font-sans text-[0.7rem] leading-normal font-semibold tracking-[0.18em] text-muted uppercase">
-                Follow Aurora
-              </h2>
-              <ul className="flex items-center gap-2.5">
-                {socials.map(({ label, href, path }) => (
-                  <li key={label}>
-                    <a
-                      className="grid size-10 place-items-center rounded-full border border-line text-muted hover:border-accent hover:text-accent motion-safe:transition-colors"
-                      href={href}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <span className="sr-only">
-                        {label} (opens in a new tab)
-                      </span>
-                      <svg
-                        aria-hidden="true"
-                        className="size-[1.15rem]"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d={path} />
-                      </svg>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className="footer-directory">
+          <div className="footer-photos">
+            {[
+              ["/about", "portrait-about.webp", "Meet Aurora"],
+              ["/services", "services/aurora.webp", "Sessions with Aurora"],
+              [
+                "/media",
+                "media/presenter.webp",
+                "Aurora’s recorded appearances",
+              ],
+            ].map(([href, src, label]) => (
+              <a key={href} href={href}>
+                <Image
+                  src={`/aurora/${src}`}
+                  alt={label}
+                  width={200}
+                  height={200}
+                  sizes="(min-width:768px) 13vw, 25vw"
+                />
+              </a>
+            ))}
           </div>
-          <nav aria-label="Explore" className={footerLinks}>
-            <h2 className="mb-2 font-sans text-[0.9rem] leading-normal font-semibold tracking-normal">
-              Explore
-            </h2>
-            <a href="/">Home</a>
-            <a href={siteLinks.services}>Services</a>
-            <a href={siteLinks.about}>About</a>
-            <a href={siteLinks.starseeds}>Starseeds</a>
-            <a href={siteLinks.products}>Products</a>
-            <a href={siteLinks.media}>Media</a>
+          <nav className="foot-links" aria-label="Footer navigation">
+            {navigation
+              .filter((n) => n.href !== "/")
+              .map((n) => (
+                <a key={n.href} href={n.href}>
+                  {n.label === "Products" ? "Shop" : n.label}
+                </a>
+              ))}
             <a href={siteLinks.cart}>Cart</a>
+            <a href="/#meditation">Free meditation</a>
           </nav>
-          <nav aria-label="Connect" className={footerLinks}>
-            <h2 className="mb-2 font-sans text-[0.9rem] leading-normal font-semibold tracking-normal">
-              Connect
-            </h2>
-            <a href={siteLinks.contact}>Contact</a>
-            <a href={siteLinks.partnerships}>Partnerships</a>
-            <a href="/#sessions">Book a Session</a>
-            <a href="/#meditation">Free Meditation</a>
-          </nav>
+          <ul className="footer-socials" aria-label="Aurora on social media">
+            {socials.map(({ label, href, path }) => (
+              <li key={label}>
+                <a href={href}>
+                  <span className="sr-only">{label}</span>
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    width={19}
+                    height={19}
+                  >
+                    <path d={path} />
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-        <p className="border-t border-line py-[1.2rem] text-xs leading-[inherit] text-muted">
-          © Aurora Luna Star
-        </p>
       </div>
     </footer>
   );

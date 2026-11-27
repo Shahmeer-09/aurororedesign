@@ -21,8 +21,8 @@ export function Reveal({
     if (preference.matches || element.getBoundingClientRect().top < innerHeight)
       return;
 
-    element.style.opacity = "0";
-    element.style.transform = "translateY(32px)";
+    element.style.opacity = "0.65";
+    element.style.transform = "translateY(8px)";
     let animation: ReturnType<typeof animate> | undefined;
     const cancel = () => {
       animation?.cancel();
@@ -39,9 +39,9 @@ export function Reveal({
 
         animation = animate(
           element,
-          { opacity: [0, 1], transform: ["translateY(32px)", "none"] },
+          { opacity: [0.65, 1], transform: ["translateY(8px)", "none"] },
           // The tuple matches --ease-out in globals.css.
-          { duration: 0.6, ease: [0.23, 1, 0.32, 1] },
+          { duration: 0.24, ease: [0.23, 1, 0.32, 1] },
         );
       },
       { margin: "0px 0px -64px" },

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/button";
 import { PageHero } from "../_components/page-hero";
 import { Reveal } from "../_components/reveal";
-import { SiteFooter, SiteHeader } from "../_components/site-chrome";
+import { SiteHeader } from "../_components/site-chrome";
 
 export const metadata: Metadata = {
   title: "Partnerships | Aurora Luna Star",
@@ -37,7 +37,7 @@ export default function PartnershipsPage() {
   return (
     <>
       <a
-        className="fixed top-3 left-3 z-3 -translate-y-[180%] bg-purple px-4 py-3 text-foreground focus:translate-y-0"
+        className="fixed top-3 left-3 z-3 -translate-y-[180%] bg-accent px-4 py-3 text-accent-ink focus:translate-y-0"
         href="#main"
       >
         Skip to content
@@ -45,12 +45,12 @@ export default function PartnershipsPage() {
       <SiteHeader />
       <main id="main">
         <PageHero title="Partnerships" />
-        <div className="star-field">
+        <div>
           <section
             aria-labelledby="kejiwa-heading"
             className="wrap grid items-center gap-8 py-12 md:grid-cols-[1fr_0.85fr] md:gap-16 md:py-18"
           >
-            <Reveal className="relative aspect-[5/4] w-full overflow-hidden rounded-t-full border border-accent/35 md:order-2 md:aspect-[5/5.5]">
+            <Reveal className="relative aspect-[5/4] w-full overflow-hidden rounded-t-full border border-line md:order-2 md:aspect-[5/5.5]">
               <Image
                 alt="Two Kejiwa bottles on a table with a small glass and copper beads"
                 className="object-cover object-[center_65%]"
@@ -60,7 +60,7 @@ export default function PartnershipsPage() {
               />
             </Reveal>
             <div>
-              <h2 id="kejiwa-heading" className="text-accent italic">
+              <h2 id="kejiwa-heading" className="text-foreground">
                 Kejiwa
               </h2>
               <p className="mt-4 font-display text-2xl leading-tight text-accent">
@@ -140,7 +140,6 @@ export default function PartnershipsPage() {
           </section>
         </div>
       </main>
-      <SiteFooter />
     </>
   );
 }

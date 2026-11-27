@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHero } from "../_components/page-hero";
-import { SiteFooter, SiteHeader } from "../_components/site-chrome";
+import { SiteHeader } from "../_components/site-chrome";
 import { siteLinks } from "../site-links";
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export default function ContactPage() {
   return (
     <>
       <a
-        className="fixed top-3 left-3 z-3 -translate-y-[180%] bg-purple px-4 py-3 text-foreground focus:translate-y-0"
+        className="fixed top-3 left-3 z-3 -translate-y-[180%] bg-accent px-4 py-3 text-accent-ink focus:translate-y-0"
         href="#main"
       >
         Skip to content
@@ -25,7 +25,7 @@ export default function ContactPage() {
       <SiteHeader />
       <main id="main">
         <PageHero title="Contact Aurora" />
-        <div className="star-field">
+        <div>
           <div className="wrap grid items-start gap-9 py-12 md:grid-cols-[0.8fr_1.2fr] md:gap-14 md:py-16">
             <div>
               <h2 className="text-[clamp(2.25rem,4vw,3.5rem)]">Get in touch</h2>
@@ -59,7 +59,6 @@ export default function ContactPage() {
           </div>
         </div>
       </main>
-      <SiteFooter />
     </>
   );
 }

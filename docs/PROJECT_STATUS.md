@@ -1,9 +1,26 @@
 # Project status
 
-- **Last updated** · 2026-11-26
+- **Last updated** · 2026-11-27
 - **Current phase** · Public site pages ready for review
 
-## Current rework
+## Homepage demo
+
+The local homepage pairs the supplied Aurora title artwork and original video with an ivory portrait introduction, session guide, full Erik L. testimonial over the Milky Way video, Fear Clear signup, and selected shop links. All eight pages now use the GSAP hamburger menu and the root-layout booking footer. The hero uses the original video and title with a purple cloud bank along the bottom. Home in the menu shows Aurora’s garden portrait. Desktop chapters have a 92svh minimum, and the shared plaster-textured footer links portraits to About, Services, and Media. Desktop and mobile Chrome verified navigation, Escape, focus return, reduced motion, and cross-page booking links.
+
+Chrome at 1440px and 390px confirmed the video and image load, pause/play, desktop parallax, reduced-motion pause, booking and meditation anchors, live signup fields, and horizontal fit. Payment, email delivery, and deployment are outside this demo check.
+
+Homepage chapters now overlap on scroll. Chrome at 1440px and 390px confirmed the next chapter paints above the previous one, the sky video plays and pauses, and reduced motion disables the overlap.
+
+The shared footer now fills a viewport with a larger mark, About copy, and four social icons. Fear Clear uses a textured plum backdrop with a cloud layer. Chrome at 1440px and 390px verified footer height, horizontal fit, signup rendering, and gentler scroll overlap after the hero.
+
+The footer now uses a warmer purple texture and the same overlap travel as the hero transition. Later sections use lighter overlap. Background videos have no playback buttons and respect reduced motion. Chrome at 1440px and 390px confirmed in-view playback, reduced-motion pause, and the footer painting over the departing section.
+
+The site uses its original Cormorant Garamond headings and Geist body text. A new twilight photograph adds shaped clouds to the lower hero. Middle sections use 16svh of overlap travel, while the hero and footer handoffs use 30svh. Chrome verified horizontal fit on all eight routes at 320px, 390px, and 1440px.
+
+## Earlier site work
+
+- Simplified the visual system across all eight pages. The original homepage video, moon phases, and Aurora’s photography anchor the design. Shared controls use flat gold and plum, interior titles use a solid backdrop, and the specialty list is static. The latest rules are in [DESIGN.md](DESIGN.md).
+- Lint and the production build passed. Chrome checked all eight routes at 320px, 390px, and 1440px and verified the original video, reduced-motion fallback, mobile menu, carousel controls, product counts, and recording thumbnails. Live form submissions remain untested.
 
 - The homepage now uses lunar phases over the original video, the summit meditation spread, a ruled session list, a six-product shelf, and a panoramic Starseeds illustration. The singing-bowl portrait matches the session list height on desktop. The signup button uses a flat pink hover treatment.
 - Media leads with all eight recordings verified against the original Media page. Starseeds, About, Partnerships, and Services share the lunar banner and use page-specific layouts for their offerings, biography, gallery, and booking guide. Desktop and mobile Chrome checks covered all five pages, the eight thumbnails, and horizontal overflow. Live signup delivery remains pending.

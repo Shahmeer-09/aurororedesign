@@ -1,0 +1,578 @@
+.journal {
+  --paper: #f5efe5;
+  --ink: #30212d;
+  --bronze: #815743;
+  --rule: #b9a999;
+  background: #291a29;
+  color: var(--paper);
+}
+.journal-hero {
+  height: 92svh;
+  min-height: 25rem;
+}
+.journal .paper {
+  background: var(--paper);
+  color: var(--ink);
+}
+.journal .spread {
+  width: min(88%, 76rem);
+  margin-inline: auto;
+  padding-block: clamp(3.5rem, 7vw, 7rem);
+}
+.journal .columns,
+.journal .shop {
+  display: grid;
+  gap: clamp(2rem, 6vw, 6rem);
+}
+.journal h2 {
+  font-size: clamp(3.2rem, 5.8vw, 5.8rem);
+  line-height: 0.99;
+  text-wrap: pretty;
+}
+.journal h2 em {
+  display: block;
+  font-weight: 500;
+}
+.journal .paper h2 em {
+  color: var(--bronze);
+}
+.journal h3 {
+  font-size: clamp(1.85rem, 2.7vw, 2.8rem);
+  line-height: 1.05;
+}
+.journal .caption {
+  margin-bottom: 1.15rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.journal .body-copy {
+  max-width: 44ch;
+  margin-block: 1.5rem;
+  font-size: clamp(1rem, 1.32vw, 1.2rem);
+  line-height: 1.65;
+}
+.journal .portrait,
+.journal .instrument,
+.journal .meditation-portrait {
+  width: 100%;
+  object-fit: cover;
+}
+.journal .portrait {
+  aspect-ratio: 4 / 4.6;
+  object-position: 50% 28%;
+}
+.journal .instrument {
+  margin-top: 2rem;
+  aspect-ratio: 1.45;
+  object-position: 50% 57%;
+}
+.journal .book,
+.journal .ink-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.journal .book {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.8rem 1.35rem;
+}
+.journal .ink-link,
+.journal .foot-links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+.journal .book:hover {
+  background: var(--bronze);
+}
+.journal .paper :focus-visible {
+  outline-color: var(--bronze);
+}
+/* Session editions and the full-bleed client interlude. */
+.journal .sessions {
+  background:
+    radial-gradient(ellipse at 20% 25%, #f1c8af, transparent 60%),
+    linear-gradient(118deg, #d4bdc5, #dcb1a4 53%, #dbb7ca);
+  text-align: center;
+}
+.journal .sessions h2 em {
+  display: inline;
+}
+.journal .session-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.3rem, 4vw, 4rem);
+  max-width: 62rem;
+  margin: clamp(2rem, 4vw, 4rem) auto 0;
+}
+.journal .session-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.session-cover {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1 / 1.13;
+  padding: 1rem;
+  background-position: center;
+  background-size: cover;
+  color: #fff7ec;
+}
+.cover-bio-magnetic {
+  background-image:
+    linear-gradient(#38203044, #2b162acc), url("/aurora/hero-orion-nebula.webp");
+}
+.cover-heart-intelligence {
+  background-image:
+    linear-gradient(#5c234850, #451730cc),
+    url("/aurora/hero-colorful-nebula.webp");
+}
+.cover-soul-evolutionary {
+  background-image:
+    linear-gradient(#282d6444, #1f1637cc), url("/aurora/nebula-hero.webp");
+}
+.journal .session-cover h3 {
+  max-width: 11ch;
+  line-height: 1;
+  font-size: clamp(2rem, 3vw, 3.3rem);
+}
+.journal .session-list p {
+  margin: 1.1rem 0 0.65rem;
+  max-width: 34ch;
+  line-height: 1.6;
+}
+.journal .session-list a {
+  margin-top: auto;
+}
+.journal .shop li {
+  border-top: 1px solid var(--rule);
+  padding-block: 1.25rem;
+}
+.journal .sound {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  min-height: 60svh;
+  padding: clamp(4rem, 9vw, 8rem) 6%;
+  position: relative;
+  isolation: isolate;
+  background: #27102d;
+}
+.testimonial-sky,
+.journal .sound::before,
+.journal .sound::after {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.testimonial-sky {
+  z-index: -3;
+  object-fit: cover;
+  object-position: 50% 45%;
+}
+.journal .sound::before {
+  content: "";
+  z-index: -2;
+  background:
+    radial-gradient(ellipse at center, #24102b99, transparent 80%),
+    linear-gradient(155deg, #34104360, #68255068 58%, #200d35b8);
+}
+.journal .sound::after {
+  content: "";
+  z-index: -1;
+  background: url("/aurora/cloud-bank.webp") center 70% / cover;
+  filter: grayscale(1) sepia(1) hue-rotate(240deg);
+  mix-blend-mode: screen;
+  opacity: 0.32;
+  mask-image: linear-gradient(170deg, transparent 40%, #000);
+}
+.journal .sound div {
+  max-width: 68rem;
+}
+.journal blockquote {
+  font-size: clamp(1.6rem, 3vw, 3.15rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.journal figcaption {
+  margin-top: 1.5rem;
+}
+.journal .shop {
+  margin-top: 2.5rem;
+  align-items: start;
+}
+.journal .lead-product img {
+  width: 100%;
+  max-height: 23rem;
+  object-fit: contain;
+  background: #e9dfd2;
+}
+.journal .lead-product h3 {
+  margin-top: 1rem;
+}
+.journal .shop li a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.125rem;
+}
+.journal .shop li span {
+  margin-left: auto;
+}
+.journal .shop a:hover {
+  text-decoration: underline;
+}
+.journal .foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.5rem;
+  border-top: 1px solid #806a76;
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+.journal .foot-links a {
+  padding-block: 0.65rem;
+}
+@media (min-width: 768px) {
+  .journal .columns {
+    grid-template-columns: 0.92fr 1.08fr;
+  }
+
+  .journal .shop {
+    grid-template-columns: 1fr 1fr;
+  }
+  .journal .paper:has(.shop) h2 em {
+    display: inline;
+  }
+}
+@media (max-width: 767px) {
+  .journal-hero {
+    height: 78svh;
+  }
+  .journal .portrait {
+    aspect-ratio: 1.18;
+  }
+}
+
+.gate-header {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 5vw;
+  color: #f5efe5;
+  background: #291a29;
+}
+.gate-overlay {
+  position: absolute;
+  inset: 0 0 auto;
+  background: transparent;
+}
+.gate-trigger,
+.gate-top button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 44px;
+  cursor: pointer;
+}
+.gate-lines {
+  display: grid;
+  width: 2rem;
+  gap: 5px;
+}
+.gate-lines i {
+  height: 1px;
+  background: currentColor;
+}
+.gate-lines i:nth-child(2) {
+  width: 72%;
+  justify-self: end;
+}
+html:has(.gate-dialog[open]) {
+  overflow: hidden;
+}
+.gate-dialog {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  background: none;
+  color: #30212d;
+  overflow: hidden;
+}
+.gate-dialog::backdrop {
+  background: #19121da3;
+}
+.gate-shell {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: min(100%, 48rem);
+  overflow: hidden;
+}
+.gate-rose,
+.gate-paper {
+  position: absolute;
+  inset: 0;
+  background: #a77a79;
+}
+.gate-paper {
+  background: #f5efe5;
+  overflow: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1rem, 3vw, 2.75rem) clamp(1.5rem, 5vw, 5rem);
+}
+.gate-top,
+.gate-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.gate-top {
+  border-bottom: 1px solid #b9a999;
+  padding-bottom: 0.6rem;
+}
+.gate-top > span {
+  font:
+    italic 1.65rem var(--font-cormorant),
+    Georgia,
+    serif;
+}
+.gate-top button span {
+  font-size: 1.85rem;
+}
+.gate-paper nav {
+  margin-block: auto;
+  padding-block: 1.2rem;
+}
+.gate-paper nav a {
+  display: block;
+  padding: 0.1em 0.12em;
+  font:
+    500 clamp(2rem, 5.5vh, 4.6rem) / 1.02 var(--font-cormorant),
+    Georgia,
+    serif;
+  letter-spacing: -0.035em;
+}
+.gate-paper nav a:is(:hover, :focus-visible) {
+  color: #815743;
+  font-style: italic;
+  background: #e8ded2;
+}
+.gate-paper :focus-visible {
+  outline: 2px solid #815743;
+  outline-offset: -2px;
+}
+.gate-bottom {
+  border-top: 1px solid #b9a999;
+  padding-top: 1rem;
+}
+.gate-bottom a {
+  padding-block: 0.55rem;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+.gate-spread {
+  display: grid;
+  align-items: center;
+  margin-block: auto;
+}
+.gate-art {
+  display: none;
+}
+@media (min-width: 768px) {
+  .gate-spread {
+    grid-template-columns: minmax(0, 1fr) 32%;
+    gap: 1rem;
+  }
+  .gate-art {
+    display: block;
+    height: clamp(10rem, 28vh, 18rem);
+    overflow: hidden;
+    background: #ddcfc9;
+  }
+  .gate-art div {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .gate-art div {
+    animation: gate-image 0.32s ease-out;
+  }
+}
+@keyframes gate-image {
+  from {
+    opacity: 0.55;
+    transform: scale(1.045);
+  }
+}
+
+.journal .meditation-chapter {
+  --foreground: #32182b;
+  --muted: #52263e;
+  --accent: #602445;
+  --accent-hover: #733658;
+  --accent-ink: #fff5fa;
+  --form-message: #52263e;
+  --field-fill: #fff4fa;
+  --field-line: #89506f;
+  --control-line: var(--field-line);
+  --surface: #ffe4f1;
+  color-scheme: light;
+  color: var(--foreground);
+  background:
+    linear-gradient(#ffe7f42e, #ffe7f42e),
+    #fac1dc url("/aurora/fear-pink-fur.webp") center / cover;
+}
+.journal .meditation-portrait {
+  max-width: 29rem;
+  justify-self: center;
+  aspect-ratio: 4 / 4.8;
+  object-position: 50% 26%;
+  box-shadow: 10px 12px 0 #60244526;
+}
+.journal main > .paper:last-child {
+  background: linear-gradient(118deg, #efe8dc, #e7d8d3 70%, #d8c5cd);
+}
+.journal .lead-product img {
+  background: transparent;
+}
+.journal-footer {
+  position: relative;
+  background:
+    linear-gradient(#24112f99, #24112f99),
+    #361c40 url("/aurora/footer-pink-clouds.webp") center 42% / cover;
+}
+.journal-footer .spread {
+  display: grid;
+  align-items: center;
+  gap: clamp(2.5rem, 8vw, 8rem);
+  min-height: 100svh;
+}
+.footer-mark {
+  filter: brightness(1.65);
+  width: clamp(12rem, 23vw, 21.25rem);
+  height: auto;
+  margin-bottom: 1.6rem;
+}
+.footer-intro .ink-link {
+  margin-top: 0.75rem;
+}
+.footer-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+.footer-photos img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 32%;
+}
+@media (min-width: 768px) {
+  .journal main > section:not(.journal-hero),
+  .journal .sound {
+    min-height: 92svh;
+    display: grid;
+    align-content: center;
+  }
+  .journal-footer .spread {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .journal .session-list {
+    grid-template-columns: 1fr;
+    max-width: 24rem;
+    gap: 3rem;
+  }
+  .session-cover {
+    aspect-ratio: 1.65;
+  }
+}
+
+/* The departing chapter recedes while the following chapter keeps scrolling. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .journal main > :is(section, figure) {
+      position: relative;
+      z-index: 0;
+      animation: chapter-overlap linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+    .journal main > :is(section, figure):has(:focus-visible) {
+      animation: none;
+    }
+  }
+}
+.journal main > .journal-hero,
+.journal main > section:last-child {
+  --chapter-travel: 30svh;
+}
+.footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.1rem;
+}
+.footer-socials a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #f5efe56b;
+}
+.footer-socials a:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+@keyframes chapter-overlap {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(var(--chapter-travel, 16svh));
+  }
+}
+
+.hero-cloud-bank {
+  position: absolute;
+  z-index: -1;
+  inset: auto 0 0 auto;
+  width: min(69%, 76rem);
+  height: clamp(9rem, 39svh, 26rem);
+  pointer-events: none;
+  background: url("/aurora/hero-twilight-clouds.webp") right 55% / cover;
+  filter: brightness(0.68) saturate(0.8) hue-rotate(-38deg);
+  mask-image: radial-gradient(
+    ellipse at 87% 97%,
+    #000 10%,
+    #000b 35%,
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+}
+
+@media (max-width: 767px) {
+  .hero-cloud-bank {
+    width: 92%;
+    height: 30%;
+  }
+}

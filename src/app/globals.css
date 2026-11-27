@@ -2,54 +2,28 @@
 
 :root {
   color-scheme: dark;
-  --background: #160921;
-  --surface: #251039;
-  --foreground: #f5eff8;
-  --muted: #c7b9d1;
-  --accent: #edce82;
-  --accent-hover: #ffe4a5;
-  --accent-ink: #271435;
+  --background: #19121d;
+  --surface: #241a2a;
+  --foreground: #f5eef3;
+  --muted: #c9bdca;
+  --accent: #e2c58c;
+  --accent-hover: #f2d9a7;
+  --accent-ink: #201822;
   --purple: #7800c2;
   --purple-hover: #891be3;
-  --line: #523263;
-  --control-line: #957da4;
-  --action-hot-pink: #ff4fb8;
-  --action-glow: #b43dff;
-  --action-border: #d2adf3;
-  --action-ink: #271333;
-  --action-sheen: rgb(255 249 255 / 68%);
-  --nav-glass: #17092178;
-  --nav-line: #c097e36b;
+  --line: #392e40;
+  --control-line: #857389;
+  --nav-glass: #19121de8;
+  --nav-line: #392e40;
   --menu-scrim: #0b0714bb;
-  --hero-fill: #1c0e28;
-  --hero-center-scrim: rgb(0 0 0 / 68%);
-  --hero-edge-scrim: rgb(0 0 0 / 44%);
-  --hero-lower-scrim: rgb(0 0 0 / 48%);
-  --hero-text-shadow: #130a20ad;
-  --horizon-line: color-mix(in srgb, var(--accent) 44%, transparent);
-  --horizon-light: color-mix(in srgb, var(--action-glow) 19%, transparent);
-  --hero-muted: #e2d2ed;
-  --star-pale: #cbb2e6;
-  --star-dim: #b197ca;
-  --star-bright: #e4cffb;
-  --star-violet: #bd95de;
-  --meditation-fill: #240b37;
+  --hero-fill: #160e1c;
+  --horizon-line: color-mix(in srgb, var(--accent) 36%, transparent);
+  --hero-muted: var(--foreground);
   --form-message: #efbdca;
-  --footer-fill: #100619;
+  --footer-fill: #130e17;
   --scroll-thumb: #9e72b9;
-  --nebula-edge: #26083aa8;
-  --nebula-center: #42126780;
-  --image-tint: color-mix(in srgb, var(--purple) 10%, transparent);
-  --field-fill: #180824;
-  --field-line: #633d75;
-  --marquee-fill: #210d30;
-  --marquee-ink: #ead6f0;
-  --star-field-glow: color-mix(in srgb, var(--purple) 9%, transparent);
-  --star-field-lower-glow: color-mix(
-    in srgb,
-    var(--purple-hover) 8%,
-    transparent
-  );
+  --field-fill: #19121d;
+  --field-line: #857389;
   --header-height: 5.5rem;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -71,13 +45,10 @@
   --color-menu-scrim: var(--menu-scrim);
   --color-hero-fill: var(--hero-fill);
   --color-hero-muted: var(--hero-muted);
-  --color-meditation-fill: var(--meditation-fill);
   --color-form-message: var(--form-message);
   --color-field-fill: var(--field-fill);
   --color-field-line: var(--field-line);
   --color-footer-fill: var(--footer-fill);
-  --color-marquee-fill: var(--marquee-fill);
-  --color-marquee-ink: var(--marquee-ink);
   --font-sans: var(--font-geist), sans-serif;
   --font-display: var(--font-cormorant), Georgia, serif;
 }
@@ -108,7 +79,7 @@
 }
 
 @utility wrap {
-  @apply mx-auto w-[min(100%-2.25rem,72rem)] md:w-[min(100%-3rem,72rem)];
+  @apply mx-auto w-[min(100%-2rem,72rem)] md:w-[min(100%-4rem,72rem)];
 }
 
 @utility section-space {
@@ -121,104 +92,23 @@
   }
 
   .button {
-    @apply relative isolate inline-flex min-h-11.5 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full border px-5 py-[0.65rem] text-sm leading-[inherit] font-semibold whitespace-nowrap;
-    border-color: var(--action-border);
-    color: var(--action-ink);
+    @apply relative inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-lg border px-5 py-2 text-sm font-medium whitespace-nowrap motion-safe:transition-colors;
   }
 
   .button-icon {
-    @apply size-4.5 shrink-0;
+    @apply size-4 shrink-0;
+  }
+
+  .button-primary {
+    @apply border-transparent bg-accent text-accent-ink hover:bg-accent-hover;
   }
 
   .button-outline {
-    background: color-mix(in srgb, var(--background) 52%, transparent);
-    color: var(--foreground);
-  }
-
-  .button-featured .button-icon {
-    @apply size-5;
-  }
-
-  @media (hover: hover) {
-    .button:hover {
-      border-color: var(--action-sheen);
-    }
-
-    .button-outline:hover {
-      background: color-mix(in srgb, var(--surface) 76%, transparent);
-      border-color: var(--action-hot-pink);
-    }
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .button,
-    .button-icon {
-      transition: transform 180ms var(--ease-out);
-    }
-
-    .button:active {
-      transform: scale(0.97);
-    }
-
-    @media (hover: hover) {
-      .button::before {
-        position: absolute;
-        z-index: -1;
-        inset: 0;
-        background: linear-gradient(
-          105deg,
-          transparent 30%,
-          var(--action-sheen),
-          transparent 70%
-        );
-        content: "";
-        pointer-events: none;
-        transform: translateX(-120%);
-        transition: transform 280ms var(--ease-out);
-      }
-
-      .button:hover::before {
-        transform: translateX(120%);
-      }
-
-      .button-featured:hover:not(:active) {
-        transform: translateY(-2px);
-      }
-
-      .button-featured:hover .button-icon {
-        transform: translateY(-1px) rotate(-12deg);
-      }
-    }
+    @apply border-control-line bg-transparent text-foreground hover:bg-surface;
   }
 
   .text-link {
     @apply inline-flex min-h-11 items-center gap-[0.45rem] text-sm leading-[inherit] font-semibold text-accent underline decoration-1 underline-offset-[0.32em] hover:text-foreground;
-  }
-}
-
-/*
- * From Uiverse.io by mrhyddenn - https://uiverse.io/mrhyddenn/moody-badger-62
- * MIT License, Copyright (c) mrhyddenn
- */
-.button-primary {
-  background: var(--action-hot-pink);
-  box-shadow: 0 0 25px color-mix(in srgb, var(--action-glow) 48%, transparent);
-
-  @media (prefers-reduced-motion: no-preference) {
-    transition:
-      transform 180ms var(--ease-out),
-      box-shadow 500ms ease;
-  }
-
-  @media (hover: hover) {
-    &:hover:enabled,
-    &:any-link:hover {
-      box-shadow:
-        0 0 5px var(--action-glow),
-        0 0 25px var(--action-glow),
-        0 0 50px color-mix(in srgb, var(--action-glow) 75%, transparent),
-        0 0 100px color-mix(in srgb, var(--action-glow) 48%, transparent);
-    }
   }
 }
 
@@ -243,72 +133,7 @@ html:has(#mobile-menu[open]) {
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(
-    180deg,
-    var(--hero-edge-scrim),
-    var(--hero-edge-scrim) 56%,
-    var(--hero-lower-scrim)
-  );
-}
-
-.home-hero::after {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  content: "";
-  pointer-events: none;
-  background:
-    radial-gradient(
-      ellipse 55% 54% at center,
-      var(--hero-center-scrim),
-      transparent
-    ),
-    linear-gradient(0deg, var(--background), transparent 18%);
-}
-
-.home-hero::before {
-  @apply pointer-events-none absolute inset-0;
-  content: "";
-  background:
-    radial-gradient(
-      circle at 16% 27%,
-      var(--star-pale) 0.8px,
-      transparent 1.4px
-    )
-    0 0 / 197px 219px,
-    radial-gradient(
-      circle at 63% 19%,
-      var(--star-bright) 0.9px,
-      transparent 1.5px
-    )
-    0 0 / 339px 281px,
-    radial-gradient(ellipse at 9% 72%, var(--horizon-light), transparent 40%),
-    radial-gradient(ellipse at 94% 34%, var(--horizon-light), transparent 42%);
-}
-
-.hero-horizon {
-  position: absolute;
-  z-index: 1;
-  pointer-events: none;
-  top: 89%;
-  left: -16%;
-  width: 132%;
-  height: 60%;
-  border-radius: 50%;
-  border-top: 1px solid var(--horizon-line);
-  box-shadow: 0 -9px 30px var(--horizon-light);
-  background: linear-gradient(var(--surface), var(--background) 22%);
-}
-
-.hero-horizon::before {
-  @apply absolute rounded-[50%] border-t border-accent/20;
-  inset: -8px 0 8px;
-  content: "";
-}
-
-.hero-horizon::after {
-  @apply absolute left-1/2 size-2.5 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-accent bg-background;
-  content: "";
+  background: rgb(13 8 17 / 65%);
 }
 
 .moon-phases {
@@ -339,160 +164,19 @@ html:has(#mobile-menu[open]) {
 
 .moon-phases i:nth-child(3) {
   @apply size-5 bg-accent;
-  box-shadow: 0 0 15px var(--horizon-line);
 }
 
 .moon-phases i:nth-child(n + 4) {
   transform: scaleX(-1);
 }
 
-.meditation-spread {
-  background: linear-gradient(
-    125deg,
-    var(--surface),
-    var(--meditation-fill) 70%,
-    var(--background)
-  );
-}
-
-.session-portrait::before,
-.about-portrait::before {
-  @apply pointer-events-none absolute rounded-t-full border border-accent/40;
-  content: "";
-  inset: -0.6rem 0.6rem 0.6rem -0.6rem;
-}
-
-.about-portrait::before {
-  inset: -0.6rem -0.6rem 0.6rem 0.6rem;
-}
-
-.about-spread {
-  background: linear-gradient(
-    110deg,
-    var(--meditation-fill),
-    var(--background) 80%
-  );
-}
-
 .starseed-panorama {
-  mask-image: linear-gradient(to bottom, black 68%, transparent);
+  mask-image: linear-gradient(to bottom, black 78%, transparent);
 }
 
 @media (width >= 48rem) {
   .starseed-panorama {
-    mask-image: linear-gradient(to right, transparent, black 38%);
-  }
-}
-
-.star-field {
-  @apply relative isolate;
-  background:
-    radial-gradient(ellipse at 95% 28%, var(--star-field-glow), transparent 35%),
-    radial-gradient(
-      ellipse at 6% 80%,
-      var(--star-field-lower-glow),
-      transparent 30%
-    );
-}
-
-.star-field::before,
-.star-field::after {
-  @apply pointer-events-none absolute inset-0 -z-1;
-  content: "";
-}
-
-.star-field::before {
-  opacity: 0.48;
-  background-image:
-    radial-gradient(
-      circle at 14% 29%,
-      var(--star-pale) 0.65px,
-      transparent 1.3px
-    ),
-    radial-gradient(
-      circle at 65% 72%,
-      var(--star-dim) 0.75px,
-      transparent 1.4px
-    ),
-    radial-gradient(
-      circle at 82% 23%,
-      var(--star-dim) 0.55px,
-      transparent 1.3px
-    );
-  background-size:
-    193px 221px,
-    347px 253px,
-    479px 349px;
-}
-
-.star-field::after {
-  opacity: 0.4;
-  background-image:
-    radial-gradient(
-      circle at 24% 52%,
-      var(--star-bright) 0.85px,
-      transparent 1.7px
-    ),
-    radial-gradient(
-      circle at 76% 18%,
-      var(--star-violet) 0.85px,
-      transparent 1.6px
-    );
-  background-size:
-    311px 267px,
-    417px 391px;
-}
-
-.nebula-backdrop {
-  background:
-    linear-gradient(
-      90deg,
-      var(--nebula-edge),
-      var(--nebula-center),
-      var(--nebula-edge)
-    ),
-    url("/aurora/nebula-hero.webp") center / cover;
-}
-
-@media (width >= 48rem) and (prefers-reduced-motion: no-preference) {
-  .testimonial {
-    background-attachment: scroll, fixed;
-  }
-
-  .star-field::after {
-    animation: twinkle 9s ease-in-out infinite alternate;
-  }
-}
-
-@keyframes twinkle {
-  from {
-    opacity: 0.16;
-  }
-  to {
-    opacity: 0.63;
-  }
-}
-
-.tinted-image::after {
-  @apply pointer-events-none absolute inset-0;
-  content: "";
-}
-
-.tinted-image::after {
-  background: var(--image-tint);
-}
-
-.marquee-track {
-  @apply flex w-max items-center motion-safe:animate-[marquee-travel_48s_linear_infinite];
-}
-
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
-
-@keyframes marquee-travel {
-  to {
-    transform: translateX(-50%);
+    mask-image: linear-gradient(to right, transparent, black 40%);
   }
 }
 
@@ -535,7 +219,7 @@ html {
   }
 
   .fd-form-group {
-    @apply grid gap-[0.35rem];
+    @apply grid gap-1.5;
   }
 
   .fd-form-group:has(input[data-ff-tab$=":submit"]) {
@@ -547,33 +231,19 @@ html {
   }
 
   .fd-form-control {
-    @apply min-h-11.5 w-full rounded-lg border border-field-line bg-field-fill px-3.5 py-[0.65rem] font-sans text-base leading-[1.4] font-normal text-foreground;
+    @apply min-h-11 w-full rounded-lg border border-field-line bg-field-fill px-3.5 py-2 font-sans text-base leading-[1.4] font-normal text-foreground;
     @apply focus:border-accent focus:outline-2 focus:outline-offset-2 focus:outline-accent;
   }
 
   [data-ff-el="submit"] {
-    @apply inline-flex min-h-11.5 w-full items-center justify-center gap-2 rounded-full border px-5 py-[0.65rem] font-sans text-sm leading-[1.4] font-semibold tracking-[0.04em] normal-case;
-    @apply focus-visible:outline-2 focus-visible:outline-offset-[5px] focus-visible:outline-accent motion-safe:active:scale-[0.98];
-    background: var(--action-hot-pink);
+    @apply inline-flex min-h-11 w-full items-center justify-center rounded-lg border border-transparent px-5 py-2 font-sans text-sm leading-[1.4] font-medium normal-case;
+    @apply focus-visible:outline-2 focus-visible:outline-offset-[5px] focus-visible:outline-accent;
+    background: var(--accent);
     box-shadow: none;
-    border-color: var(--action-border);
-    color: var(--action-ink);
+    color: var(--accent-ink);
 
     &:hover {
-      background: color-mix(
-        in srgb,
-        var(--action-hot-pink) 85%,
-        var(--foreground)
-      );
-    }
-
-    &::before {
-      @apply size-4.5 shrink-0;
-      background: currentColor;
-      content: "";
-      mask:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2L12 3Z' fill='none' stroke='black' stroke-width='1.75' stroke-linejoin='round'/%3E%3C/svg%3E")
-        center / contain no-repeat;
+      background: var(--accent-hover);
     }
   }
 }
@@ -581,7 +251,7 @@ html {
 @keyframes testimonial-in {
   from {
     opacity: 0;
-    transform: translateX(2rem);
+    transform: translateX(0.5rem);
   }
   to {
     opacity: 1;
@@ -592,6 +262,6 @@ html {
 @keyframes testimonial-out {
   to {
     opacity: 0;
-    transform: translateX(-0.75rem);
+    transform: translateX(-0.5rem);
   }
 }

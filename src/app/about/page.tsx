@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/button";
 import { PageHero } from "../_components/page-hero";
 import { Reveal } from "../_components/reveal";
-import { SiteFooter, SiteHeader } from "../_components/site-chrome";
+import { SiteHeader } from "../_components/site-chrome";
 import { bookingAnchor, siteLinks } from "../site-links";
 import { TestimonialSlider } from "./testimonial-slider";
 
@@ -17,7 +17,7 @@ export default function AboutPage() {
   return (
     <>
       <a
-        className="fixed top-3 left-3 z-3 -translate-y-[180%] bg-purple px-4 py-3 text-foreground focus:translate-y-0"
+        className="fixed top-3 left-3 z-3 -translate-y-[180%] bg-accent px-4 py-3 text-accent-ink focus:translate-y-0"
         href="#main"
       >
         Skip to content
@@ -25,7 +25,7 @@ export default function AboutPage() {
       <SiteHeader />
       <main id="main">
         <PageHero title="About Aurora" />
-        <div className="star-field">
+        <div>
           <section
             aria-labelledby="aurora-work"
             className="wrap grid items-center gap-9 py-16 md:grid-cols-[0.85fr_1.15fr] md:gap-16 md:py-20"
@@ -40,10 +40,7 @@ export default function AboutPage() {
               />
             </Reveal>
             <div>
-              <h2 id="aurora-work">
-                Alchemy, alignment{" "}
-                <em className="text-accent">&amp; ascension</em>
-              </h2>
+              <h2 id="aurora-work">Alchemy, alignment &amp; ascension</h2>
               <div className="mt-6 max-w-[60ch] space-y-4 leading-relaxed text-muted">
                 <p>
                   Aurora Luna Star is an interdimensional channel. Through
@@ -68,7 +65,7 @@ export default function AboutPage() {
               </div>
               <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
                 <ButtonLink
-                  className="button-featured min-h-12"
+                  className="min-h-12"
                   href={bookingAnchor}
                   icon="calendar"
                 >
@@ -81,7 +78,7 @@ export default function AboutPage() {
             </div>
           </section>
           <section aria-labelledby="mission-title" className="wrap">
-            <Reveal className="mx-auto max-w-[60rem] border-y border-accent/30 py-10 md:grid md:grid-cols-[1fr_1.7fr] md:gap-x-12 md:py-16 [&>p]:col-start-2">
+            <Reveal className="mx-auto max-w-[60rem] border-y border-line py-10 md:grid md:grid-cols-[1fr_1.7fr] md:gap-x-12 md:py-16 [&>p]:col-start-2">
               <h2
                 className="text-[clamp(2.25rem,4vw,3.5rem)]"
                 id="mission-title"
@@ -105,7 +102,6 @@ export default function AboutPage() {
           <TestimonialSlider />
         </div>
       </main>
-      <SiteFooter />
     </>
   );
 }

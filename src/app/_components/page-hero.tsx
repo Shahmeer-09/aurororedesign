@@ -1,5 +1,3 @@
-import { MoonPhases } from "./moon-phases";
-
 export function PageHero({
   title,
   subtitle,
@@ -10,22 +8,16 @@ export function PageHero({
   return (
     <section
       aria-labelledby="page-title"
-      className="nebula-backdrop relative isolate grid overflow-hidden min-h-[400px] place-items-center border-b border-line py-9 text-center"
+      className="border-b border-line bg-surface"
     >
-      <div aria-hidden="true" className="hero-horizon" />
-      <div className="wrap relative z-1">
-        <MoonPhases />
+      <div className="wrap py-14 md:py-20">
         <h1
-          className="mt-5 font-display italic text-[clamp(3.35rem,7vw,6.75rem)] leading-[0.94] text-balance [text-shadow:0_3px_30px_var(--hero-text-shadow)] tracking-[-0.03em]"
+          className="max-w-[22ch] text-[clamp(3rem,7vw,5.75rem)] leading-none text-balance tracking-[-0.03em]"
           id="page-title"
         >
           {title}
         </h1>
-        {subtitle && (
-          <p className="mt-5 text-sm font-semibold tracking-[0.2em] text-accent uppercase">
-            {subtitle}
-          </p>
-        )}
+        {subtitle && <p className="mt-4 text-base text-muted">{subtitle}</p>}
       </div>
     </section>
   );

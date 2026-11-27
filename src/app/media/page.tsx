@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/button";
 import { PageHero } from "../_components/page-hero";
 import { Reveal } from "../_components/reveal";
-import { SiteFooter, SiteHeader } from "../_components/site-chrome";
+import { SiteHeader } from "../_components/site-chrome";
 import { siteLinks } from "../site-links";
 
 export const metadata: Metadata = {
@@ -39,7 +39,7 @@ export default function MediaPage() {
   return (
     <>
       <a
-        className="fixed top-3 left-3 z-3 -translate-y-[180%] bg-purple px-4 py-3 text-foreground focus:translate-y-0"
+        className="fixed top-3 left-3 z-3 -translate-y-[180%] bg-accent px-4 py-3 text-accent-ink focus:translate-y-0"
         href="#main"
       >
         Skip to content
@@ -51,41 +51,33 @@ export default function MediaPage() {
           subtitle="Interviews, talks & channelings"
         />
 
-        <div className="star-field">
+        <div>
           <section
             aria-labelledby="appearances-title"
-            className="mx-auto w-[min(100%-2.25rem,90rem)] py-[clamp(3rem,6vw,6rem)] md:w-[min(100%-4rem,90rem)]"
+            className="wrap section-space"
             id="appearances"
           >
-            <h2 id="appearances-title">
-              Recorded <em className="text-accent">appearances</em>
-            </h2>
-            <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <h2 id="appearances-title">Recorded appearances</h2>
+            <ul className="mt-8 grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
               {recordings.map(({ id, title }) => (
                 <li key={id}>
                   <a
-                    className="group flex h-full flex-col border-t border-accent/35 pt-3"
+                    className="group flex h-full flex-col border-t border-line pt-3"
                     href={`https://www.youtube.com/watch?v=${id}`}
                   >
-                    <div className="relative aspect-video overflow-hidden bg-background">
+                    <div className="relative aspect-video overflow-hidden rounded-md bg-surface">
                       <Image
                         alt=""
-                        className="object-cover motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-[1.03]"
+                        className="object-cover"
                         fill
                         sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 95vw"
                         src={`/aurora/media/${id}.webp`}
                       />
-                      <span
-                        aria-hidden="true"
-                        className="absolute right-3 bottom-3 grid size-11 place-items-center rounded-full border border-line bg-background text-accent group-hover:bg-purple group-hover:text-foreground"
-                      >
-                        ▶
-                      </span>
                     </div>
                     <div className="flex flex-1 flex-col gap-3 py-4">
                       <h3 className="text-2xl leading-none">{title}</h3>
-                      <span className="mt-auto text-xs font-semibold text-accent">
-                        Watch on YouTube <span aria-hidden="true">↗</span>
+                      <span className="mt-auto text-sm text-muted underline-offset-4 group-hover:text-accent group-hover:underline">
+                        Watch on YouTube
                       </span>
                     </div>
                   </a>
@@ -100,7 +92,7 @@ export default function MediaPage() {
             id="speaker"
           >
             <div className="mx-auto grid w-[min(100%-2.25rem,90rem)] items-center gap-8 py-[clamp(3rem,6vw,6rem)] md:w-[min(100%-4rem,90rem)] md:grid-cols-[1.25fr_1fr] md:gap-[clamp(2rem,5vw,5rem)]">
-              <Reveal className="tinted-image relative isolate overflow-hidden rounded-2xl bg-surface">
+              <Reveal className="overflow-hidden rounded-lg bg-surface">
                 <Image
                   alt="Aurora Luna Star seated onstage at a speaking engagement"
                   className="h-auto w-full"
@@ -112,9 +104,7 @@ export default function MediaPage() {
               </Reveal>
 
               <div>
-                <h2 id="speaker-title">
-                  Presenter <em className="text-accent">&amp; speaker</em>
-                </h2>
+                <h2 id="speaker-title">Presenter &amp; speaker</h2>
                 <div className="mt-5 max-w-[58ch] space-y-4 leading-relaxed text-muted md:text-[1.0625rem]">
                   <p>
                     Aurora presents in person and online. In Sedona, Arizona,
@@ -147,7 +137,6 @@ export default function MediaPage() {
           </section>
         </div>
       </main>
-      <SiteFooter />
     </>
   );
 }

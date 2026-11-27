@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/button";
 import { PageHero } from "../_components/page-hero";
 import { Reveal } from "../_components/reveal";
-import { SiteFooter, SiteHeader } from "../_components/site-chrome";
+import { SiteHeader } from "../_components/site-chrome";
 import { sessionHref, sessions } from "./sessions";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function ServicesPage() {
   return (
     <>
       <a
-        className="fixed top-3 left-3 z-3 -translate-y-[180%] bg-purple px-4 py-3 text-foreground focus:translate-y-0"
+        className="fixed top-3 left-3 z-3 -translate-y-[180%] bg-accent px-4 py-3 text-accent-ink focus:translate-y-0"
         href="#main"
       >
         Skip to content
@@ -24,7 +24,7 @@ export default function ServicesPage() {
       <SiteHeader />
       <main id="main">
         <PageHero title="Services" />
-        <div className="star-field">
+        <div>
           <section
             aria-labelledby="sessions-heading"
             className="wrap grid gap-10 py-12 lg:grid-cols-[minmax(16rem,0.75fr)_minmax(0,1.25fr)] lg:gap-20 lg:py-18"
@@ -34,7 +34,7 @@ export default function ServicesPage() {
                 className="text-[clamp(2.4rem,4vw,3.75rem)]"
                 id="sessions-heading"
               >
-                Choose a session <em className="text-accent">with Aurora</em>
+                Choose a session with Aurora
               </h2>
               <nav
                 aria-label="Session guide"
@@ -53,7 +53,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
               </nav>
-              <div className="relative mt-6 hidden aspect-[1.25] max-w-96 overflow-hidden rounded-t-full border border-accent/30 lg:block">
+              <div className="relative mt-6 hidden aspect-[1.25] max-w-96 overflow-hidden rounded-t-full border border-line lg:block">
                 <Image
                   alt="Aurora playing a crystal singing bowl outdoors"
                   className="object-cover object-bottom"
@@ -67,7 +67,7 @@ export default function ServicesPage() {
               {sessions.map(({ name, slug, description, details, id }) => (
                 <section
                   aria-labelledby={`${slug}-title`}
-                  className="border-b border-accent/30 pb-8 lg:pb-10"
+                  className="border-b border-line pb-8 lg:pb-10"
                   id={slug}
                   key={slug}
                 >
@@ -118,7 +118,7 @@ export default function ServicesPage() {
             </h2>
             <div className="mt-6 grid gap-6 sm:grid-cols-2">
               <figure className="border-t border-line pt-5">
-                <blockquote className="font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight text-accent italic">
+                <blockquote className="font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight text-foreground">
                   “She met us with open arms”
                 </blockquote>
                 <p className="mt-3 max-w-[49ch] leading-relaxed text-muted">
@@ -131,7 +131,7 @@ export default function ServicesPage() {
                 </figcaption>
               </figure>
               <figure className="border-t border-line pt-5">
-                <blockquote className="font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight text-accent italic">
+                <blockquote className="font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-tight text-foreground">
                   “The beautiful safe space she created embraced me like a
                   cocoon”
                 </blockquote>
@@ -148,7 +148,6 @@ export default function ServicesPage() {
           </section>
         </div>
       </main>
-      <SiteFooter />
     </>
   );
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { SiteFooter, SiteHeader } from "../../_components/site-chrome";
+import { SiteHeader } from "../../_components/site-chrome";
 import { getProductsPage } from "../catalog";
 import { ProductGrid } from "../product-grid";
 
@@ -25,7 +25,7 @@ export default async function ProductsPage({
   return (
     <>
       <a
-        className="fixed top-3 left-3 z-3 -translate-y-[180%] bg-purple px-4 py-3 text-foreground focus:translate-y-0"
+        className="fixed top-3 left-3 z-3 -translate-y-[180%] bg-accent px-4 py-3 text-accent-ink focus:translate-y-0"
         href="#main"
       >
         Skip to content
@@ -33,9 +33,6 @@ export default async function ProductsPage({
       <SiteHeader />
       <main className="wrap py-10 md:py-14" id="main">
         <div className="mb-9 border-b border-line pb-6">
-          <p className="mb-4 text-[0.72rem] font-semibold tracking-[0.2em] text-accent uppercase">
-            Gatherings & Recordings
-          </p>
           <h1 className="text-[clamp(2.75rem,5vw,4.25rem)] leading-none tracking-[-0.03em]">
             Products
           </h1>
@@ -46,7 +43,6 @@ export default async function ProductsPage({
         </div>
         <ProductGrid products={products} />
       </main>
-      <SiteFooter />
     </>
   );
 }

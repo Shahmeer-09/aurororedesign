@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/button";
 import { PageHero } from "../_components/page-hero";
 import { Reveal } from "../_components/reveal";
-import { SiteFooter, SiteHeader } from "../_components/site-chrome";
+import { SiteHeader } from "../_components/site-chrome";
 import { siteLinks } from "../site-links";
 
 export const metadata: Metadata = {
@@ -46,7 +46,7 @@ export default function StarseedsPage() {
   return (
     <>
       <a
-        className="fixed top-3 left-3 z-3 -translate-y-[180%] bg-purple px-4 py-3 text-foreground focus:translate-y-0"
+        className="fixed top-3 left-3 z-3 -translate-y-[180%] bg-accent px-4 py-3 text-accent-ink focus:translate-y-0"
         href="#main"
       >
         Skip to content
@@ -54,15 +54,13 @@ export default function StarseedsPage() {
       <SiteHeader />
       <main id="main">
         <PageHero title="Embracing your starseed nature" />
-        <div className="star-field">
+        <div>
           <section
             aria-labelledby="what-is-a-starseed"
             className="wrap grid items-center gap-8 py-14 md:grid-cols-[1.1fr_0.9fr] md:gap-16 md:py-20"
           >
             <div>
-              <h2 id="what-is-a-starseed">
-                What is a <em className="text-accent">starseed?</em>
-              </h2>
+              <h2 id="what-is-a-starseed">What is a starseed?</h2>
               <div className="mt-6 max-w-[60ch] space-y-4 leading-relaxed text-muted">
                 <p>
                   In Aurora’s spiritual practice, a starseed is someone who
@@ -77,11 +75,7 @@ export default function StarseedsPage() {
                   everyday life.
                 </p>
               </div>
-              <ButtonLink
-                className="mt-7"
-                href="#starseed-offerings"
-                icon="sparkles"
-              >
+              <ButtonLink className="mt-7" href="#starseed-offerings">
                 Explore the Offerings
               </ButtonLink>
             </div>
@@ -108,7 +102,7 @@ export default function StarseedsPage() {
               {offerings.map(
                 ({ title, image, format, description, action, href }) => (
                   <li
-                    className="flex flex-col gap-5 border-t border-accent/35 pt-4"
+                    className="flex flex-col gap-5 border-t border-line pt-4"
                     key={image}
                   >
                     <Image
@@ -144,7 +138,6 @@ export default function StarseedsPage() {
           </section>
         </div>
       </main>
-      <SiteFooter />
     </>
   );
 }

@@ -6,9 +6,9 @@ The live website is the reference for the redesign. [Aurora Luna Star](https://a
 
 ## Homepage scope
 
-- Make Book a Session the primary action and the free meditation the secondary action. Keep both available from the hero and footer.
+- Make Book a Session the primary action and the free meditation the secondary action. Keep the video opening focused on the title artwork. Place booking in the introduction and footer, and link the footer to the meditation signup.
 - Summarize the three existing sessions. Link to Schedulista where direct booking is available and Contact for Soul Evolutionary Alchemy.
-- Preview six products and link to the full Products page. Introduce Aurora using her existing site content and photography. Keep the About, Starseeds, Products, Media, Partnerships, and Contact destinations accessible.
+- Feature a retreat and three recordings and link to the full Products page. Introduce Aurora using her existing site content and photography. Keep the About, Starseeds, Products, Media, Partnerships, and Contact destinations accessible.
 - Use the existing Flodesk flow for the meditation. Show an actionable fallback when the signup form cannot load.
 
 Booking, commerce, and the remaining live pages remain on their current systems. The route rollout on the production domain needs a separate decision.

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "./home.css";
+import { SiteFooter } from "./_components/site-chrome";
 
 const geist = localFont({
   src: "./fonts/geist.woff2",
@@ -34,6 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="bg-background font-sans text-foreground antialiased">
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

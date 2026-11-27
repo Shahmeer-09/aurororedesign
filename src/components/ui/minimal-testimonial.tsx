@@ -97,13 +97,13 @@ export function TestimonialsMinimal({
     <div className="mx-auto max-w-[60rem]" ref={root}>
       <div className="mb-6 flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-          <div className="flex -space-x-1.5">
+          <div className="flex gap-2">
             {testimonials.map(({ name, image }, index) => (
               <button
                 aria-controls={quoteId}
                 aria-label={`Read ${name}’s testimonial`}
                 aria-pressed={active === index}
-                className="relative size-11 shrink-0 cursor-pointer rounded-full ring-2 ring-background hover:z-10 focus-visible:z-20 aria-pressed:z-10 aria-pressed:scale-105 aria-pressed:ring-accent motion-safe:transition"
+                className="relative size-11 shrink-0 cursor-pointer rounded-full ring-2 ring-background hover:z-10 focus-visible:z-20 aria-pressed:z-10 aria-pressed:ring-accent"
                 key={name}
                 onClick={() =>
                   setSlide((slide) =>
@@ -119,7 +119,7 @@ export function TestimonialsMinimal({
               >
                 <Image
                   alt=""
-                  className={`size-full rounded-full object-cover motion-safe:transition ${active === index ? "" : "grayscale hover:grayscale-0"}`}
+                  className={`size-full rounded-full object-cover motion-safe:transition-[filter] ${active === index ? "" : "grayscale hover:grayscale-0"}`}
                   height={44}
                   src={image}
                   width={44}
@@ -135,7 +135,7 @@ export function TestimonialsMinimal({
           <Button
             aria-controls={quoteId}
             aria-label="Previous testimonial"
-            className="size-11.5 p-0"
+            className="size-11 p-0"
             icon="previous"
             onClick={() => go(-1)}
             variant="outline"
@@ -143,7 +143,7 @@ export function TestimonialsMinimal({
           <Button
             aria-controls={quoteId}
             aria-label="Next testimonial"
-            className="size-11.5 p-0"
+            className="size-11 p-0"
             icon="next"
             onClick={() => go(1)}
             variant="outline"
@@ -160,10 +160,10 @@ export function TestimonialsMinimal({
           const testimonial = testimonials[index];
           const outgoing = index === previous;
           const motion = outgoing
-            ? "pointer-events-none absolute inset-x-0 top-0 motion-safe:animate-[testimonial-out_460ms_ease-out_both] motion-reduce:hidden"
+            ? "pointer-events-none absolute inset-x-0 top-0 motion-safe:animate-[testimonial-out_200ms_var(--ease-out)_both] motion-reduce:hidden"
             : previous === null
               ? ""
-              : "relative z-10 motion-safe:animate-[testimonial-in_460ms_cubic-bezier(0.22,1,0.36,1)_both]";
+              : "relative z-10 motion-safe:animate-[testimonial-in_200ms_var(--ease-out)_both]";
           return (
             <blockquote
               aria-hidden={outgoing || undefined}

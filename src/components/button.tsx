@@ -33,7 +33,7 @@ function ButtonIcon({ icon }: { icon: keyof typeof iconPaths }) {
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={1.75}
+      strokeWidth={1.5}
       viewBox="0 0 24 24"
     >
       <path d={iconPaths[icon]} />
