@@ -110,7 +110,7 @@ Selected interior-page introductions, product listings, and portraits reveal onc
 
 Product details open on ivory with the original cover beside the title, format, price, and shop link. On mobile, the title precedes the cover. Descriptions with a program list pair the overview with the list in a blush panel. On narrow screens the list follows the overview in reading order. Shorter descriptions use a centered reading column.
 
-The root layout owns the footer. On the homepage it includes the full booking invitation. Inner pages use a compact mark with Aurora’s introduction, linked photos, navigation, and socials. Their hero and footer imagery moves with scroll when motion is enabled. The shared footer closes with a berry-to-plum copyright strip.
+The root layout owns the footer. The homepage footer includes the full booking invitation and fills 100vh, including the copyright strip. It grows when the content needs more room. Inner pages use a compact mark with Aurora’s introduction, linked photos, navigation, and socials. Their hero and footer imagery moves with scroll when motion is enabled. The shared footer closes with a berry-to-plum copyright strip.
 
 ## Asset sources
 

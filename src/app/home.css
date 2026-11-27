@@ -540,6 +540,21 @@ html:has(.gate-dialog[open]) {
   gap: clamp(2.5rem, 8vw, 8rem);
   min-height: 100svh;
 }
+.journal + .journal-footer {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+}
+.journal + .journal-footer .spread {
+  min-height: 0;
+  padding-block: clamp(2rem, 5vh, 3.25rem);
+}
+.journal + .journal-footer .footer-mark {
+  max-width: 30vh;
+}
+.journal + .journal-footer .footer-intro h2 {
+  font-size: clamp(3rem, 4.8vw, 4.4rem);
+}
 .footer-credit {
   padding: 0.875rem 1rem;
   background: linear-gradient(105deg, #79083e, #754660 48%, #753654);
@@ -581,6 +596,24 @@ html:has(.gate-dialog[open]) {
   }
 }
 @media (max-width: 767px) {
+  .journal + .journal-footer .spread {
+    gap: 1.5rem;
+    padding-block: 1.5rem;
+  }
+  .journal + .journal-footer .footer-mark {
+    width: 7rem;
+    margin-bottom: 0.75rem;
+  }
+  .journal + .journal-footer .footer-intro h2 {
+    font-size: clamp(2.25rem, 8vw, 3.2rem);
+  }
+  .journal + .journal-footer .body-copy {
+    margin-block: 0.75rem;
+  }
+  .journal + .journal-footer .foot-links {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+  }
   .journal .session-list {
     grid-template-columns: 1fr;
     max-width: 24rem;
