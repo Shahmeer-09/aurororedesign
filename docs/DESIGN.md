@@ -45,17 +45,17 @@ components:
 
 ## Overview
 
-The homepage is a practitioner profile in warm ivory and deep plum. The opening uses the supplied transparent title artwork, centered over Aurora’s original video. The small brand mark and shared Menu trigger sit on the footage. Keep the first booking action beside the introduction. The full site navigation is available in the homepage footer.
+The homepage is a practitioner profile in warm ivory and deep plum. The opening uses the supplied transparent title artwork, centered over Aurora’s original video. The small brand mark and shared Menu trigger sit on the footage. Place the ivory booking action at the lower right of the hero and repeat the dark booking action in the introduction. The full site navigation is available in the homepage footer.
 
 ## Landing-page layout plan
 
 | Section | Composition and visitor action |
 | --- | --- |
-| Opening | Center the original transparent title over the video. Keep the playable media and menu controls at opposite corners. |
+| Opening | Center the original transparent title over the video. Place the champagne mark at the left, Menu at the top right, and booking action at the lower right. |
 | Introduction | Cut to ivory and Aurora’s garden portrait. Set the fear question in roman and italic serif, then offer booking and her story. |
 | Private sessions | Present three illustrated session covers on a warm rose and apricot field. Each entry reaches its own booking or inquiry destination. |
 | Client voice | Center Erik L.’s full testimonial over the purple-tinted Milky Way timelapse. |
-| Fear Clear | Pair Aurora’s garden portrait with the live signup. Keep the form visible alongside its 30-minute meditation description. |
+| Fear Clear | Pair Aurora’s singing-bowl portrait with the live signup. Keep the form visible alongside its 30-minute meditation description. |
 | Retreats and recordings | Lead with the retreat cover. Place three recordings in a quieter list alongside it, then link to the shop. |
 | Footer | Pair the brand mark and booking link with a three-photo directory on textured plum. Include site destinations, cart, and meditation. Reuse this ending across routes. |
 

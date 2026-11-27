@@ -37,6 +37,9 @@ export default async function Home() {
               preload
             />
           </h1>
+          {/* <a className="book hero-book" href="#sessions">
+            Book a Session
+          </a> */}
         </section>
         <section className="paper">
           <div className="spread columns items-center">
@@ -122,10 +125,10 @@ export default async function Home() {
             <Image
               className="meditation-portrait"
               width={780}
-              height={1092}
-              src="/aurora/portrait-about.webp"
+              height={1170}
+              src="/aurora/services/aurora.webp"
               sizes="(min-width: 1040px) 464px, (min-width: 768px) 45vw, 88vw"
-              alt="Aurora Luna Star sitting among yellow flowers"
+              alt="Aurora Luna Star playing a crystal singing bowl outdoors"
             />
           </div>
         </section>

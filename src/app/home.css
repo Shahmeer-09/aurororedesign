@@ -1,6 +1,6 @@
 .journal {
   --paper: #f5efe5;
-  --ink: #30212d;
+  --ink: #302231;
   --bronze: #815743;
   --rule: #b9a999;
   background: #291a29;
@@ -10,6 +10,36 @@
   height: 92svh;
   min-height: 25rem;
 }
+.journal-hero h1 {
+  position: relative;
+  isolation: isolate;
+}
+.journal-hero .hero-book {
+  position: absolute;
+  right: clamp(1.25rem, 5vw, 4rem);
+  bottom: clamp(1.25rem, 4vh, 2.5rem);
+  z-index: 1;
+  background: var(--paper);
+  color: var(--ink);
+}
+.journal-hero .hero-book:hover {
+  background: #ede1d3;
+}
+
+.journal-hero h1::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -15% -12%;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 52%,
+    #200b2ac4 8%,
+    #200b2a8c 40%,
+    transparent 72%
+  );
+}
+
 .journal .paper {
   background: var(--paper);
   color: var(--ink);
@@ -91,9 +121,8 @@
 }
 /* Session editions and the full-bleed client interlude. */
 .journal .sessions {
-  background:
-    radial-gradient(ellipse at 20% 25%, #f1c8af, transparent 60%),
-    linear-gradient(118deg, #d4bdc5, #dcb1a4 53%, #dbb7ca);
+  --bronze: #6b4538;
+  background: linear-gradient(118deg, #e7c9ba, #e0c3ce);
   text-align: center;
 }
 .journal .sessions h2 em {
@@ -117,21 +146,29 @@
   width: 100%;
   aspect-ratio: 1 / 1.13;
   padding: 1rem;
+  background-image:
+    radial-gradient(
+      ellipse at center,
+      var(--cover-scrim, #180d23a3),
+      transparent 73%
+    ),
+    var(--cover-image);
   background-position: center;
   background-size: cover;
   color: #fff7ec;
 }
 .cover-bio-magnetic {
-  background-image:
+  --cover-image:
     linear-gradient(#38203044, #2b162acc), url("/aurora/hero-orion-nebula.webp");
 }
 .cover-heart-intelligence {
-  background-image:
+  --cover-scrim: #180d23d1;
+  --cover-image:
     linear-gradient(#5c234850, #451730cc),
     url("/aurora/hero-colorful-nebula.webp");
 }
 .cover-soul-evolutionary {
-  background-image:
+  --cover-image:
     linear-gradient(#282d6444, #1f1637cc), url("/aurora/nebula-hero.webp");
 }
 .journal .session-cover h3 {
@@ -274,6 +311,11 @@
   position: absolute;
   inset: 0 0 auto;
   background: transparent;
+}
+
+.gate-overlay > a img {
+  filter: brightness(0) invert(1) sepia(1) saturate(1.6) brightness(0.94)
+    drop-shadow(0 0 0 #f1d8af) drop-shadow(0 0 0 #f1d8af);
 }
 .gate-trigger,
 .gate-top button {
@@ -425,25 +467,25 @@ html:has(.gate-dialog[open]) {
 .journal .meditation-chapter {
   --foreground: #32182b;
   --muted: #52263e;
-  --accent: #602445;
-  --accent-hover: #733658;
-  --accent-ink: #fff5fa;
+  --accent: #522840;
+  --accent-hover: #66344e;
+  --accent-ink: var(--paper);
   --form-message: #52263e;
-  --field-fill: #fff4fa;
-  --field-line: #89506f;
+  --field-fill: #fff9f6;
+  --field-line: #8a5d76;
   --control-line: var(--field-line);
   --surface: #ffe4f1;
   color-scheme: light;
   color: var(--foreground);
   background:
-    linear-gradient(#ffe7f42e, #ffe7f42e),
-    #fac1dc url("/aurora/fear-pink-fur.webp") center / cover;
+    linear-gradient(#eddadd99, #eddadd99),
+    #eddadd url("/aurora/fear-pink-fur.webp") center / cover;
 }
 .journal .meditation-portrait {
   max-width: 29rem;
   justify-self: center;
   aspect-ratio: 4 / 4.8;
-  object-position: 50% 26%;
+  object-position: 50% 100%;
   box-shadow: 10px 12px 0 #60244526;
 }
 .journal main > .paper:last-child {
