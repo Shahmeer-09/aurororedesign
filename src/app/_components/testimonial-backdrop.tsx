@@ -7,7 +7,8 @@ export function TestimonialBackdrop() {
 
   useEffect(() => {
     const media = video.current;
-    if (!media) return;
+    const section = media?.parentElement;
+    if (!media || !section) return;
     const preference = matchMedia("(prefers-reduced-motion: reduce)");
     let inView = false;
     function sync() {
@@ -21,7 +22,7 @@ export function TestimonialBackdrop() {
       },
       { threshold: 0.15 },
     );
-    observer.observe(media);
+    observer.observe(section);
     preference.addEventListener("change", sync);
     return () => {
       observer.disconnect();

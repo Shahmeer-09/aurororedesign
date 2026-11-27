@@ -54,12 +54,12 @@ The homepage is a practitioner profile in warm ivory and deep plum. The opening 
 | Opening | Center the original transparent title over the video. Place the wordmark at the left, Menu at the top right, and booking action at the lower right. |
 | Introduction | Cut to ivory and Aurora’s garden portrait. Set the fear question in roman and italic serif, then offer booking and her story. |
 | Private sessions | Present three illustrated session covers on a warm rose and apricot field. Each entry reaches its own booking or inquiry destination. |
-| Client voice | Center Erik L.’s full testimonial over the purple-tinted Milky Way timelapse. |
+| Client voice | Center Erik L.’s full testimonial over the purple-tinted Milky Way video. The video stays fixed on hover-capable devices when reduced motion is off. |
 | Fear Clear | Pair Aurora’s singing-bowl portrait with the live signup. Keep the form visible alongside its 30-minute meditation description. |
 | Retreats and recordings | Lead with the retreat cover. Place three recordings in a quieter list alongside it, then link to the shop. |
 | Footer | Pair the brand mark and booking link with a three-photo directory on textured plum. Include site destinations, cart, and meditation. Reuse this ending across routes. |
 
-Desktop chapters use a 92svh minimum and expand with their contents. Narrow screens follow the natural reading height. The hero and the section above the footer use 30svh of overlap travel. Other chapters use 16svh. Reduced motion keeps the chapters in normal flow and shows a still sky by default. The Home menu preview uses Aurora’s garden portrait. The global footer uses Xinyi Wen’s pink clouds under an even dark purple tint. [Unsplash photo](https://unsplash.com/photos/pink-clouds-filling-the-sky-qjCHPZbeXCQ)
+Desktop chapters use a 92svh minimum and expand with their contents. Narrow screens follow the natural reading height. The hero and the section above the footer use 30svh of overlap travel. Other chapters use 16svh of overlap, and the testimonial scrolls in normal flow. Reduced motion keeps the chapters in normal flow and shows a still sky by default. The Home menu preview uses Aurora’s garden portrait. The global footer uses Xinyi Wen’s pink clouds under an even dark purple tint. [Unsplash photo](https://unsplash.com/photos/pink-clouds-filling-the-sky-qjCHPZbeXCQ)
 
 The testimonial combines roman and italic Cormorant Garamond over the Eclipse Chasers timelapse and a masked cloud photograph. [Milky Way footage](https://www.pexels.com/video/milky-way-timelapse-27775202/) · [Cloud photograph](https://www.pexels.com/photo/clouds-in-the-sky-8726320/)
 

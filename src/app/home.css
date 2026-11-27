@@ -196,7 +196,14 @@
   padding: clamp(4rem, 9vw, 8rem) 6%;
   position: relative;
   isolation: isolate;
+  clip-path: inset(0);
   background: #27102d;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .journal .testimonial-sky {
+    position: fixed;
+    height: 100dvh;
+  }
 }
 .testimonial-sky,
 .journal .sound::before,
@@ -548,14 +555,14 @@ html:has(.gate-dialog[open]) {
 /* The departing chapter recedes while the following chapter keeps scrolling. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    .journal main > :is(section, figure) {
+    .journal main > section {
       position: relative;
       z-index: 0;
       animation: chapter-overlap linear both;
       animation-timeline: view();
       animation-range: exit 0% exit 100%;
     }
-    .journal main > :is(section, figure):has(:focus-visible) {
+    .journal main > section:has(:focus-visible) {
       animation: none;
     }
   }
