@@ -5,7 +5,7 @@
 
 ## Homepage demo
 
-The local homepage pairs the supplied Aurora title artwork and original video with an ivory portrait introduction, session guide, full Erik L. testimonial over the Milky Way video, Fear Clear signup, and selected shop links. All eight pages now use the GSAP hamburger menu and the root-layout booking footer. The hero uses the original video and title with a purple cloud bank along the bottom. Home in the menu shows Aurora’s garden portrait. Desktop chapters have a 92svh minimum, and the shared plaster-textured footer links portraits to About, Services, and Media. Desktop and mobile Chrome verified navigation, Escape, focus return, reduced motion, and cross-page booking links.
+The local homepage pairs the supplied Aurora title artwork and original video with an ivory portrait introduction, session guide, full Erik L. testimonial over the Milky Way video, Fear Clear signup, and selected shop links. All eight pages now use the GSAP hamburger menu and the root-layout booking footer. The hero uses the original video and centered title. Home in the menu shows Aurora’s garden portrait. Desktop chapters have a 92svh minimum, and the shared plaster-textured footer links portraits to About, Services, and Media. Desktop and mobile Chrome verified navigation, Escape, focus return, reduced motion, and cross-page booking links.
 
 Chrome at 1440px and 390px confirmed the video and image load, pause/play, desktop parallax, reduced-motion pause, booking and meditation anchors, live signup fields, and horizontal fit. Payment, email delivery, and deployment are outside this demo check.
 

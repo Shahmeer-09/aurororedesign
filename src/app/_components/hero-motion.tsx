@@ -80,7 +80,6 @@ export function HeroMotion() {
         aria-hidden="true"
         className="absolute inset-0 -z-1 bg-[#100516]/50"
       />
-      <div aria-hidden="true" className="hero-cloud-bank" />
     </>
   );
 }

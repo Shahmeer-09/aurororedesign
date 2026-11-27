@@ -551,28 +551,3 @@ html:has(.gate-dialog[open]) {
     transform: translateY(var(--chapter-travel, 16svh));
   }
 }
-
-.hero-cloud-bank {
-  position: absolute;
-  z-index: -1;
-  inset: auto 0 0 auto;
-  width: min(69%, 76rem);
-  height: clamp(9rem, 39svh, 26rem);
-  pointer-events: none;
-  background: url("/aurora/hero-twilight-clouds.webp") right 55% / cover;
-  filter: brightness(0.68) saturate(0.8) hue-rotate(-38deg);
-  mask-image: radial-gradient(
-    ellipse at 87% 97%,
-    #000 10%,
-    #000b 35%,
-    transparent 70%
-  );
-  mix-blend-mode: screen;
-}
-
-@media (max-width: 767px) {
-  .hero-cloud-bank {
-    width: 92%;
-    height: 30%;
-  }
-}

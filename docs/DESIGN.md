@@ -84,7 +84,7 @@ Display text and quotations use Cormorant Garamond at medium weight. Body text, 
 
 Content uses a centered 72rem maximum container; the full navigation header can extend to 100rem. Section spacing ranges from 4rem to 8rem. The same menu opens at all widths. Section grids become a single column below 768px.
 
-The homepage uses its own [editorial stylesheet](../src/app/home.css). Pair a rectangular garden portrait with the introduction on ivory. Follow with the three illustrated sessions, a full-width Milky Way testimonial, the Fear Clear signup on a bright pink fur texture with dark plum text and a raspberry-plum signup action, and a retreat cover beside three recording links. On narrow screens these spreads stack. Keep photography static. The hero footage has up to 48px of desktop scroll travel, an asymmetric purple twilight cloud bank, and a still poster for reduced motion. Both background videos play in view when motion is enabled.
+The homepage uses its own [editorial stylesheet](../src/app/home.css). Pair a rectangular garden portrait with the introduction on ivory. Follow with the three illustrated sessions, a full-width Milky Way testimonial, the Fear Clear signup on a bright pink fur texture with dark plum text and a raspberry-plum signup action, and a retreat cover beside three recording links. On narrow screens these spreads stack. Keep photography static. The hero footage has up to 48px of desktop scroll travel and a still poster for reduced motion. Both background videos play in view when motion is enabled.
 
 Media leads with eight linked recording thumbnails, followed by a presenter feature with the original stage photograph and a speaking inquiry button. Interior pages with banners use the shared `PageHero` component with a flat surface and fluid title. Products opens directly with a compact title and cover grid. [Live Media page](https://auroralunastar.com/mediakit/)
 
@@ -114,7 +114,7 @@ The root layout renders the homepage’s “Work with Aurora” footer on every 
 
 ## Asset sources
 
-- The hero’s twilight clouds are by Ludvig Hedenborg. [Pexels photograph](https://www.pexels.com/photo/fluffy-purple-and-dark-clouds-in-the-sunset-light-9465354/)
+- The archived twilight cloud reference is by Ludvig Hedenborg. [Pexels photograph](https://www.pexels.com/photo/fluffy-purple-and-dark-clouds-in-the-sunset-light-9465354/)
 
 - The homepage loop and fallback poster use Aurora Luna Star’s [original hero video](https://auroralunastar.com/wp-content/uploads/2020/09/logo-animation.mp4).
 - [Aurora Luna Star](https://auroralunastar.com/) supplies factual copy, wordmark, testimonial.
