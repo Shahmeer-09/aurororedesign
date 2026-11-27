@@ -1,6 +1,7 @@
 "use client";
 
 import gsap from "gsap";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { bookingAnchor, navigation, siteLinks } from "@/app/site-links";
 
@@ -103,7 +104,13 @@ export function KineticNavigation() {
           <div data-curtain="" className="gate-rose" />
           <div data-curtain="" className="gate-paper">
             <div className="gate-top">
-              <span>Aurora Luna Star</span>
+              <Image
+                className="gate-wordmark"
+                src="/aurora/aurora-logo-header5.png"
+                width={867}
+                height={117}
+                alt="Aurora Luna Star"
+              />
               <button type="button" onClick={close}>
                 Close <span aria-hidden="true">×</span>
               </button>

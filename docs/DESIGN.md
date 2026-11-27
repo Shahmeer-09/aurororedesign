@@ -45,13 +45,13 @@ components:
 
 ## Overview
 
-The homepage is a practitioner profile in warm ivory and deep plum. The opening uses the supplied transparent title artwork, centered over Aurora’s original video. The small brand mark and shared Menu trigger sit on the footage. Place the ivory booking action at the lower right of the hero and repeat the dark booking action in the introduction. The full site navigation is available in the homepage footer.
+The homepage is a practitioner profile in warm ivory and deep plum. The opening uses the supplied transparent title artwork, centered over Aurora’s original video. The header wordmark and shared Menu trigger sit on the footage. Place the ivory booking action at the lower right of the hero and repeat the dark booking action in the introduction. The full site navigation is available in the homepage footer.
 
 ## Landing-page layout plan
 
 | Section | Composition and visitor action |
 | --- | --- |
-| Opening | Center the original transparent title over the video. Place the champagne mark at the left, Menu at the top right, and booking action at the lower right. |
+| Opening | Center the original transparent title over the video. Place the wordmark at the left, Menu at the top right, and booking action at the lower right. |
 | Introduction | Cut to ivory and Aurora’s garden portrait. Set the fear question in roman and italic serif, then offer booking and her story. |
 | Private sessions | Present three illustrated session covers on a warm rose and apricot field. Each entry reaches its own booking or inquiry destination. |
 | Client voice | Center Erik L.’s full testimonial over the purple-tinted Milky Way timelapse. |
@@ -102,7 +102,7 @@ Homepage photographs and artwork have square corners. Buttons and signup fields 
 
 ## Components
 
-The shared header places the Aurora mark on the left and Menu on the right. On Home it overlays the footage. Two sliding panels reveal large Cormorant Garamond links on ivory. On desktop, hovering or focusing a destination changes the facing photograph. Mobile uses the entire sheet for links. Escape and Close restore focus to the trigger.
+The shared header places the Aurora mark on the left and Menu on the right. On Home the header wordmark overlays the footage. The menu sheet also uses the wordmark. Two sliding panels reveal large Cormorant Garamond links on ivory. On desktop, hovering or focusing a destination changes the facing photograph. Mobile uses the entire sheet for links. Escape and Close restore focus to the trigger.
 
 Buttons pair 16px line icons with medium-weight Geist labels. Primary hover lightens the gold fill. Secondary hover raises the plum surface one step. Keyboard focus uses a 2px gold outline offset by 5px. Reduced-motion preferences disable button motion. Form controls keep visible labels, dark plum fills, and a 2.875rem minimum height. The signup action spans the form width.
 

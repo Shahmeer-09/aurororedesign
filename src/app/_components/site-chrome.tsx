@@ -6,7 +6,17 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
   return (
     <header className={`gate-header ${overlay ? "gate-overlay" : ""}`}>
       <a href="/" aria-label="Aurora Luna Star home">
-        <Image src="/aurora/logogold.png" width={48} height={48} alt="" />
+        {overlay ? (
+          <Image
+            className="gate-wordmark"
+            src="/aurora/aurora-logo-header5.png"
+            width={867}
+            height={117}
+            alt=""
+          />
+        ) : (
+          <Image src="/aurora/logogold.png" width={48} height={48} alt="" />
+        )}
       </a>
       <KineticNavigation />
     </header>

@@ -313,9 +313,9 @@
   background: transparent;
 }
 
-.gate-overlay > a img {
-  filter: brightness(0) invert(1) sepia(1) saturate(1.6) brightness(0.94)
-    drop-shadow(0 0 0 #f1d8af) drop-shadow(0 0 0 #f1d8af);
+.gate-wordmark {
+  width: clamp(9rem, 40vw, 14rem);
+  height: auto;
 }
 .gate-trigger,
 .gate-top button {
@@ -386,11 +386,8 @@ html:has(.gate-dialog[open]) {
   border-bottom: 1px solid #b9a999;
   padding-bottom: 0.6rem;
 }
-.gate-top > span {
-  font:
-    italic 1.65rem var(--font-cormorant),
-    Georgia,
-    serif;
+.gate-top .gate-wordmark {
+  filter: brightness(0.48);
 }
 .gate-top button span {
   font-size: 1.85rem;
