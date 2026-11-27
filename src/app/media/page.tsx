@@ -48,24 +48,24 @@ export default function MediaPage() {
       <SiteHeader overlay />
       <main className="edition media-edition" id="main">
         <div>
-          <section className="feature-band">
-            <div className="wrap">
-              <h1>
-                Media <em>&amp; Speaking</em>
-              </h1>
-              <div className="media-opening">
-                <Recording id={recordings[0].id} title={recordings[0].title} />
-                <div>
-                  <p className="kicker">Featured recording</p>
-                  <h2>{recordings[0].title}</h2>
-                  <a
-                    className="text-link"
-                    href={`https://www.youtube.com/watch?v=${recordings[0].id}`}
-                  >
-                    Watch on YouTube ↗
-                  </a>
-                </div>
+          <section
+            className="media-hero sky-motion"
+            aria-labelledby="media-title"
+          >
+            <div className="wrap media-opening">
+              <div>
+                <h1 id="media-title">
+                  Media <em>&amp; Speaking</em>
+                </h1>
+                <h2>{recordings[0].title}</h2>
+                <a
+                  className="text-link"
+                  href={`https://www.youtube.com/watch?v=${recordings[0].id}`}
+                >
+                  Watch on YouTube ↗
+                </a>
               </div>
+              <Recording id={recordings[0].id} title={recordings[0].title} />
             </div>
           </section>
           <section

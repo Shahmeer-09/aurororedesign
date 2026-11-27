@@ -25,7 +25,10 @@ export default function AboutPage() {
       <SiteHeader overlay />
       <main className="edition about-edition" id="main">
         <div>
-          <section aria-labelledby="aurora-work" className="portrait-opening">
+          <section
+            aria-labelledby="aurora-work"
+            className="portrait-opening sky-motion"
+          >
             <div className="about-portrait">
               <Image
                 alt="Aurora Luna Star with purple hair in a garden"
@@ -123,21 +126,23 @@ export default function AboutPage() {
             <p>Shanna S.</p>
           </section>
         </div>
-        <section className="invitation wrap">
-          <Image
-            src="/aurora/contact-portrait.webp"
-            width={180}
-            height={216}
-            alt="Aurora in the garden"
-          />
-          <div>
-            <h2>In private practice</h2>
-            <p>
-              Explore Aurora’s one-to-one work in meditation and the Akashic
-              Records.
-            </p>
+        <section className="photo-ending about-ending">
+          <div className="invitation wrap">
+            <Image
+              src="/aurora/contact-portrait.webp"
+              width={180}
+              height={216}
+              alt="Aurora in the garden"
+            />
+            <div>
+              <h2>In private practice</h2>
+              <p>
+                Explore Aurora’s one-to-one work in meditation and the Akashic
+                Records.
+              </p>
+            </div>
+            <ButtonLink href={siteLinks.services}>Explore Sessions</ButtonLink>
           </div>
-          <ButtonLink href={siteLinks.services}>Explore Sessions</ButtonLink>
         </section>
       </main>
     </>

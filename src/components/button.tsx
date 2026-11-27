@@ -16,6 +16,8 @@ const iconPaths = {
   refresh: "M20 7v5h-5m5 0a8 8 0 1 1-2.3-5.7L20 12",
   previous: "m15 18-6-6 6-6",
   next: "m9 6 6 6-6 6",
+  minus: "M5 12h14",
+  plus: "M5 12h14M12 5v14",
 };
 
 type ButtonStyle = {

@@ -23,7 +23,7 @@ export default function ServicesPage() {
       </a>
       <SiteHeader overlay />
       <main className="edition services-edition" id="main">
-        <section className="session-opening">
+        <section className="session-opening sky-motion">
           <div className="wrap">
             <h1>
               Sessions <em>with Aurora</em>
@@ -151,10 +151,14 @@ export default function ServicesPage() {
             </div>
           </section>
         </div>
-        <section className="inquiry-band">
+        <section className="photo-ending inquiry-band">
           <div className="wrap">
             <h2>Which session fits?</h2>
-            <p>Tell Aurora what you’d like to explore.</p>
+            <p className="max-w-[46ch]">
+              Maybe you want to explore a pattern that keeps coming up, make
+              space for what you’re feeling, or ask about the Akashic Records.
+              Tell Aurora what’s on your mind and ask where to begin.
+            </p>
             <ButtonLink href={sessionHref()}>Ask about a session</ButtonLink>
           </div>
         </section>

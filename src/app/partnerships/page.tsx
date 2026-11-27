@@ -45,7 +45,10 @@ export default function PartnershipsPage() {
       <SiteHeader overlay />
       <main className="edition partnerships-edition" id="main">
         <div>
-          <section aria-labelledby="kejiwa-heading" className="partner-opening">
+          <section
+            aria-labelledby="kejiwa-heading"
+            className="partner-opening sky-motion"
+          >
             <Reveal className="relative aspect-[5/4] w-full overflow-hidden  md:order-2 md:aspect-[5/5.5]">
               <Image
                 alt="Two Kejiwa bottles on a table with a small glass and copper beads"
@@ -65,29 +68,32 @@ export default function PartnershipsPage() {
               <p className="mt-4 font-display text-2xl leading-tight text-accent">
                 Elixirs and mists for spiritual practice
               </p>
-              <div className="mt-4 max-w-[60ch] space-y-4 leading-relaxed text-muted">
-                <p>
-                  Kejiwa makes elixirs and mists for lightworkers, Reiki
-                  practitioners, and others with a spiritual practice. The maker
-                  describes them as companions for meditation, bodywork,
-                  breathwork, sound baths, and ceremony.
-                </p>
-                <p>
-                  Explore Kejiwa’s Alche-Mists, Ormus Minerals, and Spagyrics,
-                  along with the maker’s guidance on using them in daily rituals
-                  or practitioner-led sessions.
-                </p>
-              </div>
-              <ButtonLink
-                className="mt-6"
-                href="https://kejiwastore.com/aurora"
-                icon="bag"
-                rel="sponsored"
-              >
-                Visit Kejiwa
-              </ButtonLink>
             </div>
           </section>
+          <div className="wrap py-10 partner-notes">
+            {" "}
+            <div className="mt-4 max-w-[60ch] space-y-4 leading-relaxed text-muted">
+              <p>
+                Kejiwa makes elixirs and mists for lightworkers, Reiki
+                practitioners, and others with a spiritual practice. The maker
+                describes them as companions for meditation, bodywork,
+                breathwork, sound baths, and ceremony.
+              </p>
+              <p>
+                Explore Kejiwa’s Alche-Mists, Ormus Minerals, and Spagyrics,
+                along with the maker’s guidance on using them in daily rituals
+                or practitioner-led sessions.
+              </p>
+            </div>
+            <ButtonLink
+              className="mt-6"
+              href="https://kejiwastore.com/aurora"
+              icon="bag"
+              rel="sponsored"
+            >
+              Visit Kejiwa
+            </ButtonLink>
+          </div>
 
           <section
             aria-labelledby="twistedsage-heading"

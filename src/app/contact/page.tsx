@@ -24,40 +24,45 @@ export default function ContactPage() {
       </a>
       <SiteHeader overlay />
       <main className="edition contact-edition" id="main">
-        <div>
-          <div className="contact-layout wrap">
-            <div>
-              <h1>
-                Contact <em>Aurora</em>
-              </h1>
-              <p className="mt-4 max-w-[42ch] leading-relaxed text-muted">
-                Use the form for questions about sessions, speaking engagements,
-                partnerships, or Aurora’s work.
-              </p>
-              <a className="text-link mt-2" href={siteLinks.services}>
-                Explore sessions
-              </a>
-              <div className="contact-photo relative mt-7 overflow-hidden">
-                <Image
-                  alt="Aurora Luna Star standing in a sunlit garden"
-                  className="object-cover object-[center_10%]"
-                  fill
-                  sizes="(min-width: 768px) 35vw, 90vw"
-                  src="/aurora/contact-portrait.webp"
-                />
-              </div>
-            </div>
-            <div>
-              <iframe
-                className="block h-[760px] w-full bg-white"
-                src={contactFormUrl}
-                title="Aurora Luna Star contact form"
-              />
-              <a className="text-link mt-3" href={contactFormUrl}>
-                Open the contact form directly
-              </a>
-            </div>
+        <div className="contact-layout wrap">
+          <span className="contact-display" aria-hidden="true">
+            Contact
+          </span>
+          <div className="contact-intro">
+            <h1>
+              Connect with <em>Aurora</em>
+            </h1>
+            <p className="mt-4 max-w-[45ch] leading-relaxed text-muted">
+              Have a question about a session, or an invitation for Aurora to
+              speak? Send her a message below.
+            </p>
+            <p className="mt-3 max-w-[45ch] leading-relaxed text-muted">
+              For partnerships, share a little about your work and what you’d
+              like to create together.
+            </p>
           </div>
+          <div className="contact-photo">
+            <Image
+              alt="Aurora Luna Star standing in a sunlit garden"
+              className="object-cover object-[center_20%]"
+              fill
+              sizes="(min-width: 1100px) 430px, (min-width: 768px) 42vw, 92vw"
+              src="/aurora/contact-portrait.webp"
+            />
+          </div>
+          <div className="contact-form">
+            <iframe
+              className="block h-[760px] w-full border border-line bg-white"
+              src={contactFormUrl}
+              title="Aurora Luna Star contact form"
+            />
+          </div>
+          <a className="contact-sessions text-link" href={siteLinks.services}>
+            Explore sessions
+          </a>
+          <a className="contact-form-link text-link" href={contactFormUrl}>
+            Open the contact form directly
+          </a>
         </div>
       </main>
     </>

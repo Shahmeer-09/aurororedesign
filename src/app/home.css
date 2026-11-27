@@ -504,11 +504,50 @@ html:has(.gate-dialog[open]) {
     linear-gradient(#24112f99, #24112f99),
     #361c40 url("/aurora/footer-pink-clouds.webp") center 42% / cover;
 }
+.footer-back-top {
+  position: absolute;
+  inset-block-start: 0.75rem;
+  inset-inline-end: clamp(0.75rem, 2vw, 2rem);
+  display: grid;
+  justify-items: center;
+  gap: 0.3125rem;
+  width: 4.5rem;
+  padding: 0.25rem;
+  color: var(--paper);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.3;
+  text-align: center;
+  text-transform: uppercase;
+}
+.footer-back-top-icon {
+  display: grid;
+  place-items: center;
+  width: 1.375rem;
+  height: 1.375rem;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.footer-back-top:hover {
+  color: #f2d9a7;
+}
 .journal-footer .spread {
   display: grid;
   align-items: center;
   gap: clamp(2.5rem, 8vw, 8rem);
   min-height: 100svh;
+}
+.footer-credit {
+  padding: 0.875rem 1rem;
+  background: linear-gradient(105deg, #79083e, #754660 48%, #753654);
+  color: var(--paper);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.045em;
+  text-align: center;
 }
 .footer-mark {
   filter: brightness(1.65);
@@ -552,11 +591,11 @@ html:has(.gate-dialog[open]) {
   }
 }
 
-/* The departing chapter recedes while the following chapter keeps scrolling. */
+/* Fixed photo endings stay outside the overlap transform. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     .journal main > section,
-    main:has(+ .journal-footer) > :last-child {
+    main:has(+ .journal-footer) > :last-child:not(.photo-ending) {
       position: relative;
       z-index: 0;
       animation: chapter-overlap linear both;
@@ -564,14 +603,15 @@ html:has(.gate-dialog[open]) {
       animation-range: exit 0% exit 100%;
     }
     .journal main > section:has(:focus-visible),
-    main:has(+ .journal-footer) > :last-child:has(:focus-visible) {
+    main:has(+ .journal-footer)
+      > :last-child:not(.photo-ending):has(:focus-visible) {
       animation: none;
     }
   }
 }
 .journal main > .journal-hero,
 .journal main > section:last-child,
-main:has(+ .journal-footer) > :last-child {
+main:has(+ .journal-footer) > :last-child:not(.photo-ending) {
   --chapter-travel: 30svh;
 }
 .footer-socials {

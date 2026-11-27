@@ -35,7 +35,7 @@ export function ProductGrid({
                 ? "group grid h-full grid-cols-[5rem_1fr] content-center items-center gap-x-4 border-t border-line py-6 xl:grid-cols-[6.25rem_1fr]"
                 : "group flex h-full flex-col"
             }
-            href={`https://auroralunastar.com/product/${slug}/`}
+            href={`/products/${slug}`}
           >
             <div
               className={`relative overflow-hidden border border-line bg-surface motion-safe:transition-colors group-hover:border-control-line ${shelf ? "row-span-2 rounded-md" : "rounded-lg"}`}

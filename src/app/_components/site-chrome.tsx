@@ -49,6 +49,12 @@ const socials = [
 export function SiteFooter() {
   return (
     <footer className="journal journal-footer">
+      <a className="footer-back-top" href="#top">
+        <span className="footer-back-top-icon" aria-hidden="true">
+          ↑
+        </span>
+        <span>Back to top</span>
+      </a>
       <div className="spread">
         <div className="footer-intro">
           <Image
@@ -122,6 +128,7 @@ export function SiteFooter() {
           </ul>
         </div>
       </div>
+      <p className="footer-credit">© Aurora Luna Star · Made with ♥</p>
     </footer>
   );
 }

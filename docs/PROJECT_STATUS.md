@@ -3,9 +3,37 @@
 - **Last updated** · 2026-11-27
 - **Current phase** · Public site pages ready for review
 
+## Product detail pages
+
+Each detail page has inline quantity controls, an Add to cart button, and three related products. The production build passed. Chrome verified the product ID and selected quantity in intercepted cart requests for all nine products at 1440px and 390px. Live cart and checkout were outside this check.
+
+The retreat and Orion descriptions now spread the overview and program across the reading area. The catalog and detail routes are separate, and detail URL parameters resolve inside Suspense. Chrome checked all nine products and the catalog at 1440px and 390px without the reported URL data insight.
+
+The nine product details use an ivory layout with original cover artwork, pricing, and a purchase link to Aurora’s shop. The reading section renders published copy from [the product export](product-details.json). Chrome checked all nine pages at 1440px and 390px for image loading, layout, prices, and purchase destinations. Checkout was outside this check.
+
+## Footer navigation and product data
+
+Every shared footer has a Back to top link. Chrome verified it on the main routes and a product detail page at 1440px, plus keyboard activation on Home and Products at 390px. The [product detail export](product-details.json) contains published copy, image URLs, prices, and purchase information for the nine catalog products. The copy matches the public detail pages. Prices and stock reflect the collection date.
+
+## Photo CTA and footer spacing
+
+About, Services, and Starseeds have taller photo CTAs. The Services invitation gives visitors examples of what they can ask Aurora about. Inner footers have more vertical space. Chrome confirmed the three photos stay fixed across scroll positions on desktop and scroll on touch screens and with reduced motion. Checked layout at 1440px and 390px.
+
+## Contact, catalog, and closing sections
+
+The catalog header blends into the ivory page with black controls. About, Services, and Starseeds use supplied CTA photographs with fixed desktop and scrolling touch backgrounds. Chrome verified these treatments and horizontal fit at 1440px and 390px.
+
+## Contact refinement
+
+Contact uses a layered display heading on warm white and aligns Aurora’s portrait with the bottom of the hosted form on desktop. Chrome confirmed the form renders at 1440px, 390px, and 320px. Submission remains untested.
+
+## Shop and inner-page imagery
+
+The catalog links to nine local product details with original artwork and descriptions adapted from Aurora’s WooCommerce listings. The publisher’s product pages handle purchases. About ends with a compact ivory invitation. Media pairs its page title and featured recording in the space hero. Inner heroes and footers use scroll-linked image movement and respect reduced motion. Inner footers include Aurora’s short introduction under the emblem.
+
 ## Inner page preview
 
-Seven inner pages now use subject-specific openings and content-sized closing actions. About opens with Aurora’s portrait, Services with her work, Starseeds with a definition and night sky, Media with its playable recording, and Products with the retreat. Partnerships and Contact use the same overlay menu and editorial palette. The homepage retains its full booking footer.
+Seven inner pages now use subject-specific openings and content-sized closing actions. About opens with Aurora’s portrait, Services with her work, Starseeds with a definition and night sky, Media with its playable recording, and Products with the full catalog, including both retreat payment options. Partnerships and Contact use the same overlay menu and editorial palette. The homepage retains its full booking footer.
 
 The production build and targeted Biome check passed. Chrome reviewed the homepage and seven inner pages at 1440px and 390px. All visible main images loaded, each route had one H1, and internal fragment links resolved without horizontal overflow. The featured recording mounted its player on click and the external contact form rendered. Booking, inquiry submission, and checkout were not exercised. Full-page screenshots are in `/tmp/aurora-editorial-review`. Local development preview uses port 3000.
 

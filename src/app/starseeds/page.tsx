@@ -56,7 +56,7 @@ export default function StarseedsPage() {
         <div>
           <section
             aria-labelledby="what-is-a-starseed"
-            className="star-opening"
+            className="star-opening sky-motion"
           >
             <div>
               <h1 id="what-is-a-starseed">
@@ -68,12 +68,6 @@ export default function StarseedsPage() {
                   feels a connection between their soul and other star systems.
                   You might feel drawn to a constellation, wonder about your
                   soul’s origins, or feel out of place on Earth.
-                </p>
-                <p>
-                  If you already identify as a starseed, Aurora’s work explores
-                  grounding in your body, connecting with unity consciousness,
-                  and bringing what you learn about your star connections into
-                  everyday life.
                 </p>
               </div>
               <ButtonLink className="mt-7" href="#starseed-offerings">
@@ -99,6 +93,12 @@ export default function StarseedsPage() {
                 Explore your star connections
               </h2>
             </Reveal>
+            <p className="mt-5 max-w-[60ch] leading-relaxed">
+              If you already identify as a starseed, Aurora’s work explores
+              grounding in your body, connecting with unity consciousness, and
+              bringing what you learn about your star connections into everyday
+              life.
+            </p>
             <ul className="star-atlas">
               {offerings.map(
                 ({ title, image, format, description, action, href }) => (
@@ -135,18 +135,20 @@ export default function StarseedsPage() {
             </ul>
           </section>
         </div>
-        <section className="comparison wrap">
-          <h2>Choose your format</h2>
-          <ul>
-            {offerings.map(({ format, action, href }) => (
-              <li key={href}>
-                <span>{format}</span>
-                <a className="text-link" href={href}>
-                  {action}
-                </a>
-              </li>
-            ))}
-          </ul>
+        <section className="photo-ending starseeds-ending">
+          <div className="comparison wrap">
+            <h2>Choose your format</h2>
+            <ul>
+              {offerings.map(({ format, action, href }) => (
+                <li key={href}>
+                  <span>{format}</span>
+                  <a className="text-link" href={href}>
+                    {action}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
       </main>
     </>

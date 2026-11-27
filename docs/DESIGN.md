@@ -59,7 +59,7 @@ The homepage is a practitioner profile in warm ivory and deep plum. The opening 
 | Retreats and recordings | Lead with the retreat cover. Place three recordings in a quieter list alongside it, then link to the shop. |
 | Footer | Pair the brand mark and booking link with a three-photo directory on textured plum. Include site destinations, cart, and meditation. Reuse this ending across routes. |
 
-Desktop chapters use a 92svh minimum and expand with their contents. Narrow screens follow the natural reading height. The homepage hero and every page’s last content section use 30svh of overlap travel. The shared footer passes over the last section as it enters the viewport. Other chapters use 16svh of overlap, and the testimonial scrolls in normal flow. Reduced motion keeps the chapters in normal flow and shows a still sky by default. The Home menu preview uses Aurora’s garden portrait. The global footer uses Xinyi Wen’s pink clouds under an even dark purple tint. [Unsplash photo](https://unsplash.com/photos/pink-clouds-filling-the-sky-qjCHPZbeXCQ)
+Desktop chapters use a 92svh minimum and expand with their contents. Narrow screens follow the natural reading height. The homepage hero and animated closing sections use 30svh of overlap travel. The photo CTAs on About, Services, and Starseeds keep their backgrounds fixed to the desktop viewport during scroll. These photos scroll with the page on touch devices and with reduced motion. The shared footer passes over the last section as it enters the viewport. Other chapters use 16svh of overlap, and the testimonial scrolls in normal flow. Reduced motion keeps the chapters in normal flow and shows a still sky by default. The Home menu preview uses Aurora’s garden portrait. The global footer uses Xinyi Wen’s pink clouds under an even dark purple tint. [Unsplash photo](https://unsplash.com/photos/pink-clouds-filling-the-sky-qjCHPZbeXCQ)
 
 The testimonial combines roman and italic Cormorant Garamond over the Eclipse Chasers timelapse and a masked cloud photograph. [Milky Way footage](https://www.pexels.com/video/milky-way-timelapse-27775202/) · [Cloud photograph](https://www.pexels.com/photo/clouds-in-the-sky-8726320/)
 
@@ -86,9 +86,9 @@ Content uses a centered 72rem maximum container; the full navigation header can 
 
 The homepage uses its own [editorial stylesheet](../src/app/home.css). Pair a rectangular garden portrait with the introduction on ivory. Follow with the three illustrated sessions, a full-width Milky Way testimonial, the Fear Clear signup on a bright pink fur texture with dark plum text and a raspberry-plum signup action, and a retreat cover beside three recording links. On narrow screens these spreads stack. Keep photography static. The hero footage has up to 48px of desktop scroll travel and a still poster for reduced motion. Both background videos play in view when motion is enabled.
 
-Use the star field on Starseeds. Keep other openings focused on the subject of the page. Closing actions belong to the relevant section and take the height of their content.
+Use the star field on Starseeds. Keep other openings focused on the subject of the page. Closing actions belong to the relevant section. Photo CTAs have a moderate minimum height on desktop and grow with their content.
 
-The About body pairs a garden portrait with Aurora’s bio and includes the mission and client stories. Services pairs a session index and singing-bowl photograph with the three booking or inquiry entries. Starseeds introduces the practice alongside original artwork. Media features one recording with an on-demand player and seven more direct links. Products pairs the two retreat payment options before the recording catalog.
+The About body pairs a garden portrait with Aurora’s bio and includes the mission and client stories. Services pairs a session index and singing-bowl photograph with the three booking or inquiry entries. Starseeds introduces the practice alongside original artwork. Media features one recording with an on-demand player and seven more direct links. Products uses one ivory cover grid for the two retreat payment options and the recording catalog. Contact uses a warm white surface with a soft blush tint, a garden portrait, and the hosted form. The portrait sits under an oversized Contact wordmark and aligns with the form’s bottom edge on desktop. The introduction leads on mobile.
 
 ## Elevation & Depth
 
@@ -108,7 +108,9 @@ The document uses native smooth anchor scrolling and a slim purple scrollbar. Re
 
 Selected interior-page introductions, product listings, and portraits reveal once after entering 64px into the viewport, using a 240ms fade and an 8px rise. Content renders visible before JavaScript. Below-fold elements are prepared after hydration. Elements already in view on page entry and visitors with reduced motion get the static presentation. Keyboard focus immediately reveals a group.
 
-The root layout owns the footer. On the homepage it includes the full booking invitation. Inner pages use a compact mark, linked photos, navigation, and socials beneath their own closing action.
+Product details open on ivory with the original cover beside the title, format, price, and shop link. On mobile, the title precedes the cover. Descriptions with a program list pair the overview with the list in a blush panel. On narrow screens the list follows the overview in reading order. Shorter descriptions use a centered reading column.
+
+The root layout owns the footer. On the homepage it includes the full booking invitation. Inner pages use a compact mark with Aurora’s introduction, linked photos, navigation, and socials. Their hero and footer imagery moves with scroll when motion is enabled. The shared footer closes with a berry-to-plum copyright strip.
 
 ## Asset sources
 
