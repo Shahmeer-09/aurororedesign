@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button";
-import { PageHero } from "../_components/page-hero";
+import "../inner.css";
 import { Reveal } from "../_components/reveal";
 import { SiteHeader } from "../_components/site-chrome";
 
@@ -42,15 +42,11 @@ export default function PartnershipsPage() {
       >
         Skip to content
       </a>
-      <SiteHeader />
-      <main id="main">
-        <PageHero title="Partnerships" />
+      <SiteHeader overlay />
+      <main className="edition partnerships-edition" id="main">
         <div>
-          <section
-            aria-labelledby="kejiwa-heading"
-            className="wrap grid items-center gap-8 py-12 md:grid-cols-[1fr_0.85fr] md:gap-16 md:py-18"
-          >
-            <Reveal className="relative aspect-[5/4] w-full overflow-hidden rounded-t-full border border-line md:order-2 md:aspect-[5/5.5]">
+          <section aria-labelledby="kejiwa-heading" className="partner-opening">
+            <Reveal className="relative aspect-[5/4] w-full overflow-hidden  md:order-2 md:aspect-[5/5.5]">
               <Image
                 alt="Two Kejiwa bottles on a table with a small glass and copper beads"
                 className="object-cover object-[center_65%]"
@@ -60,6 +56,9 @@ export default function PartnershipsPage() {
               />
             </Reveal>
             <div>
+              <h1>
+                Creative <em>partnerships</em>
+              </h1>
               <h2 id="kejiwa-heading" className="text-foreground">
                 Kejiwa
               </h2>

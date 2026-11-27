@@ -65,7 +65,7 @@ The testimonial combines roman and italic Cormorant Garamond over the Eclipse Ch
 
 ## Guidelines for new pages
 
-- **Choose the opening based on the page’s purpose.** About, Services, Starseeds, Media, and Products use the full-width [EditionHero](../src/app/_components/edition-banner.tsx). Partnerships and Contact use the shared [PageHero](../src/app/_components/page-hero.tsx).
+- **Choose the opening based on the page’s purpose.** Place the overlay menu above a portrait, working photograph, featured recording, shop feature, or contact composition.
 - **Build the page body on plum.** Use the shared `wrap` container and `section-space` utility from [globals.css](../src/app/globals.css). Alternate open text sections with image-led sections and use fine borders to separate lists or content groups.
 - **Use gold to guide attention.** Set large headings in Cormorant Garamond and keep descriptions and controls in Geist. Use muted plum-gray for supporting copy and warm gold for primary actions and keyboard focus.
 - **Reuse the site controls.** Start with the shared [SiteHeader and SiteFooter](../src/app/_components/site-chrome.tsx). Use the shared [Button and ButtonLink](../src/components/button.tsx) for actions, the outline variant for secondary actions, and gold text links for inline navigation.
@@ -86,7 +86,7 @@ Content uses a centered 72rem maximum container; the full navigation header can 
 
 The homepage uses its own [editorial stylesheet](../src/app/home.css). Pair a rectangular garden portrait with the introduction on ivory. Follow with the three illustrated sessions, a full-width Milky Way testimonial, the Fear Clear signup on a bright pink fur texture with dark plum text and a raspberry-plum signup action, and a retreat cover beside three recording links. On narrow screens these spreads stack. Keep photography static. The hero footage has up to 48px of desktop scroll travel and a still poster for reduced motion. Both background videos play in view when motion is enabled.
 
-About, Services, Starseeds, Media, and Products use full-width sky photographs from `public/aurora/spaceimagesfornewsite` behind ivory titles and the shared overlay navigation. Their heroes are capped at 350px or 40% of the viewport height, whichever is smaller. Each page pairs its existing ivory body with a second sky photograph and one destination above the footer. The closing section is at least 90% of the viewport height on desktop and 56% on mobile.
+Use the star field on Starseeds. Keep other openings focused on the subject of the page. Closing actions belong to the relevant section and take the height of their content.
 
 The About body pairs a garden portrait with Aurora’s bio and includes the mission and client stories. Services pairs a session index and singing-bowl photograph with the three booking or inquiry entries. Starseeds introduces the practice alongside original artwork. Media features one recording with an on-demand player and seven more direct links. Products pairs the two retreat payment options before the recording catalog.
 
@@ -108,7 +108,7 @@ The document uses native smooth anchor scrolling and a slim purple scrollbar. Re
 
 Selected interior-page introductions, product listings, and portraits reveal once after entering 64px into the viewport, using a 240ms fade and an 8px rise. Content renders visible before JavaScript. Below-fold elements are prepared after hydration. Elements already in view on page entry and visitors with reduced motion get the static presentation. Keyboard focus immediately reveals a group.
 
-The root layout renders the homepage’s “Work with Aurora” footer on every route. It fills at least one viewport and pairs the larger Aurora mark and an About excerpt with photo links and social icons. Booking and meditation links target the corresponding homepage sections.
+The root layout owns the footer. On the homepage it includes the full booking invitation. Inner pages use a compact mark, linked photos, navigation, and socials beneath their own closing action.
 
 ## Asset sources
 

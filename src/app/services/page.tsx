@@ -2,7 +2,6 @@ import "../inner.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button";
-import { EditionCta, EditionHero } from "../_components/edition-banner";
 import { Reveal } from "../_components/reveal";
 import { SiteHeader } from "../_components/site-chrome";
 import { sessionHref, sessions } from "./sessions";
@@ -24,14 +23,21 @@ export default function ServicesPage() {
       </a>
       <SiteHeader overlay />
       <main className="edition services-edition" id="main">
-        <EditionHero image="space4.jpg" title="Sessions with Aurora" />
+        <section className="session-opening">
+          <div className="wrap">
+            <h1>
+              Sessions <em>with Aurora</em>
+            </h1>
+            <ButtonLink href="#session-list">Explore sessions</ButtonLink>
+          </div>
+        </section>
         <div>
           <section
             aria-labelledby="sessions-heading"
-            className="wrap grid gap-10 py-12 lg:grid-cols-[minmax(16rem,0.75fr)_minmax(0,1.25fr)] lg:gap-20 lg:py-18"
+            className="wrap section-space"
             id="session-list"
           >
-            <div className="self-start lg:sticky lg:top-[calc(var(--header-height)+2rem)]">
+            <div className="session-guide">
               <h2
                 className="text-[clamp(2.4rem,4vw,3.75rem)]"
                 id="sessions-heading"
@@ -58,21 +64,12 @@ export default function ServicesPage() {
                   ))}
                 </ul>
               </nav>
-              <div className="relative mt-6 aspect-[1.5] max-w-96 overflow-hidden">
-                <Image
-                  alt="Aurora playing a crystal singing bowl outdoors"
-                  className="object-cover object-bottom"
-                  fill
-                  sizes="384px"
-                  src="/aurora/services/aurora.webp"
-                />
-              </div>
             </div>
-            <div className="min-w-0 space-y-12 lg:space-y-16">
+            <div className="session-rows">
               {sessions.map(({ name, slug, description, details, id }) => (
                 <section
                   aria-labelledby={`${slug}-title`}
-                  className="border-b border-line pb-8 lg:pb-10"
+                  className="session-row"
                   id={slug}
                   key={slug}
                 >
@@ -81,32 +78,34 @@ export default function ServicesPage() {
                       alt=""
                       className="h-auto w-full rounded-sm"
                       height={480}
-                      sizes="(min-width: 1200px) 670px, (min-width: 1024px) 57vw, 92vw"
+                      sizes="(min-width: 1200px) 420px, (min-width: 768px) 38vw, 92vw"
                       src={`/aurora/services/${slug}.webp`}
                       width={960}
                     />
                   </Reveal>
-                  <h2
-                    className="mt-5 text-[clamp(2rem,4vw,3rem)] leading-none tracking-[-0.025em]"
-                    id={`${slug}-title`}
-                  >
-                    {name}
-                  </h2>
-                  <p className="mt-3 max-w-[65ch] leading-relaxed text-foreground">
-                    {description}
-                  </p>
-                  <p className="mt-3 max-w-[65ch] leading-relaxed text-muted">
-                    {details}
-                  </p>
-                  <ButtonLink
-                    aria-label={id ? `Book ${name}` : `Ask about ${name}`}
-                    className="mt-5"
-                    href={sessionHref(id)}
-                    icon={id ? "calendar" : "message"}
-                    variant={id ? "primary" : "outline"}
-                  >
-                    {id ? "Book this session" : "Ask about this session"}
-                  </ButtonLink>
+                  <div>
+                    <h2
+                      className="mt-5 text-[clamp(2rem,4vw,3rem)] leading-none tracking-[-0.025em]"
+                      id={`${slug}-title`}
+                    >
+                      {name}
+                    </h2>
+                    <p className="mt-3 max-w-[65ch] leading-relaxed text-foreground">
+                      {description}
+                    </p>
+                    <p className="mt-3 max-w-[65ch] leading-relaxed text-muted">
+                      {details}
+                    </p>
+                    <ButtonLink
+                      aria-label={id ? `Book ${name}` : `Ask about ${name}`}
+                      className="mt-5"
+                      href={sessionHref(id)}
+                      icon={id ? "calendar" : "message"}
+                      variant={id ? "primary" : "outline"}
+                    >
+                      {id ? "Book this session" : "Ask about this session"}
+                    </ButtonLink>
+                  </div>
                 </section>
               ))}
             </div>
@@ -152,12 +151,13 @@ export default function ServicesPage() {
             </div>
           </section>
         </div>
-        <EditionCta
-          image="pexelspace2.jpg"
-          title="Find the session for you"
-          label="Choose a Session"
-          href="#session-list"
-        />
+        <section className="inquiry-band">
+          <div className="wrap">
+            <h2>Which session fits?</h2>
+            <p>Tell Aurora what you’d like to explore.</p>
+            <ButtonLink href={sessionHref()}>Ask about a session</ButtonLink>
+          </div>
+        </section>
       </main>
     </>
   );

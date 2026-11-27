@@ -1,7 +1,7 @@
 import "../inner.css";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { EditionCta, EditionHero } from "../_components/edition-banner";
+import { ButtonLink } from "@/components/button";
 import { Reveal } from "../_components/reveal";
 import { SiteHeader } from "../_components/site-chrome";
 import { siteLinks } from "../site-links";
@@ -47,20 +47,24 @@ export default function MediaPage() {
       </a>
       <SiteHeader overlay />
       <main className="edition media-edition" id="main">
-        <EditionHero image="space4.jpg" title="Media & Speaking" />
         <div>
           <section className="feature-band">
-            <div className="wrap media-opening">
-              <Recording id={recordings[0].id} title={recordings[0].title} />
-              <div>
-                <p className="kicker">Featured recording</p>
-                <h2>{recordings[0].title}</h2>
-                <a
-                  className="text-link"
-                  href={`https://www.youtube.com/watch?v=${recordings[0].id}`}
-                >
-                  Watch on YouTube ↗
-                </a>
+            <div className="wrap">
+              <h1>
+                Media <em>&amp; Speaking</em>
+              </h1>
+              <div className="media-opening">
+                <Recording id={recordings[0].id} title={recordings[0].title} />
+                <div>
+                  <p className="kicker">Featured recording</p>
+                  <h2>{recordings[0].title}</h2>
+                  <a
+                    className="text-link"
+                    href={`https://www.youtube.com/watch?v=${recordings[0].id}`}
+                  >
+                    Watch on YouTube ↗
+                  </a>
+                </div>
               </div>
             </div>
           </section>
@@ -70,11 +74,11 @@ export default function MediaPage() {
             id="appearances"
           >
             <h2 id="appearances-title">Recorded appearances</h2>
-            <ul className="mt-8 grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+            <ul className="episode-archive">
               {recordings.slice(1).map(({ id, title }) => (
                 <li key={id}>
                   <a
-                    className="group flex h-full flex-col border-t border-line pt-3"
+                    className="group archive-link"
                     href={`https://www.youtube.com/watch?v=${id}`}
                   >
                     <div className="relative aspect-video overflow-hidden rounded-md bg-surface">
@@ -100,7 +104,7 @@ export default function MediaPage() {
 
           <section
             aria-labelledby="speaker-title"
-            className="border-b border-line"
+            className="speaker-band"
             id="speaker"
           >
             <div className="mx-auto grid w-[min(100%-2.25rem,90rem)] items-center gap-8 py-[clamp(3rem,6vw,6rem)] md:w-[min(100%-4rem,90rem)] md:grid-cols-[1.25fr_1fr] md:gap-[clamp(2rem,5vw,5rem)]">
@@ -139,16 +143,13 @@ export default function MediaPage() {
                     supporting others on their own paths.
                   </p>
                 </div>
+                <ButtonLink className="mt-6" href={siteLinks.contact}>
+                  Invite Aurora to Speak
+                </ButtonLink>
               </div>
             </div>
           </section>
         </div>
-        <EditionCta
-          image="pexelspace2.jpg"
-          title="Bring Aurora to your event"
-          label="Invite Aurora to Speak"
-          href={siteLinks.contact}
-        />
       </main>
     </>
   );

@@ -5,9 +5,9 @@
 
 ## Inner page preview
 
-About, Services, Starseeds, Media, and Products now open with the shared overlay menu over the supplied sky photos and close with a full-width image and one action. The production preview is on port 3068. Chrome at 1440px and 390px confirmed the hero caps, artwork, CTA destinations, Escape, focus return, and horizontal fit. The desktop homepage hero matched its baseline screenshot pixel for pixel. Lint and the production build passed.
+Seven inner pages now use subject-specific openings and content-sized closing actions. About opens with Aurora’s portrait, Services with her work, Starseeds with a definition and night sky, Media with its playable recording, and Products with the retreat. Partnerships and Contact use the same overlay menu and editorial palette. The homepage retains its full booking footer.
 
-About, Services, Starseeds, Media and Products now use the homepage palette. Chrome rendered all five routes at 1440px and 390px with all main images loaded and no horizontal overflow. The featured player creates its iframe on click. Live playback, booking and payment completion were not verified.
+The production build and targeted Biome check passed. Chrome reviewed the homepage and seven inner pages at 1440px and 390px. All visible main images loaded, each route had one H1, and internal fragment links resolved without horizontal overflow. The featured recording mounted its player on click and the external contact form rendered. Booking, inquiry submission, and checkout were not exercised. Full-page screenshots are in `/tmp/aurora-editorial-review`. Local development preview uses port 3000.
 
 ## Homepage demo
 

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { PageHero } from "../_components/page-hero";
+import "../inner.css";
 import { SiteHeader } from "../_components/site-chrome";
 import { siteLinks } from "../site-links";
 
@@ -22,13 +22,14 @@ export default function ContactPage() {
       >
         Skip to content
       </a>
-      <SiteHeader />
-      <main id="main">
-        <PageHero title="Contact Aurora" />
+      <SiteHeader overlay />
+      <main className="edition contact-edition" id="main">
         <div>
-          <div className="wrap grid items-start gap-9 py-12 md:grid-cols-[0.8fr_1.2fr] md:gap-14 md:py-16">
+          <div className="contact-layout wrap">
             <div>
-              <h2 className="text-[clamp(2.25rem,4vw,3.5rem)]">Get in touch</h2>
+              <h1>
+                Contact <em>Aurora</em>
+              </h1>
               <p className="mt-4 max-w-[42ch] leading-relaxed text-muted">
                 Use the form for questions about sessions, speaking engagements,
                 partnerships, or Aurora’s work.
@@ -36,10 +37,10 @@ export default function ContactPage() {
               <a className="text-link mt-2" href={siteLinks.services}>
                 Explore sessions
               </a>
-              <div className="relative mt-7 hidden aspect-[4/5] w-full max-w-[25rem] overflow-hidden rounded-2xl border border-line md:block">
+              <div className="contact-photo relative mt-7 overflow-hidden">
                 <Image
                   alt="Aurora Luna Star standing in a sunlit garden"
-                  className="object-cover object-[center_36%]"
+                  className="object-cover object-[center_10%]"
                   fill
                   sizes="(min-width: 768px) 35vw, 90vw"
                   src="/aurora/contact-portrait.webp"
@@ -48,7 +49,7 @@ export default function ContactPage() {
             </div>
             <div>
               <iframe
-                className="block h-[760px] w-full rounded-2xl"
+                className="block h-[760px] w-full bg-white"
                 src={contactFormUrl}
                 title="Aurora Luna Star contact form"
               />

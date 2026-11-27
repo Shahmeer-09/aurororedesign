@@ -2,7 +2,6 @@ import "../inner.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button";
-import { EditionCta, EditionHero } from "../_components/edition-banner";
 import { Reveal } from "../_components/reveal";
 import { SiteHeader } from "../_components/site-chrome";
 import { siteLinks } from "../site-links";
@@ -54,14 +53,15 @@ export default function StarseedsPage() {
       </a>
       <SiteHeader overlay />
       <main className="edition starseeds-edition" id="main">
-        <EditionHero image="pexelcolorful.jpg" title="What Is a Starseed?" />
         <div>
           <section
             aria-labelledby="what-is-a-starseed"
-            className="wrap star-opening grid items-center gap-8 py-14 md:grid-cols-[1.1fr_0.9fr] md:gap-16 md:py-20"
+            className="star-opening"
           >
             <div>
-              <h2 id="what-is-a-starseed">Starseeds in Aurora’s practice</h2>
+              <h1 id="what-is-a-starseed">
+                What is a <em>Starseed?</em>
+              </h1>
               <div className="mt-6 max-w-[60ch] space-y-4 leading-relaxed text-muted">
                 <p>
                   In Aurora’s spiritual practice, a starseed is someone who
@@ -99,13 +99,10 @@ export default function StarseedsPage() {
                 Explore your star connections
               </h2>
             </Reveal>
-            <ul className="mt-9 grid gap-9 md:grid-cols-3">
+            <ul className="star-atlas">
               {offerings.map(
                 ({ title, image, format, description, action, href }) => (
-                  <li
-                    className="flex flex-col gap-5 border-t border-line pt-4"
-                    key={image}
-                  >
+                  <li className="atlas-entry" key={image}>
                     <Image
                       alt={
                         image === "blueprint-activator"
@@ -138,12 +135,19 @@ export default function StarseedsPage() {
             </ul>
           </section>
         </div>
-        <EditionCta
-          image="space3.jpg"
-          title="Find your star connections"
-          label="Explore Starseed Offerings"
-          href="#starseed-offerings"
-        />
+        <section className="comparison wrap">
+          <h2>Choose your format</h2>
+          <ul>
+            {offerings.map(({ format, action, href }) => (
+              <li key={href}>
+                <span>{format}</span>
+                <a className="text-link" href={href}>
+                  {action}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
       </main>
     </>
   );

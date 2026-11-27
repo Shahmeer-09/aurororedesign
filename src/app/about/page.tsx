@@ -2,7 +2,6 @@ import "../inner.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button";
-import { EditionCta, EditionHero } from "../_components/edition-banner";
 import { Reveal } from "../_components/reveal";
 import { SiteHeader } from "../_components/site-chrome";
 import { bookingAnchor, siteLinks } from "../site-links";
@@ -25,23 +24,22 @@ export default function AboutPage() {
       </a>
       <SiteHeader overlay />
       <main className="edition about-edition" id="main">
-        <EditionHero image="space4.jpg" title="Meet Aurora" />
         <div>
-          <section
-            aria-labelledby="aurora-work"
-            className="wrap grid items-center gap-9 py-16 md:grid-cols-[0.85fr_1.15fr] md:gap-16 md:py-20"
-          >
-            <Reveal className="about-portrait relative mx-auto aspect-[5/6] w-[92%] max-w-104 md:aspect-auto md:self-stretch">
+          <section aria-labelledby="aurora-work" className="portrait-opening">
+            <div className="about-portrait">
               <Image
                 alt="Aurora Luna Star with purple hair in a garden"
                 className="object-cover object-[center_35%]"
                 fill
-                sizes="(min-width: 1024px) 416px, (min-width: 768px) 45vw, 90vw"
+                preload
+                sizes="(min-width: 768px) 48vw, 100vw"
                 src="/aurora/portrait-about.webp"
               />
-            </Reveal>
+            </div>
             <div>
-              <h2 id="aurora-work">Aurora’s practice</h2>
+              <h1 id="aurora-work">
+                Meet <em>Aurora</em>
+              </h1>
               <div className="mt-6 max-w-[60ch] space-y-4 leading-relaxed text-muted">
                 <p>
                   Aurora Luna Star is an interdimensional channel. Through
@@ -125,12 +123,22 @@ export default function AboutPage() {
             <p>Shanna S.</p>
           </section>
         </div>
-        <EditionCta
-          image="space3.jpg"
-          title="Work with Aurora"
-          label="Explore Sessions"
-          href={siteLinks.services}
-        />
+        <section className="invitation wrap">
+          <Image
+            src="/aurora/contact-portrait.webp"
+            width={180}
+            height={216}
+            alt="Aurora in the garden"
+          />
+          <div>
+            <h2>In private practice</h2>
+            <p>
+              Explore Aurora’s one-to-one work in meditation and the Akashic
+              Records.
+            </p>
+          </div>
+          <ButtonLink href={siteLinks.services}>Explore Sessions</ButtonLink>
+        </section>
       </main>
     </>
   );
