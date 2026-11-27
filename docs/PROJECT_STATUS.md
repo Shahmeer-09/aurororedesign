@@ -5,6 +5,8 @@
 
 ## Inner page preview
 
+About, Services, Starseeds, Media, and Products now open with the shared overlay menu over the supplied sky photos and close with a full-width image and one action. The production preview is on port 3068. Chrome at 1440px and 390px confirmed the hero caps, artwork, CTA destinations, Escape, focus return, and horizontal fit. The desktop homepage hero matched its baseline screenshot pixel for pixel. Lint and the production build passed.
+
 About, Services, Starseeds, Media and Products now use the homepage palette. Chrome rendered all five routes at 1440px and 390px with all main images loaded and no horizontal overflow. The featured player creates its iframe on click. Live playback, booking and payment completion were not verified.
 
 ## Homepage demo

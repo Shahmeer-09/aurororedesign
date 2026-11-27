@@ -2,6 +2,7 @@ import Image from "next/image";
 import "../../inner.css";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { EditionCta, EditionHero } from "../../_components/edition-banner";
 import { SiteHeader } from "../../_components/site-chrome";
 import { getProductsPage } from "../catalog";
 import { ProductGrid } from "../product-grid";
@@ -32,19 +33,10 @@ export default async function ProductsPage({
       >
         Skip to content
       </a>
-      <SiteHeader />
+      <SiteHeader overlay />
       <main className="edition shop-edition" id="main">
+        <EditionHero image="pexelcolorful.jpg" title="Retreats & Recordings" />
         <div className="wrap py-10">
-          <div className="mb-9 border-b border-line pb-6">
-            <h1 className="text-[clamp(2.75rem,5vw,4.25rem)] leading-none tracking-[-0.03em]">
-              Retreats &amp; recordings
-            </h1>
-            <p className="mt-4 max-w-[52ch] leading-[1.7] text-muted">
-              Retreats, online gatherings, and channeled series from Aurora.
-              Each item opens its page on auroralunastar.com to complete your
-              purchase.
-            </p>
-          </div>
           <section className="retreat-feature">
             <Image
               src="/aurora/products/trust-yourself-retreat-deposit.webp"
@@ -66,15 +58,19 @@ export default async function ProductsPage({
               ))}
             </div>
           </section>
-          <h2 className="mb-6">Recordings &amp; gatherings</h2>
+          <h2>Recordings &amp; gatherings</h2>
+          <p className="mt-4 mb-6 max-w-[52ch] leading-relaxed text-muted">
+            Each item opens its page on auroralunastar.com to complete your
+            purchase.
+          </p>
           <ProductGrid products={products.slice(2)} headingLevel="h3" />
-          <a
-            className="text-link mt-8"
-            href="https://auroralunastar.com/products/"
-          >
-            Browse the full shop ↗
-          </a>
         </div>
+        <EditionCta
+          image="space3.jpg"
+          title="Find more in the shop"
+          label="Browse the Full Shop"
+          href="https://auroralunastar.com/products/"
+        />
       </main>
     </>
   );

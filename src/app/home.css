@@ -555,20 +555,23 @@ html:has(.gate-dialog[open]) {
 /* The departing chapter recedes while the following chapter keeps scrolling. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    .journal main > section {
+    .journal main > section,
+    main:has(+ .journal-footer) > :last-child {
       position: relative;
       z-index: 0;
       animation: chapter-overlap linear both;
       animation-timeline: view();
       animation-range: exit 0% exit 100%;
     }
-    .journal main > section:has(:focus-visible) {
+    .journal main > section:has(:focus-visible),
+    main:has(+ .journal-footer) > :last-child:has(:focus-visible) {
       animation: none;
     }
   }
 }
 .journal main > .journal-hero,
-.journal main > section:last-child {
+.journal main > section:last-child,
+main:has(+ .journal-footer) > :last-child {
   --chapter-travel: 30svh;
 }
 .footer-socials {

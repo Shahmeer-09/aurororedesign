@@ -1,7 +1,7 @@
 import "../inner.css";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ButtonLink } from "@/components/button";
+import { EditionCta, EditionHero } from "../_components/edition-banner";
 import { Reveal } from "../_components/reveal";
 import { SiteHeader } from "../_components/site-chrome";
 import { siteLinks } from "../site-links";
@@ -45,15 +45,16 @@ export default function MediaPage() {
       >
         Skip to content
       </a>
-      <SiteHeader />
-      <main className="edition" id="main">
+      <SiteHeader overlay />
+      <main className="edition media-edition" id="main">
+        <EditionHero image="space4.jpg" title="Media & Speaking" />
         <div>
           <section className="feature-band">
             <div className="wrap media-opening">
               <Recording id={recordings[0].id} title={recordings[0].title} />
               <div>
-                <p className="kicker">Media &amp; speaking</p>
-                <h1>{recordings[0].title}</h1>
+                <p className="kicker">Featured recording</p>
+                <h2>{recordings[0].title}</h2>
                 <a
                   className="text-link"
                   href={`https://www.youtube.com/watch?v=${recordings[0].id}`}
@@ -138,15 +139,16 @@ export default function MediaPage() {
                     supporting others on their own paths.
                   </p>
                 </div>
-                <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
-                  <ButtonLink href={siteLinks.contact} icon="message">
-                    Invite Aurora to Speak
-                  </ButtonLink>
-                </div>
               </div>
             </div>
           </section>
         </div>
+        <EditionCta
+          image="pexelspace2.jpg"
+          title="Bring Aurora to your event"
+          label="Invite Aurora to Speak"
+          href={siteLinks.contact}
+        />
       </main>
     </>
   );

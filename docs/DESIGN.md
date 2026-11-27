@@ -59,13 +59,13 @@ The homepage is a practitioner profile in warm ivory and deep plum. The opening 
 | Retreats and recordings | Lead with the retreat cover. Place three recordings in a quieter list alongside it, then link to the shop. |
 | Footer | Pair the brand mark and booking link with a three-photo directory on textured plum. Include site destinations, cart, and meditation. Reuse this ending across routes. |
 
-Desktop chapters use a 92svh minimum and expand with their contents. Narrow screens follow the natural reading height. The hero and the section above the footer use 30svh of overlap travel. Other chapters use 16svh of overlap, and the testimonial scrolls in normal flow. Reduced motion keeps the chapters in normal flow and shows a still sky by default. The Home menu preview uses Aurora’s garden portrait. The global footer uses Xinyi Wen’s pink clouds under an even dark purple tint. [Unsplash photo](https://unsplash.com/photos/pink-clouds-filling-the-sky-qjCHPZbeXCQ)
+Desktop chapters use a 92svh minimum and expand with their contents. Narrow screens follow the natural reading height. The homepage hero and every page’s last content section use 30svh of overlap travel. The shared footer passes over the last section as it enters the viewport. Other chapters use 16svh of overlap, and the testimonial scrolls in normal flow. Reduced motion keeps the chapters in normal flow and shows a still sky by default. The Home menu preview uses Aurora’s garden portrait. The global footer uses Xinyi Wen’s pink clouds under an even dark purple tint. [Unsplash photo](https://unsplash.com/photos/pink-clouds-filling-the-sky-qjCHPZbeXCQ)
 
 The testimonial combines roman and italic Cormorant Garamond over the Eclipse Chasers timelapse and a masked cloud photograph. [Milky Way footage](https://www.pexels.com/video/milky-way-timelapse-27775202/) · [Cloud photograph](https://www.pexels.com/photo/clouds-in-the-sky-8726320/)
 
 ## Guidelines for new pages
 
-- **Choose the opening based on the page’s purpose.** Use the shared [PageHero](../src/app/_components/page-hero.tsx) for left-aligned introductions on a solid plum surface. Use a compact title block when visitors come to browse a collection, as on Products.
+- **Choose the opening based on the page’s purpose.** About, Services, Starseeds, Media, and Products use the full-width [EditionHero](../src/app/_components/edition-banner.tsx). Partnerships and Contact use the shared [PageHero](../src/app/_components/page-hero.tsx).
 - **Build the page body on plum.** Use the shared `wrap` container and `section-space` utility from [globals.css](../src/app/globals.css). Alternate open text sections with image-led sections and use fine borders to separate lists or content groups.
 - **Use gold to guide attention.** Set large headings in Cormorant Garamond and keep descriptions and controls in Geist. Use muted plum-gray for supporting copy and warm gold for primary actions and keyboard focus.
 - **Reuse the site controls.** Start with the shared [SiteHeader and SiteFooter](../src/app/_components/site-chrome.tsx). Use the shared [Button and ButtonLink](../src/components/button.tsx) for actions, the outline variant for secondary actions, and gold text links for inline navigation.
@@ -86,7 +86,9 @@ Content uses a centered 72rem maximum container; the full navigation header can 
 
 The homepage uses its own [editorial stylesheet](../src/app/home.css). Pair a rectangular garden portrait with the introduction on ivory. Follow with the three illustrated sessions, a full-width Milky Way testimonial, the Fear Clear signup on a bright pink fur texture with dark plum text and a raspberry-plum signup action, and a retreat cover beside three recording links. On narrow screens these spreads stack. Keep photography static. The hero footage has up to 48px of desktop scroll travel and a still poster for reduced motion. Both background videos play in view when motion is enabled.
 
-About, Services, Starseeds, Media and Products use the homepage’s ivory paper, plum ink and bronze links through the scoped inner stylesheet. About opens with a garden portrait and closes with Shanna’s words and Services. Services pairs a session index and singing-bowl photograph with the three booking or inquiry entries. Starseeds opens with a definition alongside original artwork. Media features one recording with an on-demand player and seven more direct links. Products pairs the two retreat payment options before the recording catalog. Partnerships and Contact retain their shared interior banner.
+About, Services, Starseeds, Media, and Products use full-width sky photographs from `public/aurora/spaceimagesfornewsite` behind ivory titles and the shared overlay navigation. Their heroes are capped at 350px or 40% of the viewport height, whichever is smaller. Each page pairs its existing ivory body with a second sky photograph and one destination above the footer. The closing section is at least 90% of the viewport height on desktop and 56% on mobile.
+
+The About body pairs a garden portrait with Aurora’s bio and includes the mission and client stories. Services pairs a session index and singing-bowl photograph with the three booking or inquiry entries. Starseeds introduces the practice alongside original artwork. Media features one recording with an on-demand player and seven more direct links. Products pairs the two retreat payment options before the recording catalog.
 
 ## Elevation & Depth
 
@@ -98,7 +100,7 @@ Homepage photographs and artwork have square corners. Buttons and signup fields 
 
 ## Components
 
-The shared header places the Aurora mark on the left and Menu on the right. On Home the header wordmark overlays the footage. The menu sheet also uses the wordmark. Two sliding panels reveal large Cormorant Garamond links on ivory. On desktop, hovering or focusing a destination changes the facing photograph. Mobile uses the entire sheet for links. Escape and Close restore focus to the trigger.
+The shared header places the Aurora mark on the left and Menu on the right. The wordmark overlays the footage on Home and the hero image on the five pages with an EditionHero. The menu sheet also uses the wordmark. Two sliding panels reveal large Cormorant Garamond links on ivory. On desktop, hovering or focusing a destination changes the facing photograph. Mobile uses the entire sheet for links. Escape and Close restore focus to the trigger.
 
 Buttons pair 16px line icons with medium-weight Geist labels. Primary hover lightens the gold fill. Secondary hover raises the plum surface one step. Keyboard focus uses a 2px gold outline offset by 5px. Reduced-motion preferences disable button motion. Form controls keep visible labels, dark plum fills, and a 2.875rem minimum height. The signup action spans the form width.
 

@@ -2,6 +2,7 @@ import "../inner.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button";
+import { EditionCta, EditionHero } from "../_components/edition-banner";
 import { Reveal } from "../_components/reveal";
 import { SiteHeader } from "../_components/site-chrome";
 import { siteLinks } from "../site-links";
@@ -51,17 +52,16 @@ export default function StarseedsPage() {
       >
         Skip to content
       </a>
-      <SiteHeader />
-      <main className="edition" id="main">
+      <SiteHeader overlay />
+      <main className="edition starseeds-edition" id="main">
+        <EditionHero image="pexelcolorful.jpg" title="What Is a Starseed?" />
         <div>
           <section
             aria-labelledby="what-is-a-starseed"
             className="wrap star-opening grid items-center gap-8 py-14 md:grid-cols-[1.1fr_0.9fr] md:gap-16 md:py-20"
           >
             <div>
-              <h1 id="what-is-a-starseed">
-                What is a <em>starseed?</em>
-              </h1>
+              <h2 id="what-is-a-starseed">Starseeds in Aurora’s practice</h2>
               <div className="mt-6 max-w-[60ch] space-y-4 leading-relaxed text-muted">
                 <p>
                   In Aurora’s spiritual practice, a starseed is someone who
@@ -138,6 +138,12 @@ export default function StarseedsPage() {
             </ul>
           </section>
         </div>
+        <EditionCta
+          image="space3.jpg"
+          title="Find your star connections"
+          label="Explore Starseed Offerings"
+          href="#starseed-offerings"
+        />
       </main>
     </>
   );

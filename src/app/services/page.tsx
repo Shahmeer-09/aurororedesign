@@ -2,6 +2,7 @@ import "../inner.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button";
+import { EditionCta, EditionHero } from "../_components/edition-banner";
 import { Reveal } from "../_components/reveal";
 import { SiteHeader } from "../_components/site-chrome";
 import { sessionHref, sessions } from "./sessions";
@@ -21,20 +22,22 @@ export default function ServicesPage() {
       >
         Skip to content
       </a>
-      <SiteHeader />
-      <main className="edition" id="main">
+      <SiteHeader overlay />
+      <main className="edition services-edition" id="main">
+        <EditionHero image="space4.jpg" title="Sessions with Aurora" />
         <div>
           <section
             aria-labelledby="sessions-heading"
             className="wrap grid gap-10 py-12 lg:grid-cols-[minmax(16rem,0.75fr)_minmax(0,1.25fr)] lg:gap-20 lg:py-18"
+            id="session-list"
           >
             <div className="self-start lg:sticky lg:top-[calc(var(--header-height)+2rem)]">
-              <h1
+              <h2
                 className="text-[clamp(2.4rem,4vw,3.75rem)]"
                 id="sessions-heading"
               >
-                Sessions with <em>Aurora</em>
-              </h1>
+                Session guide
+              </h2>
               <p className="mt-4">
                 Private sessions in guided meditation and the Akashic Records.
               </p>
@@ -149,6 +152,12 @@ export default function ServicesPage() {
             </div>
           </section>
         </div>
+        <EditionCta
+          image="pexelspace2.jpg"
+          title="Find the session for you"
+          label="Choose a Session"
+          href="#session-list"
+        />
       </main>
     </>
   );

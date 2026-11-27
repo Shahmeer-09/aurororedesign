@@ -2,6 +2,7 @@ import "../inner.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button";
+import { EditionCta, EditionHero } from "../_components/edition-banner";
 import { Reveal } from "../_components/reveal";
 import { SiteHeader } from "../_components/site-chrome";
 import { bookingAnchor, siteLinks } from "../site-links";
@@ -22,8 +23,9 @@ export default function AboutPage() {
       >
         Skip to content
       </a>
-      <SiteHeader />
-      <main className="edition" id="main">
+      <SiteHeader overlay />
+      <main className="edition about-edition" id="main">
+        <EditionHero image="space4.jpg" title="Meet Aurora" />
         <div>
           <section
             aria-labelledby="aurora-work"
@@ -39,9 +41,7 @@ export default function AboutPage() {
               />
             </Reveal>
             <div>
-              <h1 id="aurora-work">
-                Meet <em>Aurora</em>
-              </h1>
+              <h2 id="aurora-work">Aurora’s practice</h2>
               <div className="mt-6 max-w-[60ch] space-y-4 leading-relaxed text-muted">
                 <p>
                   Aurora Luna Star is an interdimensional channel. Through
@@ -123,9 +123,14 @@ export default function AboutPage() {
               has created.”
             </blockquote>
             <p>Shanna S.</p>
-            <ButtonLink href="/services">Explore sessions</ButtonLink>
           </section>
         </div>
+        <EditionCta
+          image="space3.jpg"
+          title="Work with Aurora"
+          label="Explore Sessions"
+          href={siteLinks.services}
+        />
       </main>
     </>
   );
